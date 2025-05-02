@@ -14,6 +14,7 @@ const Impact = lazy(() => import("./pages/impact"));
 const Members = lazy(() => import("./pages/members"));
 const Pillars = lazy(() => import("./pages/pillars"));
 
+const ScholarshipBeneficiaries = lazy(() => import("./components/scholarship-beneficiaries"));
 
 function App() {
   return (
@@ -34,6 +35,11 @@ function App() {
           <Route path="/impact" element={<Impact />} />
           <Route path="/members" element={<Members />} />
           <Route path="/pillars" element={<Pillars />} />
+
+          <Route
+            path="/events/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students"
+            element={<ScholarshipBeneficiaries />}
+          />
         </Routes>
       </Router>
     </Suspense>

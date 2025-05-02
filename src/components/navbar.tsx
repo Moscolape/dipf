@@ -56,18 +56,18 @@ export default function NavLinks() {
     };
   }, [isMenuOpen]);
 
-  const logoSize = windowWidth < 640 ? 60 : 80;
+  const logoSize = windowWidth < 640 ? 60 : 50;
 
   return (
     <nav
       className="flex justify-between items-center sm:px-4 pl-2 py-2 fixed w-full top-0 z-40"
       style={{
-        backgroundColor: "rgba(255, 255, 255, 0.5)",
+        backgroundColor: "rgba(255, 255, 255, 0.1)",
         backdropFilter: "blur(30px)",
       }}
     >
       <Link to="/" className="logo">
-        <img src={logo} alt="My Logo" width={logoSize} height={logoSize} />
+        <img src={logo} alt="My Logo" width={logoSize} height={logoSize} className="sm:scale-200 pl-2 pt-2 pb-2" />
       </Link>
 
       {/* Desktop Navigation */}
@@ -76,9 +76,9 @@ export default function NavLinks() {
           <Link
             key={link.name}
             to={link.href}
-            className={`px-4 py-2 text-h6 hover:text-[#be202f] hover:scale-110 rounded-md ${
+            className={`px-4 py-2 text-h6 hover:text-[#b58825] hover:scale-110 rounded-md ${
               currentPath.includes(link.href)
-                ? "text-[#be202f] font-bold"
+                ? "text-[#b58825] font-bold"
                 : "font-medium"
             } ${link.name === "Donate" ? "hidden" : "inline-block"}`}
           >
@@ -107,7 +107,7 @@ export default function NavLinks() {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setMenuOpen(true)}
-        className="md:hidden p-2 rounded-md focus:outline-none"
+        className="md:hidden p-2 rounded focus:outline-none bg-white mr-2"
       >
         <Menu size={32} />
       </button>
