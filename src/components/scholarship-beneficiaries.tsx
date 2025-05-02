@@ -13,7 +13,7 @@ const ScholarshipBeneficiaries = () => {
     <PageWrapper>
       <div className="pt-12 px-6 max-w-6xl mx-auto font-Montserrat">
         <h1
-          className="text-2xl sm:text-4xl font-bold mb-10"
+          className="text-xl sm:text-4xl font-bold sm:mb-10 mb-3 underline sm:no-underline"
           data-aos="fade-down"
         >
           De Imperial Philanthropic Family plans to grant full scholarships to

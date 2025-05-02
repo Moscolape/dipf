@@ -9,6 +9,10 @@
   -ms-user-select: none;
 }
 
+.input {
+  display: block;
+}
+
 /* DM Sans */
 .font-DM-Sans {
   font-family: 'DM Sans', sans-serif;

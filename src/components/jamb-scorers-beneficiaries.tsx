@@ -12,7 +12,7 @@ const TopJambScorersBeneficiaries = () => {
     <PageWrapper>
       <div className="pt-12 px-6 max-w-6xl mx-auto font-Montserrat">
         <h1
-          className="text-2xl sm:text-4xl font-bold mb-10"
+          className="text-xl sm:text-4xl font-bold sm:mb-10 mb-3 underline sm:no-underline"
           data-aos="fade-down"
         >
           De Imperial Philanthropic Family plans to provide Tertiary Education
@@ -22,6 +22,7 @@ const TopJambScorersBeneficiaries = () => {
           src={presido}
           alt="DIPF-National President"
           className="h-[50vh] w-full object-cover sm:h-[90vh]"
+          data-aos="fade-in"
         />
         <p data-aos="fade-up" className="mt-10">
           The <b>De Imperial Philanthropic Family (DIPF)</b> is proud to
@@ -33,9 +34,9 @@ const TopJambScorersBeneficiaries = () => {
           examinations.
         </p>
         <br />
-        <div>
+        <div data-aos="fade-up">
           <p>
-            The DIPF JAMB SCHOLARSHIP GRANTS will be of two categories namely;
+            The DIPF JAMB SCHOLARSHIP GRANTS will be of two categories;
           </p>
           <ol className="list-decimal ml-5">
             <li>
@@ -49,31 +50,35 @@ const TopJambScorersBeneficiaries = () => {
           </ol>
         </div>
         <br />
-        <p>
-          The DIPF Scholarship Examination is open for 2025 JAMBites who met the
-          following requirements:
-        </p>
-        <ul className="list-disc ml-5">
-          <li>Must be an Igbo indigene.</li>
-          <li>
-            Must have schooled and written 2025 JAMB in a Southeastern state.
-          </li>
-          <li>
-            Must have selected Southeastern Universities as First and Second
-            choice of institution.
-          </li>
-          <li>Must have scored 250 and above in 2025 JAMB UTME Examination.</li>
-        </ul>
-        <br />
-        <p>
-          If you meet the above requirements, kindly proceed to fill this{" "}
-          <a
-            href="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-top-10-jamb-scorers-in-southeast-2025/register"
-            className="text-blue-600 hover:underline font-medium"
-          >
-            registration form
-          </a>
-        </p>
+        <div data-aos="fade-up">
+          <p>
+            The DIPF Scholarship Examination is open for 2025 JAMBites who met
+            the following requirements:
+          </p>
+          <ul className="list-disc ml-5">
+            <li>Must be an Igbo indigene.</li>
+            <li>
+              Must have schooled and written 2025 JAMB in a Southeastern state.
+            </li>
+            <li>
+              Must have selected Southeastern Universities as First and Second
+              choice of institution.
+            </li>
+            <li>
+              Must have scored 250 and above in 2025 JAMB UTME Examination.
+            </li>
+          </ul>
+          <br />
+          <p>
+            If you meet the above requirements, kindly proceed to fill this{" "}
+            <a
+              href="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-top-10-jamb-scorers-in-southeast-2025/register"
+              className="text-blue-600 hover:underline font-medium"
+            >
+              registration form
+            </a>
+          </p>
+        </div>
       </div>
     </PageWrapper>
   );

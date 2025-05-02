@@ -17,6 +17,7 @@ const Pillars = lazy(() => import("./pages/pillars"));
 
 const ScholarshipBeneficiaries = lazy(() => import("./components/scholarship-beneficiaries"));
 const JambScorersBeneficiaries = lazy(() => import("./components/jamb-scorers-beneficiaries"));
+const JambScholarshipForm = lazy(() => import("./components/dipf-jamb-scholarship-exam-form"));
 
 function App() {
   return (
@@ -46,6 +47,10 @@ function App() {
           <Route
             path="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-top-10-jamb-scorers-in-southeast-2025"
             element={<JambScorersBeneficiaries />}
+          />
+          <Route
+            path="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-top-10-jamb-scorers-in-southeast-2025/register"
+            element={<JambScholarshipForm />}
           />
         </Routes>
       </Router>
