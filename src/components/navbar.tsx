@@ -10,6 +10,7 @@ const links = [
   { name: "Members", href: "/members" },
   { name: "Pillars", href: "/pillars" },
   { name: "Events", href: "/events" },
+  { name: "Initiatives", href: "/initiatives" }
 ];
 
 export default function NavLinks() {
@@ -71,7 +72,7 @@ export default function NavLinks() {
       </Link>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center space-x-4 font-Montserrat">
+      <div className="hidden md:flex items-center space-x-4 font-Montserrat text-lg">
         {links.map((link) => (
           <Link
             key={link.name}
@@ -99,7 +100,7 @@ export default function NavLinks() {
           repeat: Infinity,
           repeatType: "mirror",
         }}
-        className="text-white py-2 px-4 rounded-md hidden sm:block"
+        className="text-white py-2 px-4 rounded-md hidden sm:block text-lg"
       >
         Contact Us
       </motion.a>
