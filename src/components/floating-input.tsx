@@ -19,6 +19,8 @@ const FloatingInput: React.FC<FloatingInputProps> = ({
 }) => {
   const [hasValue, setHasValue] = useState(false);
 
+  const isPhoneNumber = label.includes("phone number");
+
   return (
     <div className="relative w-full">
       <input
@@ -37,12 +39,19 @@ const FloatingInput: React.FC<FloatingInputProps> = ({
         onBlur={(e) => setHasValue(e.target.value !== "")}
         className="peer w-full pb-1 pt-5 border-b-2 outline-none placeholder-transparent"
         placeholder={label}
+        {...(isPhoneNumber && {
+          inputMode: "numeric",
+          onInput: (e: React.FormEvent<HTMLInputElement>) => {
+            const input = e.currentTarget;
+            input.value = input.value.replace(/\D/g, "").slice(0, 11);
+          },
+        })}
       />
       <label
         htmlFor={name}
         className={`absolute left-0 transition-all duration-200 text-gray-400 cursor-text 
-      ${hasValue ? "top-0 text-sm text-[#b58825]" : "top-5 text-base"}
-      peer-focus:top-0 peer-focus:text-sm peer-focus:text-[#b58825]`}
+        ${hasValue ? "top-0 text-sm text-[#b58825]" : "top-5 text-base"}
+        peer-focus:top-0 peer-focus:text-sm peer-focus:text-[#b58825]`}
       >
         {label}
       </label>

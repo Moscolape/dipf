@@ -1,10 +1,11 @@
 import PageWrapper from "../components/pageWrapper";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import initializeAOS from "../utils/aos-init";
 import { logo } from "../constants/assets";
 import { useForm } from "react-hook-form";
 import { statesData } from "../utils/statesdata";
 import FloatingInput from "./floating-input";
+import SuccessModal from "./success-modal";
 
 interface JambScholarshipFormData {
   name: string;
@@ -19,7 +20,7 @@ interface JambScholarshipFormData {
   jambScore: number;
   firstChoice: string;
   secondChoice: string;
-  jambSlip: File;
+  jambSlip: FileList;
   guardianPhone: string;
   jambExamState: string;
 }
@@ -34,30 +35,64 @@ const JambScholarshipForm = () => {
     handleSubmit,
     reset,
     watch,
+    // setValue,
     formState: { errors },
   } = useForm<JambScholarshipFormData>();
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
+  const [showModal, setShowModal] = useState(false);
 
   const stateOrigin = watch("stateOfOrigin");
   const stateSchool = watch("schoolState");
 
   const onSubmit = async (data: JambScholarshipFormData) => {
-    const formData = new FormData();
-    Object.entries(data).forEach(([key, value]) => {
-      if (key === "jambSlip") {
-        formData.append("jambSlip", value[0]); // Append file
-      } else {
-        formData.append(key, value as string);
-      }
-    });
+    setIsSubmitting(true);
 
     try {
-      // Dummy API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      console.log("Form submitted:", Object.fromEntries(formData.entries()));
-      alert("Application submitted successfully!");
+      const formData = new FormData();
+
+      // Append all form fields except the file
+      Object.entries(data).forEach(([key, value]) => {
+        if (key !== "jambSlip") {
+          formData.append(key, value as string);
+        }
+      });
+
+      // Check and append file
+      const file = data.jambSlip?.[0];
+
+      if (file instanceof File) {
+        formData.append("jambSlip", file);
+      } else {
+        console.error("Invalid or missing file:", data.jambSlip);
+        alert("Please upload a valid JAMB slip file.");
+        return;
+      }
+
+      console.log("Submitting FormData:", [...formData.entries()]);
+
+    //   const response = await fetch("http://localhost:8080/api/v1/register", {
+      const response = await fetch("https://dipf-backend.onrender.com/api/v1/register", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error("Backend Error:", errorData);
+        throw new Error(errorData.message || "Submission failed.");
+      }
+
+      const result = await response.json();
+      setShowModal(true);
+      console.log(result);
       reset();
     } catch (error) {
-      console.error(error);
+      console.error("Error submitting form:", error);
+      alert("An error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -252,25 +287,69 @@ const JambScholarshipForm = () => {
             </label>
             <input
               type="file"
-              accept="image/*"
+              accept=".jpg, .png, .jpeg"
               {...register("jambSlip", {
                 required:
                   "You must upload a clear photo of your Original JAMB Result Slip",
               })}
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                if (file) {
+                  setPreviewImage(URL.createObjectURL(file));
+                }
+              }}
               className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
             />
+
             {errors.jambSlip && (
               <p className="text-red-500 text-sm mt-1">
                 {errors.jambSlip.message}
               </p>
             )}
 
+            {/* Image Preview */}
+            {previewImage && (
+              <div>
+                <p className="font-medium mb-2">Image Preview:</p>
+                <img
+                  src={previewImage}
+                  alt="Slip Preview"
+                  className="w-64 h-64 object-cover"
+                />
+              </div>
+            )}
+
+            {showModal && <SuccessModal />}
+
             <div className="sm:col-span-2 flex justify-center mt-4">
               <button
                 type="submit"
-                className="bg-[#7f571c] text-white px-6 py-2 rounded hover:bg-[#926014] transition cursor-pointer"
+                disabled={isSubmitting}
+                className="bg-[#7f571c] text-white px-6 py-2 rounded hover:bg-[#926014] transition cursor-pointer flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed"
               >
-                Apply
+                {isSubmitting && (
+                  <svg
+                    className="animate-spin h-4 w-4 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    />
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                    />
+                  </svg>
+                )}
+                {isSubmitting ? "Applying..." : "Apply"}
               </button>
             </div>
           </form>
