@@ -14,6 +14,7 @@ const Contact = lazy(() => import("./pages/contact"));
 const Impact = lazy(() => import("./pages/impact"));
 const Members = lazy(() => import("./pages/members"));
 const Pillars = lazy(() => import("./pages/pillars"));
+const Login = lazy(() => import("./pages/login"));
 
 const ScholarshipBeneficiaries = lazy(() => import("./components/scholarship-beneficiaries"));
 const JambScorersBeneficiaries = lazy(() => import("./components/jamb-scorers-beneficiaries"));
@@ -39,6 +40,7 @@ function App() {
           <Route path="/impact" element={<Impact />} />
           <Route path="/members" element={<Members />} />
           <Route path="/pillars" element={<Pillars />} />
+          <Route path="/login" element={<Login />} />
 
           <Route
             path="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students"

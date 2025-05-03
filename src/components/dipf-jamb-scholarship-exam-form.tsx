@@ -120,7 +120,7 @@ const JambScholarshipForm = () => {
         <img
           src={logo}
           alt="watermark"
-          className="absolute bottom-[40%] right-[30%] w-128 opacity-10 pointer-events-none z-30"
+          className="absolute bottom-[40%] right-[30%] w-128 opacity-5 pointer-events-none z-30"
         />
 
         {/* Foreground Content */}
@@ -153,7 +153,7 @@ const JambScholarshipForm = () => {
             </ul>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
             <FloatingInput
               label="Name"
               name="name"
@@ -168,15 +168,21 @@ const JambScholarshipForm = () => {
               register={register}
               error={errors.age}
             />
-            <select
-              {...register("sex", { required: "Sex is required" })}
-              className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
-            >
-              <option value="">Select Sex</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-            </select>
-            {errors.sex && <p className="text-red-500">{errors.sex.message}</p>}
+            <div>
+              <select
+                {...register("sex", { required: "Sex is required" })}
+                className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
+              >
+                <option value="">Select Sex</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              {errors.sex && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.sex.message}
+                </p>
+              )}
+            </div>
             <FloatingInput
               label="Your phone number"
               name="phone"
@@ -191,57 +197,71 @@ const JambScholarshipForm = () => {
               register={register}
               error={errors.guardianPhone}
             />
-            <select
-              {...register("stateOfOrigin", {
-                required: "State of Origin is required",
-              })}
-              className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
-            >
-              <option value="">Select State of Origin</option>
-              {Object.keys(statesData).map((state) => (
-                <option key={state} value={state}>
-                  {state}
+            <div>
+              <select
+                {...register("stateOfOrigin", {
+                  required: "State of Origin is required",
+                })}
+                className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
+              >
+                <option value="">Select State of Origin</option>
+                {Object.keys(statesData).map((state) => (
+                  <option key={state} value={state}>
+                    {state}
+                  </option>
+                ))}
+              </select>
+              {errors.stateOfOrigin && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.stateOfOrigin.message}
+                </p>
+              )}
+            </div>
+            <div>
+              <select
+                {...register("lgaOfOrigin", {
+                  required: "LGA of Origin is required",
+                })}
+                className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
+              >
+                <option value="">Select LGA of Origin</option>
+                {stateOrigin &&
+                  statesData[stateOrigin as keyof typeof statesData]?.map(
+                    (lga) => (
+                      <option key={lga} value={lga}>
+                        {lga}
+                      </option>
+                    )
+                  )}
+              </select>
+              {errors.lgaOfOrigin && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.lgaOfOrigin.message}
+                </p>
+              )}
+            </div>
+            <div>
+              <select
+                {...register("jambExamState", {
+                  required: "We need to know this!",
+                })}
+                className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
+              >
+                <option value="">
+                  In Which State Did You Write Your JAMB?
                 </option>
-              ))}
-            </select>
-            {errors.stateOfOrigin && (
-              <p className="text-red-500">{errors.stateOfOrigin.message}</p>
-            )}
-            <select
-              {...register("lgaOfOrigin", {
-                required: "LGA of Origin is required",
-              })}
-              className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
-            >
-              <option value="">Select LGA of Origin</option>
-              {stateOrigin &&
-                statesData[stateOrigin as keyof typeof statesData]?.map(
-                  (lga) => (
-                    <option key={lga} value={lga}>
-                      {lga}
-                    </option>
-                  )
-                )}
-            </select>
-            {errors.lgaOfOrigin && (
-              <p className="text-red-500">{errors.lgaOfOrigin.message}</p>
-            )}
-            <select
-              {...register("jambExamState", {
-                required: "We need to know this!",
-              })}
-              className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
-            >
-              <option value="">In Which State Did You Write Your JAMB?</option>
-              {Object.keys(statesData).map((state) => (
-                <option key={state} value={state}>
-                  {state}
-                </option>
-              ))}
-            </select>
-            {errors.jambExamState && (
-              <p className="text-red-500">{errors.jambExamState.message}</p>
-            )}
+                {Object.keys(statesData).map((state) => (
+                  <option key={state} value={state}>
+                    {state}
+                  </option>
+                ))}
+              </select>
+              {errors.jambExamState && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.jambExamState.message}
+                </p>
+              )}
+            </div>
             <FloatingInput
               label="Secondary school you graduated from"
               name="secondarySchool"
@@ -249,41 +269,49 @@ const JambScholarshipForm = () => {
               register={register}
               error={errors.secondarySchool}
             />
-            <select
-              {...register("schoolState", {
-                required: "State of secondary school is required",
-              })}
-              className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
-            >
-              <option value="">Select State of School</option>
-              {Object.keys(statesData).map((state) => (
-                <option key={state} value={state}>
-                  {state}
-                </option>
-              ))}
-            </select>
-            {errors.schoolState && (
-              <p className="text-red-500">{errors.schoolState.message}</p>
-            )}
-            <select
-              {...register("schoolLga", {
-                required: "LGA of secondary school is required",
-              })}
-              className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
-            >
-              <option value="">Select LGA of School</option>
-              {stateSchool &&
-                statesData[stateSchool as keyof typeof statesData]?.map(
-                  (lga) => (
-                    <option key={lga} value={lga}>
-                      {lga}
-                    </option>
-                  )
-                )}
-            </select>
-            {errors.schoolLga && (
-              <p className="text-red-500">{errors.schoolLga.message}</p>
-            )}
+            <div>
+              <select
+                {...register("schoolState", {
+                  required: "State of secondary school is required",
+                })}
+                className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
+              >
+                <option value="">Select State of School</option>
+                {Object.keys(statesData).map((state) => (
+                  <option key={state} value={state}>
+                    {state}
+                  </option>
+                ))}
+              </select>
+              {errors.schoolState && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.schoolState.message}
+                </p>
+              )}
+            </div>
+            <div>
+              <select
+                {...register("schoolLga", {
+                  required: "LGA of secondary school is required",
+                })}
+                className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
+              >
+                <option value="">Select LGA of School</option>
+                {stateSchool &&
+                  statesData[stateSchool as keyof typeof statesData]?.map(
+                    (lga) => (
+                      <option key={lga} value={lga}>
+                        {lga}
+                      </option>
+                    )
+                  )}
+              </select>
+              {errors.schoolLga && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.schoolLga.message}
+                </p>
+              )}
+            </div>
             <FloatingInput
               label="JAMB Score"
               name="jambScore"
@@ -305,30 +333,32 @@ const JambScholarshipForm = () => {
               register={register}
               error={errors.secondChoice}
             />
-            <label className="block text-sm font-medium text-gray-700">
-              Upload Original JAMB Result Slip (Image only)
-            </label>
-            <input
-              type="file"
-              accept=".jpg, .png, .jpeg"
-              {...register("jambSlip", {
-                required:
-                  "You must upload a clear photo of your Original JAMB Result Slip",
-              })}
-              onChange={(e) => {
-                const file = e.target.files?.[0];
-                if (file) {
-                  setPreviewImage(URL.createObjectURL(file));
-                }
-              }}
-              className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
-            />
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                Upload Original JAMB Result Slip (Image only)
+              </label>
+              <input
+                type="file"
+                accept=".jpg, .png, .jpeg"
+                {...register("jambSlip", {
+                  required:
+                    "You must upload a clear photo of your Original JAMB Result Slip",
+                })}
+                onChange={(e) => {
+                  const file = e.target.files?.[0];
+                  if (file) {
+                    setPreviewImage(URL.createObjectURL(file));
+                  }
+                }}
+                className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
+              />
 
-            {errors.jambSlip && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.jambSlip.message}
-              </p>
-            )}
+              {errors.jambSlip && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.jambSlip.message}
+                </p>
+              )}
+            </div>
 
             {/* Image Preview */}
             {previewImage && (

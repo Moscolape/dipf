@@ -6,7 +6,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import initializeAOS from "../utils/aos-init";
 import { logo2 } from "../constants/assets";
@@ -56,6 +56,10 @@ const quickLinks = [
     href: "/events",
   },
   {
+    text: "Initiatives",
+    href: "/initiatives",
+  },
+  {
     text: "Contact Us",
     href: "/contact",
   },
@@ -66,8 +70,11 @@ export default function Footer() {
     initializeAOS();
   }, []);
 
+  const location = useLocation();
+  const isLoginPage = location.pathname === "/login";
+
   return (
-    <div className="w-full bg-black text-white mt-20 font-Montserrat">
+    <div className={`w-full bg-black text-white ${isLoginPage ? 'mt-0' : 'mt-20'} font-Montserrat`}>
       <div className="flex sm:flex-row flex-col justify-between items-start sm:p-6 p-3">
         <div className="sm:w-1/3 font-Montserrat" data-aos="fade-up">
           <img src={logo2} alt="logo" className="w-40 sm:mx-0 mx-auto" />
@@ -135,12 +142,11 @@ export default function Footer() {
               <a
                 href="https://chukwunenye-moses-portfolio.vercel.app/portfolio"
                 target="_blank"
-                className="hover:text-[#b58825]"
+                className="text-[#b58825]"
               >
                 Chukwunenye Moses
               </a>
             </b>
-            .
           </p>
         </div>
       </div>

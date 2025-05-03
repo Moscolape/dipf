@@ -10,7 +10,8 @@ const links = [
   { name: "Members", href: "/members" },
   { name: "Pillars", href: "/pillars" },
   { name: "Events", href: "/events" },
-  { name: "Initiatives", href: "/initiatives" }
+  { name: "Initiatives", href: "/initiatives" },
+  { name: "Contact Us", href: "/contact" },
 ];
 
 export default function NavLinks() {
@@ -68,11 +69,17 @@ export default function NavLinks() {
       }}
     >
       <Link to="/" className="logo">
-        <img src={logo} alt="My Logo" width={logoSize} height={logoSize} className="sm:scale-200 pl-2 pt-2 pb-2" />
+        <img
+          src={logo}
+          alt="My Logo"
+          width={logoSize}
+          height={logoSize}
+          className="sm:scale-200 pl-2 pt-2 pb-2"
+        />
       </Link>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center space-x-4 font-Montserrat text-lg">
+      <div className="hidden md:flex items-center space-x-4 font-Montserrat">
         {links.map((link) => (
           <Link
             key={link.name}
@@ -88,22 +95,12 @@ export default function NavLinks() {
         ))}
       </div>
 
-      <motion.a
-        href="/contact"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        animate={{
-          backgroundColor: ["#b58825", "#7f571c", "#dfbe41", "#926014"],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          repeatType: "mirror",
-        }}
-        className="text-white py-2 px-4 rounded-md hidden sm:block text-lg"
+      <Link
+        to="/login"
+        className="text-white bg-[#b58825] hover:bg-[#926014] py-2 px-4 rounded-md hidden sm:block"
       >
-        Contact Us
-      </motion.a>
+        Login
+      </Link>
 
       {/* Mobile Menu Button */}
       <button
