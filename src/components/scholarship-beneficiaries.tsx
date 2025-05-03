@@ -23,9 +23,8 @@ const ScholarshipBeneficiaries = () => {
           In a groundbreaking initiative,{" "}
           <b>De Imperial Philanthropic Family</b>, a prominent NGO comprising
           eminent individuals from Nigeria’s southeastern states –{" "}
-          <b>Anambra, Imo, Enugu, Abia, and Ebonyi</b> – has joined forces with{" "}
-          <b>Best Brain Contest</b>, an esteemed educational NGO, to award
-          scholarships through a comprehensive program. The initiative,
+          <b>Anambra, Imo, Enugu, Abia, and Ebonyi</b> – has provided a
+          comprehensive program to award scholarships to <b>over 1000 students</b> in the next few years. The initiative,
           spearheaded by De Imperial Philanthropic Family’s President,{" "}
           <b>High Chief Dr. Darlington Nwabunike</b> (Eze Nwakaibeya Ogbabalu
           Aku N’ Anwu Ojoto), and <b>Mr Chikezie Okonkwo</b> (Akunaetigbuilo na

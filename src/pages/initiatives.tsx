@@ -13,13 +13,13 @@ const EducationalSupport = () => {
       id: 1,
       image: js1,
       title:
-        "Scholarship Initiative by De Imperial Philanthropic Family & Best Brain Contest",
+        "Scholarship Initiative by De Imperial Philanthropic Family for SouthEastern JS1 Students",
       description:
-        "In a groundbreaking initiative, De Imperial Philanthropic Family, a prominent NGO comprising eminent individuals from Nigeria’s southeastern states – Anambra, Imo, Enugu, Abia, and Ebonyi – has joined forces with Best Brain Contest, an esteemed educational NGO, to award scholarships through a comprehensive program...",
+        "In a groundbreaking initiative, De Imperial Philanthropic Family, a prominent NGO comprising eminent individuals from Nigeria’s southeastern states – Anambra, Imo, Enugu, Abia, and Ebonyi – has provided a comprehensive program to award scholarships...",
       link: "/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students",
     },
     {
-      id: 1,
+      id: 2,
       image: jambite,
       title: "Scholarship Grant for Top 10 JAMB Scorers from SouthEast in 2025",
       description:

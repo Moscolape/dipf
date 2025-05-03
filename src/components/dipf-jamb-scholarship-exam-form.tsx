@@ -72,11 +72,14 @@ const JambScholarshipForm = () => {
 
       console.log("Submitting FormData:", [...formData.entries()]);
 
-    //   const response = await fetch("http://localhost:8080/api/v1/register", {
-      const response = await fetch("https://dipf-backend.onrender.com/api/v1/register", {
-        method: "POST",
-        body: formData,
-      });
+      //   const response = await fetch("http://localhost:8080/api/v1/register", {
+      const response = await fetch(
+        "https://dipf-backend.onrender.com/api/v1/register",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -126,10 +129,30 @@ const JambScholarshipForm = () => {
             DIPF JAMB Scholarship Application
           </h2>
           <p className="mb-5">
-            <b>N.B:</b> Entering inacurate information or uploading a photo of
+            <b>NOTE:</b> Entering inacurate information or uploading a photo of
             your result slip that isn't very clear could lead to your
             disqualification.
           </p>
+          <div className="mb-5">
+            <p>
+              <b>NOTE:</b> You also have to meet the criteria below;
+            </p>
+            <ul className="list-disc ml-5">
+              <li>Must be an Igbo indigene.</li>
+              <li>
+                Must have schooled and written 2025 JAMB in a Southeastern
+                state.
+              </li>
+              <li>
+                Must have selected Southeastern Universities as First and Second
+                choice of institution.
+              </li>
+              <li>
+                Must have scored 250 and above in 2025 JAMB UTME Examination.
+              </li>
+            </ul>
+          </div>
+
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
             <FloatingInput
               label="Name"

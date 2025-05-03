@@ -35,7 +35,7 @@ const PageWrapper: React.FC<PageWrapperProps> = ({ children }) => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 bg-[#b58825] text-white p-3 rounded-full shadow-lg hover:bg-[#926014] transition-all duration-300 cursor-pointer animate-fadeUp"
+          className="fixed z-50 bottom-6 right-6 bg-[#b58825] text-white p-3 rounded-full shadow-lg hover:bg-[#926014] transition-all duration-300 cursor-pointer animate-fadeUp"
         >
           <FaArrowUp size={20} />
         </button>
