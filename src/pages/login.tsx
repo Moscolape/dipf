@@ -40,12 +40,15 @@ const Login = () => {
     try {
       setIsSubmitting(true);
 
-      const response = await fetch("http://localhost:8080/api/v1/auth/login", {
-        //   const response = await fetch("https://dipf-backend.onrender.com/api/v1/auth/login",{
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+      //   const response = await fetch("http://localhost:8080/api/v1/auth/login", {
+      const response = await fetch(
+        "https://dipf-backend.onrender.com/api/v1/auth/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        }
+      );
 
       const result = await response.json();
 
@@ -158,7 +161,7 @@ const Login = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-[#7f571c] text-white px-6 py-2 rounded hover:bg-[#926014] transition cursor-pointer flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed"
+                  className="bg-[#7f571c] text-white px-6 py-2 rounded hover:bg-[#926014] transition cursor-pointer flex items-center justify-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed w-full"
                 >
                   {isSubmitting && (
                     <svg

@@ -106,14 +106,14 @@ const JambScholarshipForm = () => {
         <img
           src={logo}
           alt="watermark"
-          className="absolute top-0 right-10 w-64 opacity-50 pointer-events-none z-0"
+          className="absolute top-0 right-10 w-64 sm:opacity-50 opacity-20 pointer-events-none z-0"
         />
 
         {/* Bottom-Right Watermark */}
         <img
           src={logo}
           alt="watermark"
-          className="absolute bottom-0 right-10 w-64 opacity-50 pointer-events-none z-0 -mb-28 sm:mb-0"
+          className="absolute bottom-0 right-10 w-64 sm:opacity-50 opacity-20 pointer-events-none z-0 -mb-28 sm:mb-0"
         />
 
         {/* Bottom-Right Watermark */}
@@ -129,7 +129,7 @@ const JambScholarshipForm = () => {
             DIPF JAMB Scholarship Application
           </h2>
           <p className="mb-5">
-            <b>NOTE:</b> Entering inacurate information or uploading a photo of
+            <b>NOTE:</b> Entering inaccurate information or uploading a photo of
             your result slip that isn't very clear could lead to your
             disqualification.
           </p>
@@ -374,11 +374,11 @@ const JambScholarshipForm = () => {
 
             {showModal && <SuccessModal />}
 
-            <div className="sm:col-span-2 flex justify-center mt-4">
+            <div className="sm:col-span-2 flex justify-center mt-10">
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-[#7f571c] text-white px-6 py-2 rounded hover:bg-[#926014] transition cursor-pointer flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed"
+                className="bg-[#7f571c] text-white px-6 py-2 rounded hover:bg-[#926014] transition cursor-pointer flex items-center justify-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed w-full"
               >
                 {isSubmitting && (
                   <svg

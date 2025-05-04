@@ -27,7 +27,7 @@ const socialMediaLinks = [
   {
     icon: <FaTwitter />,
     href: "https://twitter.com/DeImperialFam",
-  }
+  },
 ];
 
 const quickLinks = [
@@ -74,7 +74,11 @@ export default function Footer() {
   const isLoginPage = location.pathname === "/login";
 
   return (
-    <div className={`w-full bg-black text-white ${isLoginPage ? 'mt-0' : 'mt-20'} font-Montserrat`}>
+    <div
+      className={`w-full bg-black text-white ${
+        isLoginPage ? "mt-0" : "mt-20"
+      } font-Montserrat`}
+    >
       <div className="flex sm:flex-row flex-col justify-between items-start sm:p-6 p-3">
         <div className="sm:w-1/3 font-Montserrat" data-aos="fade-up">
           <img src={logo2} alt="logo" className="w-40 sm:mx-0 mx-auto" />
@@ -121,7 +125,10 @@ export default function Footer() {
           <br />
           <div className="flex items-start">
             <FaMapMarkerAlt className="text-white text-xl mr-2" />
-            <p>No 77 Old Ojo Road, First Gate, Maza Maza, Lagos</p>
+            <div>
+              <p className="mb-2">De Imperial Office National Headquarters:</p>
+              <p>NO 4 OLADIMIJI ALO LEKKI PHASE 1, LAGOS STATE</p>
+            </div>
           </div>
           <div className="flex items-start mt-3">
             <FaPhoneAlt className="text-white text-xl mr-2" />
