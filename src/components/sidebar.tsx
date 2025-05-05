@@ -20,7 +20,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="fixed z-40 h-full sidebar font-Inter w-1/5 bg-gray-900 text-white">
+    <div className="fixed z-40 h-full sidebar font-Montserrat w-1/5 bg-gray-900 text-white">
       <div className="p-5">
         <img
           src={logo2}
@@ -28,7 +28,7 @@ const Sidebar = () => {
           className="absolute -top-7 left-0 scale-75"
         />
         <div className="mt-20 mb-10">
-          <p className="text-lg font-semibold">DIPF ADMIN</p>
+          <p className="text-lg font-semibold">DIPF - ADMIN MANAGER</p>
         </div>
         <ul className="space-y-2">
           {sidebarLinks.map((link) => {

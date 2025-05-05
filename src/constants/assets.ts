@@ -9,6 +9,8 @@ import dash1 from "../assets/Union.svg";
 import dash2 from "../assets/Union2.svg";
 import apply1 from "../assets/field-reports.svg";
 import apply2 from "../assets/field-reports2.svg";
+import next from "../assets/arrow-right-double.svg";
+import prev from "../assets/arrow-left-double.svg";
 
 export {
   logo,
@@ -22,4 +24,6 @@ export {
   dash2,
   apply1,
   apply2,
+  next,
+  prev
 };
