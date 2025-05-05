@@ -1,0 +1,61 @@
+import { NavLink, useLocation } from "react-router-dom";
+import { apply1, apply2, dash1, dash2, logo2 } from "../constants/assets";
+
+const Sidebar = () => {
+  const location = useLocation();
+
+  const sidebarLinks = [
+    {
+      text: "Dashboard",
+      icon: dash1,
+      activeIcon: dash2,
+      urls: ["/dashboard"],
+    },
+    {
+      text: "Applicants",
+      icon: apply1,
+      activeIcon: apply2,
+      urls: ["/applicants"],
+    },
+  ];
+
+  return (
+    <div className="fixed z-40 h-full sidebar font-Inter w-1/5 bg-gray-900 text-white">
+      <div className="p-5">
+        <img
+          src={logo2}
+          alt="logo"
+          className="absolute -top-7 left-0 scale-75"
+        />
+        <div className="mt-20 mb-10">
+          <p className="text-lg font-semibold">DIPF ADMIN</p>
+        </div>
+        <ul className="space-y-2">
+          {sidebarLinks.map((link) => {
+            const isActive = link.urls.includes(location.pathname);
+            return (
+              <li key={link.text}>
+                <NavLink
+                  to={link.urls[0]}
+                  className={`flex items-center space-x-3 p-2 rounded-lg transition duration-200 ${
+                    isActive ? "bg-white text-gray-900 font-semibold" : "hover:bg-[#b58825]"
+                  }`}
+                >
+                  <img
+                    src={isActive ? link.activeIcon : link.icon}
+                    alt={`${link.text} icon`}
+                    className="w-5 h-5"
+                  />
+                  <span>{link.text}</span>
+                </NavLink>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <button></button>
+    </div>
+  );
+};
+
+export default Sidebar;

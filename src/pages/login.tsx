@@ -5,6 +5,7 @@ import { working } from "../constants/assets";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
 
 type LoginData = {
   username: string;
@@ -18,6 +19,8 @@ const Login = () => {
   const [messageType, setMessageType] = useState<"error" | "success" | null>(
     null
   );
+
+  const { login } = useAuth();
 
   const {
     register,
@@ -60,12 +63,13 @@ const Login = () => {
 
       if (result.message.toLowerCase().includes("successful")) {
         setFormMessage(result.message);
+        login(result.token);
         setMessageType("success");
         reset();
 
         // delay before navigation
         setTimeout(() => {
-          navigate("/");
+          navigate("/dashboard");
         }, 2000);
 
         return;

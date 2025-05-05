@@ -20,6 +20,9 @@ const ScholarshipBeneficiaries = lazy(() => import("./components/scholarship-ben
 const JambScorersBeneficiaries = lazy(() => import("./components/jamb-scorers-beneficiaries"));
 const JambScholarshipForm = lazy(() => import("./components/dipf-jamb-scholarship-exam-form"));
 
+const Dashboard = lazy(() => import("./components/dashboard"));
+const Applicants = lazy(() => import("./components/applicants"));
+
 function App() {
   return (
     <Suspense
@@ -41,6 +44,9 @@ function App() {
           <Route path="/members" element={<Members />} />
           <Route path="/pillars" element={<Pillars />} />
           <Route path="/login" element={<Login />} />
+
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/applicants" element={<Applicants />} />
 
           <Route
             path="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students"
