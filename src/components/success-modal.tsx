@@ -21,7 +21,7 @@ const SuccessModal = () => {
             <h2 className="text-3xl font-bold text-green-600 mb-4">
               🎉 Well done!
             </h2>
-            <p>Your have applied successfully!!</p>
+            <p>You have applied successfully!!</p>
           </div>
           <button
             onClick={() => {

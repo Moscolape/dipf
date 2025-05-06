@@ -3,6 +3,7 @@ import DashboardWrapper from "./dashboardWrapper";
 import { Applicant } from "./applicants";
 import { ArrowLeftIcon, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import initializeAOS from "../utils/aos-init";
 
 const ApplicantDetails = () => {
   const [applicant, setApplicant] = useState<Applicant | null>(null);
@@ -12,13 +13,17 @@ const ApplicantDetails = () => {
   const applicantId = location.pathname.split("/").pop() || "";
 
   useEffect(() => {
+    initializeAOS();
+  }, []);
+
+  useEffect(() => {
     const getApplicant = async () => {
       setIsLoading(true);
 
       try {
         const response = await fetch(
-          //   `https://dipf-backend.onrender.com/api/v1/applicants/${applicantId}`,
-          `http://localhost:8080/api/v1/applicants/${applicantId}`
+            `https://dipf-backend.onrender.com/api/v1/applicants/${applicantId}`,
+        //   `http://localhost:8080/api/v1/applicants/${applicantId}`
         );
 
         const result = await response.json();
@@ -41,21 +46,21 @@ const ApplicantDetails = () => {
   return (
     <DashboardWrapper>
       {isLoading ? (
-        <div className="flex items-center justify-center h-[20vh]">
+        <div className="flex items-center justify-center h-[60vh]">
           <div className="w-8 h-8 border-4 border-[#b58825] border-t-transparent rounded-full animate-spin"></div>
         </div>
       ) : (
-        <div className="p-5 bg-gray-50 ">
+        <div className="p-5 bg-gray-50 font-Montserrat">
           <Link to={"/applicants"}>
             <div
-              className="bg-white p-3 rounded-full hover:scale-110 inline-block mb-3 cursor-pointer"
+              className="bg-white p-3 rounded-full hover:scale-120 inline-block mb-3 cursor-pointer"
               title="Back to Applicants"
             >
               <ArrowLeftIcon className="text-black" />
             </div>
           </Link>
           <div className="p-6 rounded-lg shadow bg-white mb-10">
-            <h1 className="mb-10 text-2xl font-semibold underline">
+            <h1 className="mb-10 text-2xl font-semibold underline" data-aos="fade-in">
               PERSONAL INFORMATION
             </h1>
             <div className="flex items-start">
@@ -63,10 +68,11 @@ const ApplicantDetails = () => {
                 <img
                   src={applicant?.passport}
                   alt="passport"
-                  className="w-80 h-80 rounded-full"
+                  className="w-80 h-80 rounded-full object-cover"
+                  data-aos="fade-up"
                 />
               </div>
-              <div className="font-Montserrat grid grid-cols-2 gap-10 w-2/3">
+              <div className="font-Montserrat grid grid-cols-2 gap-10 w-2/3" data-aos="fade-down">
                 <div>
                   <span className="text-sm text-gray-400">NAME</span>
                   <p className="font-semibold">{applicant?.name}</p>
@@ -121,36 +127,54 @@ const ApplicantDetails = () => {
                   <span className="text-sm text-gray-400">JAMB SCORE</span>
                   <p className="font-semibold">{applicant?.jambScore}</p>
                 </div>
+                <div>
+                  <span className="text-sm text-gray-400">FIRST CHOICE OF INSTITUTION</span>
+                  <p className="font-semibold">{applicant?.firstChoice}</p>
+                </div>
+                <div>
+                  <span className="text-sm text-gray-400">SECOND CHOICE OF INSITUTION</span>
+                  <p className="font-semibold">{applicant?.secondChoice}</p>
+                </div>
               </div>
             </div>
           </div>
-          <div className="p-6 rounded-lg shadow bg-white mb-5">
+          <div className="p-6 rounded-lg shadow bg-white mb-5" data-aos="fade-up">
             <h1 className="mb-5 text-2xl font-semibold underline">
               IMAGE UPLOADS
             </h1>
             <div className="flex gap-10 flex-wrap">
               {applicant?.jambSlip && (
-                <div>
+                <div data-aos="fade-in">
                   <p className="text-sm text-gray-500 mb-1">JAMB Slip</p>
                   <img
                     src={applicant.jambSlip}
                     alt="JAMB Slip"
-                    className="w-60 h-60 object-cover rounded cursor-pointer"
+                    className="w-60 h-60 object-cover rounded"
                     title="View"
-                    onClick={() => setPreviewImage(applicant.jambSlip)}
                   />
+                  <span
+                    onClick={() => setPreviewImage(applicant.jambSlip)}
+                    className="text-blue-700 text-sm cursor-pointer hover:underline inline-block mt-2"
+                  >
+                    View
+                  </span>
                 </div>
               )}
               {applicant?.oLevelSlip && (
-                <div>
-                  <p className="text-sm text-gray-500 mb-1">O-Level Slip</p>
+                <div data-aos="fade-out">
+                  <p className="text-sm text-gray-500 mb-1">O-Level Result</p>
                   <img
                     src={applicant.oLevelSlip}
                     alt="O-Level Slip"
-                    className="w-60 h-60 object-cover rounded cursor-pointer"
+                    className="w-60 h-60 object-cover rounded"
                     title="View"
-                    onClick={() => setPreviewImage(applicant.oLevelSlip)}
                   />
+                  <span
+                    onClick={() => setPreviewImage(applicant.oLevelSlip)}
+                    className="text-blue-700 text-sm cursor-pointer hover:underline inline-block mt-2"
+                  >
+                    View
+                  </span>
                 </div>
               )}
             </div>
@@ -168,7 +192,7 @@ const ApplicantDetails = () => {
                 />
                 <button
                   onClick={() => setPreviewImage(null)}
-                  className="absolute top-2 right-2 bg-white p-1 rounded-full shadow cursor-pointer"
+                  className="absolute top-2 right-2 bg-white hover:bg-gray-100 p-2 rounded-full shadow cursor-pointer"
                 >
                   <X className="w-5 h-5 text-black" />
                 </button>
