@@ -12,7 +12,7 @@ const Members = () => {
     <PageWrapper>
       <div className="flex flex-col justify-center items-center my-5 h-[60vh]">
         <img src={notAvailableYet} alt="no-data" className="w-30 h-30"/>
-        <span className="block my-4">Nothing yet</span>
+        <span className="block my-4">Under development</span>
       </div>
     </PageWrapper>
   );

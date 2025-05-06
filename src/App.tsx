@@ -5,6 +5,7 @@ import "./App.css";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ProtectedRoute from "./components/protectedRoutes";
 
 const Home = lazy(() => import("./pages/home"));
 const About = lazy(() => import("./pages/about"));
@@ -16,12 +17,20 @@ const Members = lazy(() => import("./pages/members"));
 const Pillars = lazy(() => import("./pages/pillars"));
 const Login = lazy(() => import("./pages/login"));
 
-const ScholarshipBeneficiaries = lazy(() => import("./components/scholarship-beneficiaries"));
-const JambScorersBeneficiaries = lazy(() => import("./components/jamb-scorers-beneficiaries"));
-const JambScholarshipForm = lazy(() => import("./components/dipf-jamb-scholarship-exam-form"));
+const ScholarshipBeneficiaries = lazy(
+  () => import("./components/scholarship-beneficiaries")
+);
+const JambScorersBeneficiaries = lazy(
+  () => import("./components/jamb-scorers-beneficiaries")
+);
+const JambScholarshipForm = lazy(
+  () => import("./components/dipf-jamb-scholarship-exam-form")
+);
 
 const Dashboard = lazy(() => import("./components/dashboard"));
 const Applicants = lazy(() => import("./components/applicants"));
+const ApplicantDetails = lazy(() => import("./components/applicant-details"));
+
 
 function App() {
   return (
@@ -45,8 +54,12 @@ function App() {
           <Route path="/pillars" element={<Pillars />} />
           <Route path="/login" element={<Login />} />
 
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/applicants" element={<Applicants />} />
+          {/* Protect Admin Routes */}
+          <Route element={<ProtectedRoute />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/applicants" element={<Applicants />} />
+            <Route path="/applicants/:id" element={<ApplicantDetails />} />
+          </Route>
 
           <Route
             path="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students"

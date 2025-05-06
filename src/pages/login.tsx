@@ -70,7 +70,7 @@ const Login = () => {
         // delay before navigation
         setTimeout(() => {
           navigate("/dashboard");
-        }, 2000);
+        }, 1000);
 
         return;
       }

@@ -4,17 +4,17 @@ import { AuthContext } from "./auth-context";
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [token, setToken] = useState<string | null>(
-    localStorage.getItem("authToken")
+    localStorage.getItem("dipfToken")
   );
 
   const login = (token: string) => {
     setToken(token);
-    localStorage.setItem("authToken", token);
+    localStorage.setItem("dipfToken", token);
   };
 
   const logout = () => {
     setToken(null);
-    localStorage.removeItem("authToken");
+    localStorage.removeItem("dipfToken");
   };
 
   return (

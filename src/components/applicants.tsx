@@ -38,7 +38,7 @@ const Applicants = () => {
       try {
         const response = await fetch(
           //   `https://dipf-backend.onrender.com/api/v1/jamb-scholarship?page=1&limit=10`,
-          `http://localhost:8080/api/v1/getAllJambApplicants`
+          `http://localhost:8080/api/v1/applicants`
         );
 
         const result = await response.json();
@@ -92,25 +92,23 @@ const Applicants = () => {
                   index % 2 === 0 ? "bg-gray-100" : "bg-white"
                 } py-3 px-2 font-Nunito group`}
               >
-                <Link to={`/applicants/${applicant._id}`}>
-                  <div className="flex items-center justify-between w-full cursor-pointer group-hover:scale-[1.01] transition-all">
-                    <span className="w-[25%] text-sm text-[#272525] font-normal">
-                      {applicant.name}
-                    </span>
-                    <span className="w-[25%] text-sm font-normal">
-                      {applicant.phone}
-                    </span>
-                    <span className="w-[25%] text-sm font-normal">
-                      {applicant.jambScore}
-                    </span>
-                    <span className="w-[15%] text-sm font-normal">
-                      {moment(applicant.createdAt).format("LL")}
-                    </span>
-                    <span className="w-[10%] text-sm text-[#b58825] font-normal">
-                      View
-                    </span>
-                  </div>
-                </Link>
+                <div className="flex items-center justify-between w-full cursor-pointer transition-all">
+                  <span className="w-[25%] text-sm text-[#272525] font-normal group-hover:scale-[1.01]">
+                    {applicant.name}
+                  </span>
+                  <span className="w-[25%] text-sm font-normal group-hover:scale-[1.01]">
+                    {applicant.phone}
+                  </span>
+                  <span className="w-[25%] text-sm font-normal group-hover:scale-[1.01]">
+                    {applicant.jambScore}
+                  </span>
+                  <span className="w-[15%] text-sm font-normal group-hover:scale-[1.01]">
+                    {moment(applicant.createdAt).format("LL")}
+                  </span>
+                  <span className="w-[10%] text-sm text-[#b58825] font-normal">
+                    <Link to={`/applicants/${applicant._id}`}>View</Link>
+                  </span>
+                </div>
               </div>
             ))}
 
