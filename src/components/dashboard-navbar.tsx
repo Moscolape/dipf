@@ -7,16 +7,7 @@ export default function TopNavbar() {
   const location = useLocation();
   const [showModal, setShowModal] = useState(false);
 
-  const formatTitle = (path: string) => {
-    const segments = path.split("/").filter(Boolean);
-    return segments.length
-      ? segments[segments.length - 1]
-          .replace(/-/g, " ")
-          .replace(/\b\w/g, (l) => l.toUpperCase())
-      : "Dashboard";
-  };
-
-  const title = formatTitle(location.pathname);
+  const title = location.pathname.includes('dashboard') ? 'Dashboard' : 'Applicants';
 
   return (
     <>

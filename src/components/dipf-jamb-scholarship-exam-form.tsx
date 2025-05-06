@@ -21,6 +21,8 @@ interface JambScholarshipFormData {
   firstChoice: string;
   secondChoice: string;
   jambSlip: FileList;
+  passport: FileList;
+  oLevelSlip: FileList;
   guardianPhone: string;
   jambExamState: string;
 }
@@ -40,7 +42,9 @@ const JambScholarshipForm = () => {
   } = useForm<JambScholarshipFormData>();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [previewImage, setPreviewImage] = useState<string | null>(null);
+  const [firstPreviewImage, setFirstPreviewImage] = useState<string | null>(null);
+  const [secondPreviewImage, setSecondPreviewImage] = useState<string | null>(null);
+  const [thirdPreviewImage, setThirdPreviewImage] = useState<string | null>(null);
   const [showModal, setShowModal] = useState(false);
 
   const stateOrigin = watch("stateOfOrigin");
@@ -48,45 +52,46 @@ const JambScholarshipForm = () => {
 
   const onSubmit = async (data: JambScholarshipFormData) => {
     setIsSubmitting(true);
-
+  
     try {
       const formData = new FormData();
-
-      // Append all form fields except the file
+  
+      // Append all non-file fields
       Object.entries(data).forEach(([key, value]) => {
-        if (key !== "jambSlip") {
+        if (!["jambSlip", "passport", "oLevelSlip"].includes(key)) {
           formData.append(key, value as string);
         }
       });
-
-      // Check and append file
-      const file = data.jambSlip?.[0];
-
-      if (file instanceof File) {
-        formData.append("jambSlip", file);
-      } else {
-        console.error("Invalid or missing file:", data.jambSlip);
-        alert("Please upload a valid JAMB slip file.");
+  
+      // Append files
+      const jambSlip = data.jambSlip?.[0];
+      const passport = data.passport?.[0];
+      const oLevelSlip = data.oLevelSlip?.[0];
+  
+      if (!jambSlip || !passport || !oLevelSlip) {
+        alert("Please upload all required documents (JAMB slip, passport, O'Level slip).");
         return;
       }
-
-      console.log("Submitting FormData:", [...formData.entries()]);
-
-      //   const response = await fetch("http://localhost:8080/api/v1/register", {
+  
+      formData.append("jambSlip", jambSlip);
+      formData.append("passport", passport);
+      formData.append("oLevelSlip", oLevelSlip);
+  
       const response = await fetch(
+        // "http://localhost:8080/api/v1/register",
         "https://dipf-backend.onrender.com/api/v1/register",
         {
           method: "POST",
           body: formData,
         }
       );
-
+  
       if (!response.ok) {
         const errorData = await response.json();
         console.error("Backend Error:", errorData);
         throw new Error(errorData.message || "Submission failed.");
       }
-
+  
       const result = await response.json();
       setShowModal(true);
       console.log(result);
@@ -98,6 +103,7 @@ const JambScholarshipForm = () => {
       setIsSubmitting(false);
     }
   };
+  
 
   return (
     <PageWrapper>
@@ -144,7 +150,7 @@ const JambScholarshipForm = () => {
                 state.
               </li>
               <li>
-                Must have competed Secondary Education and received a
+                Must have completed Secondary Education and received a
                 certificate (WAEC, NECO or equivalent).
               </li>
 
@@ -352,7 +358,7 @@ const JambScholarshipForm = () => {
                 onChange={(e) => {
                   const file = e.target.files?.[0];
                   if (file) {
-                    setPreviewImage(URL.createObjectURL(file));
+                    setFirstPreviewImage(URL.createObjectURL(file));
                   }
                 }}
                 className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
@@ -366,11 +372,86 @@ const JambScholarshipForm = () => {
             </div>
 
             {/* Image Preview */}
-            {previewImage && (
+            {firstPreviewImage && (
               <div>
-                <p className="font-medium mb-2">Image Preview:</p>
+                <p className="font-medium mb-2">JAMB Slip Preview:</p>
                 <img
-                  src={previewImage}
+                  src={firstPreviewImage}
+                  alt="Slip Preview"
+                  className="w-64 h-64 object-cover"
+                />
+              </div>
+            )}
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                Upload Clear Passport Photo
+              </label>
+              <input
+                type="file"
+                accept=".jpg, .png, .jpeg"
+                {...register("passport", {
+                  required: "You must upload a clear photo of your face",
+                })}
+                onChange={(e) => {
+                  const file = e.target.files?.[0];
+                  if (file) {
+                    setSecondPreviewImage(URL.createObjectURL(file));
+                  }
+                }}
+                className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
+              />
+
+              {errors.passport && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.passport.message}
+                </p>
+              )}
+            </div>
+
+            {/* Image Preview */}
+            {secondPreviewImage && (
+              <div>
+                <p className="font-medium mb-2">Passport Preview:</p>
+                <img
+                  src={secondPreviewImage}
+                  alt="Slip Preview"
+                  className="w-64 h-64 object-cover"
+                />
+              </div>
+            )}
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                Upload Original O'Level Result Slip (WAEC, NECO, or NABTEB)
+              </label>
+              <input
+                type="file"
+                accept=".jpg, .png, .jpeg"
+                {...register("oLevelSlip", {
+                  required:
+                    "You must upload a clear photo of your O'Level Result",
+                })}
+                onChange={(e) => {
+                  const file = e.target.files?.[0];
+                  if (file) {
+                    setThirdPreviewImage(URL.createObjectURL(file));
+                  }
+                }}
+                className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
+              />
+
+              {errors.oLevelSlip && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.oLevelSlip.message}
+                </p>
+              )}
+            </div>
+
+            {/* Image Preview */}
+            {thirdPreviewImage && (
+              <div>
+                <p className="font-medium mb-2">O'Level Result Preview:</p>
+                <img
+                  src={thirdPreviewImage}
                   alt="Slip Preview"
                   className="w-64 h-64 object-cover"
                 />

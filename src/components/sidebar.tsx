@@ -1,5 +1,6 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { apply1, apply2, dash1, dash2, logo2 } from "../constants/assets";
+import { useCallback } from "react";
 
 const Sidebar = () => {
   const location = useLocation();
@@ -19,6 +20,13 @@ const Sidebar = () => {
     },
   ];
 
+  const isActive = useCallback(
+    (...to: string[]) => {
+      return to.some((url) => location.pathname.startsWith(url));
+    },
+    [location.pathname]
+  );
+
   return (
     <div className="fixed z-40 h-full sidebar font-Montserrat w-1/5 bg-gray-900 text-white">
       <div className="p-5">
@@ -32,17 +40,18 @@ const Sidebar = () => {
         </div>
         <ul className="space-y-2">
           {sidebarLinks.map((link) => {
-            const isActive = link.urls.includes(location.pathname);
             return (
               <li key={link.text}>
                 <NavLink
                   to={link.urls[0]}
                   className={`flex items-center space-x-3 p-2 rounded-lg transition duration-200 ${
-                    isActive ? "bg-white text-gray-900 font-semibold" : "hover:bg-[#b58825]"
+                    isActive(...link.urls)
+                      ? "bg-white text-gray-900 font-semibold"
+                      : "hover:bg-[#b58825]"
                   }`}
                 >
                   <img
-                    src={isActive ? link.activeIcon : link.icon}
+                    src={isActive(...link.urls) ? link.activeIcon : link.icon}
                     alt={`${link.text} icon`}
                     className="w-5 h-5"
                   />
