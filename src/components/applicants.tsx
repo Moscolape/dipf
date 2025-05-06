@@ -21,6 +21,8 @@ export interface Applicant {
   firstChoice: string;
   secondChoice: string;
   jambSlip: string;
+  passport: string;
+  oLevelSlip: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -37,7 +39,7 @@ const Applicants = () => {
 
       try {
         const response = await fetch(
-          //   `https://dipf-backend.onrender.com/api/v1/jamb-scholarship?page=1&limit=10`,
+          // `https://dipf-backend.onrender.com/api/v1/applicants`,
           `http://localhost:8080/api/v1/applicants`
         );
 
@@ -70,7 +72,7 @@ const Applicants = () => {
 
   return (
     <DashboardWrapper>
-      <div className="w-full m-auto font-Inter">
+      <div className="w-full m-auto font-Inter p-5">
         <div className="py-3 px-2 flex items-center bg-white">
           <span className="w-[25%] font-bold">Name</span>
           <span className="w-[25%] font-bold">Phone Number</span>

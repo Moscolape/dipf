@@ -16,7 +16,7 @@ const Logout: React.FC<LogoutModalProps> = ({ close }) => {
   };
 
   return (
-    <div className="w-screen h-screen bg-[#00000080] flex items-center justify-center z-50 fixed top-0 left-0">
+    <div className="w-screen h-screen bg-[#000000cb] flex items-center justify-center z-50 fixed top-0 left-0">
       <div className="bg-white w-[30%] m-auto rounded-lg py-10 animate-fadeDownFast font-Montserrat">
         <span className="block text-center text-gray-3 font-bold text-2xl mt-4">
           Logging Out

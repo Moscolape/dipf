@@ -3,7 +3,7 @@ import DashboardWrapper from "./dashboardWrapper";
 const Dashboard = () => {
   return (
     <DashboardWrapper>
-      <div>Dashboard</div>
+      <div className="p-5">Dashboard</div>
     </DashboardWrapper>
   );
 };

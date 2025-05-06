@@ -12,7 +12,7 @@ const DashboardWrapper: React.FC<DashboardWrapperProps> = ({ children }) => {
       <Sidebar />
       <div className="ml-[20%] w-4/5">
         <TopNavbar />
-        <div className="p-5">{children}</div>
+        <div>{children}</div>
       </div>
     </>
   );

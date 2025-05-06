@@ -7,7 +7,7 @@ import { statesData } from "../utils/statesdata";
 import FloatingInput from "./floating-input";
 import SuccessModal from "./success-modal";
 
-interface JambScholarshipFormData {
+export interface JambScholarshipFormData {
   name: string;
   age: number;
   sex: string;
