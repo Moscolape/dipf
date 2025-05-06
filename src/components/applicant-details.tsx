@@ -140,7 +140,7 @@ const ApplicantDetails = () => {
           </div>
           <div className="p-6 rounded-lg shadow bg-white mb-5" data-aos="fade-up">
             <h1 className="mb-5 text-2xl font-semibold underline">
-              IMAGE UPLOADS
+              RESULT UPLOADS
             </h1>
             <div className="flex gap-10 flex-wrap">
               {applicant?.jambSlip && (
