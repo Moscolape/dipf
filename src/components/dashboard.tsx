@@ -15,7 +15,7 @@ const Dashboard = () => {
       <div className="p-5 bg-gray-50 font-Montserrat">
         <div className="w-full bg-white p-4 rounded-xl" data-aos="fade-up">
           <span className="font-semibold text-2xl inline-block mb-5">
-            Applicant Distribution by State of Origin
+            Applicants Distribution by State of Origin
           </span>
           <div className="">
             <ApplicantsByStateOfOrigin />
