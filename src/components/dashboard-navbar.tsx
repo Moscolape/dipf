@@ -15,7 +15,7 @@ export default function TopNavbar() {
         <h1 className="text-2xl font-bold font-Montserrat">{title}</h1>
 
         <div
-          className="rounded-full bg-[#b58825] hover:bg-[#926014] p-2 cursor-pointer hover:rotate-[180deg] transition-transform"
+          className="rounded-full bg-[#b58825] hover:bg-[#926014] p-2 cursor-pointer hover:rotate-[360deg] transition-transform"
           title="Log out"
           onClick={() => setShowModal(true)}
         >
