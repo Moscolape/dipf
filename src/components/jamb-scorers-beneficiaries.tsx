@@ -16,7 +16,7 @@ const TopJambScorersBeneficiaries = () => {
           data-aos="fade-down"
         >
           De Imperial Philanthropic Family plans to provide Tertiary Education
-          Support Funds for Top 10 JAMBites from the S'East.
+          Support Funds for 2025 Top JAMB Scorers from the S'East and Nigeria in General.
         </h1>
         <img
           src={presido}
@@ -26,7 +26,7 @@ const TopJambScorersBeneficiaries = () => {
         />
         <p data-aos="fade-up" className="mt-10">
           The <b>De Imperial Philanthropic Family (DIPF)</b> is proud to
-          announce the launch of the DIPF <b>₦35M Scholarship Grants</b> aimed
+          announce the launch of the DIPF <b>₦50M Scholarship Grants</b> aimed
           at rewarding the top JAMB scorers in Nigeria. This initiative is
           designed to encourage academic excellence among the youth in Igbo land
           in particular and Nigeria in general, inspiring prospective candidates
@@ -35,17 +35,20 @@ const TopJambScorersBeneficiaries = () => {
         </p>
         <br />
         <div data-aos="fade-up">
-          <p>
-            The DIPF JAMB SCHOLARSHIP GRANTS will be of two categories;
-          </p>
+          <p>The DIPF JAMB SCHOLARSHIP GRANTS will be of two categories;</p>
           <ol className="list-decimal ml-5">
             <li>
-              ₦10M Scholarship Grant for Top Ten Jamb Scorers in Nigeria
-              irrespective of tribes and schools.
+              <b>₦20 Million</b> for 37 Top JAMB Scorers: Each of the 36 States,
+              along with the Federal Capital Territory (Abuja), will be Awarded
+              a DIPF Scholarship of <b>₦500,000</b> (Five Hundred Thousand
+              Naira).
             </li>
             <li>
-              ₦25M Scholarship Grant for Top Ten Winners of DIPF Scholarship
-              Examination.
+              <b>₦30 Million</b> for Southeast Nigeria: An additional DIPF
+              Scholarship fund will be awarded to 25 Top JAMB Scorers from the
+              Southeast Region, providing <b>₦1 Million</b> each to Five
+              Outstanding Candidates from each of the Five States: ABIA,
+              ANAMBRA, EBONYI, ENUGU, and IMO.
             </li>
           </ol>
         </div>
@@ -60,6 +63,7 @@ const TopJambScorersBeneficiaries = () => {
             <li>
               Must have schooled and written 2025 JAMB in a Southeastern state.
             </li>
+            <li>Must have competed Secondary Education and received a certificate (WAEC, NECO or equivalent).</li>
             <li>
               Must have selected Southeastern Universities as First and Second
               choice of institution.
