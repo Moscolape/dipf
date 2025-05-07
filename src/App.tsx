@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./index.css";
 import "./App.css";
@@ -6,6 +6,7 @@ import "./App.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ProtectedRoute from "./components/protectedRoutes";
+import MobileWarning from "./components/mobile";
 
 const Home = lazy(() => import("./pages/home"));
 const About = lazy(() => import("./pages/about"));
@@ -31,8 +32,22 @@ const Dashboard = lazy(() => import("./components/dashboard"));
 const Applicants = lazy(() => import("./components/applicants"));
 const ApplicantDetails = lazy(() => import("./components/applicant-details"));
 
-
 function App() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <Suspense
       fallback={
@@ -52,7 +67,10 @@ function App() {
           <Route path="/impact" element={<Impact />} />
           <Route path="/members" element={<Members />} />
           <Route path="/pillars" element={<Pillars />} />
-          <Route path="/login" element={<Login />} />
+          <Route
+            path="/login"
+            element={isMobile ? <MobileWarning /> : <Login />}
+          />
 
           {/* Protect Admin Routes */}
           <Route element={<ProtectedRoute />}>
