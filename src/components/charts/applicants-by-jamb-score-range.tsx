@@ -58,6 +58,7 @@ const ApplicantsByJambScoreRangePieChart = () => {
           nameKey="range"
           cx="50%"
           cy="50%"
+          innerRadius={40}
           outerRadius={100}
           label
         >

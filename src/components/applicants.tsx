@@ -39,10 +39,10 @@ const Applicants = () => {
       setIsLoading(true);
 
       try {
-        const response = await fetch(
-          `https://dipf-backend.onrender.com/api/v1/applicants?sortBy=jambScore&order=${sortOrder}`,
-        //   `http://localhost:8080/api/v1/applicants?sortBy=jambScore&order=${sortOrder}`
-        );
+        const baseUrl = "https://dipf-backend.onrender.com/api/v1/applicants";
+        // const baseUrl = `http://localhost:8080/api/v1/applicants`;
+        const query = sortOrder ? `?sortBy=jambScore&order=${sortOrder}` : "";
+        const response = await fetch(`${baseUrl}${query}`);
 
         const result = await response.json();
 

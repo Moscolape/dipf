@@ -13,7 +13,7 @@ const Dashboard = () => {
   return (
     <DashboardWrapper>
       <div className="p-5 bg-gray-50 font-Montserrat">
-        <div className="w-full bg-white p-4 rounded-xl" data-aos="fade-up">
+        <div className="w-full bg-white p-4 rounded-xl shadow" data-aos="fade-up">
           <span className="font-semibold text-2xl inline-block mb-5">
             Applicants Distribution by State of Origin
           </span>
@@ -22,7 +22,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="grid grid-cols-2 gap-6 mt-6">
-          <div className="bg-white p-4 rounded-xl" data-aos="fade-up">
+          <div className="bg-white p-4 rounded-xl shadow" data-aos="fade-up">
             <span className="font-semibold text-2xl inline-block mb-5">
               Sex Distribution of Applicants
             </span>
@@ -30,7 +30,7 @@ const Dashboard = () => {
               <ApplicantsBySexPieChart />
             </div>
           </div>
-          <div className="bg-white p-4 rounded-xl" data-aos="fade-up">
+          <div className="bg-white p-4 rounded-xl shadow" data-aos="fade-up">
             <span className="font-semibold text-2xl inline-block mb-5">
               Score Distribution of Applicants
             </span>
