@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import initializeAOS from "../utils/aos-init";
 import { logo } from "../constants/assets";
 import { useForm } from "react-hook-form";
-import { statesData } from "../utils/statesdata";
+import { statesData } from "../utils/allstatesdata";
 import FloatingInput from "./floating-input";
 import SuccessModal from "./success-modal";
 
@@ -42,41 +42,52 @@ const JambScholarshipForm = () => {
   } = useForm<JambScholarshipFormData>();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [firstPreviewImage, setFirstPreviewImage] = useState<string | null>(null);
-  const [secondPreviewImage, setSecondPreviewImage] = useState<string | null>(null);
-//   const [thirdPreviewImage, setThirdPreviewImage] = useState<string | null>(null);
+  const [firstPreviewImage, setFirstPreviewImage] = useState<string | null>(
+    null
+  );
+  const [secondPreviewImage, setSecondPreviewImage] = useState<string | null>(
+    null
+  );
+  //   const [thirdPreviewImage, setThirdPreviewImage] = useState<string | null>(null);
   const [showModal, setShowModal] = useState(false);
 
   const stateOrigin = watch("stateOfOrigin");
+  const selectedOriginState = statesData.find(
+    (state) => state.state === stateOrigin
+  );
+
   const stateSchool = watch("schoolState");
+  const selectedSchoolState = statesData.find(
+    (state) => state.state === stateSchool
+  );
 
   const onSubmit = async (data: JambScholarshipFormData) => {
     setIsSubmitting(true);
-  
+
     try {
       const formData = new FormData();
-  
+
       // Append all non-file fields
       Object.entries(data).forEach(([key, value]) => {
         if (!["jambSlip", "passport"].includes(key)) {
           formData.append(key, value as string);
         }
       });
-  
+
       // Append files
       const jambSlip = data.jambSlip?.[0];
       const passport = data.passport?.[0];
-    //   const oLevelSlip = data.oLevelSlip?.[0];
-  
+      //   const oLevelSlip = data.oLevelSlip?.[0];
+
       if (!jambSlip || !passport) {
         alert("Please upload all required documents (JAMB slip, passport).");
         return;
       }
-  
+
       formData.append("jambSlip", jambSlip);
       formData.append("passport", passport);
-    //   formData.append("oLevelSlip", oLevelSlip);
-  
+      //   formData.append("oLevelSlip", oLevelSlip);
+
       const response = await fetch(
         // "http://localhost:8080/api/v1/register",
         "https://dipf-backend.onrender.com/api/v1/register",
@@ -85,13 +96,13 @@ const JambScholarshipForm = () => {
           body: formData,
         }
       );
-  
+
       if (!response.ok) {
         const errorData = await response.json();
         console.error("Backend Error:", errorData);
         throw new Error(errorData.message || "Submission failed.");
       }
-  
+
       const result = await response.json();
       setShowModal(true);
       console.log(result);
@@ -103,7 +114,6 @@ const JambScholarshipForm = () => {
       setIsSubmitting(false);
     }
   };
-  
 
   return (
     <PageWrapper>
@@ -139,29 +149,6 @@ const JambScholarshipForm = () => {
             your result slip that isn't very clear could lead to your
             disqualification.
           </p>
-          <div className="mb-5">
-            <p>
-              <b>NOTE:</b> You also have to meet the criteria below;
-            </p>
-            <ul className="list-disc ml-5">
-              <li>Must be an Igbo indigene.</li>
-              <li>
-                Must have schooled and written 2025 JAMB in a Southeastern
-                state.
-              </li>
-              {/* <li>
-                Must have completed Secondary Education and received a
-                certificate (WAEC, NECO or equivalent).
-              </li> */}
-              <li>
-                Must have selected Southeastern Universities as First and Second
-                choice of institution.
-              </li>
-              <li>
-                Must have scored 250 and above in 2025 JAMB UTME Examination.
-              </li>
-            </ul>
-          </div>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
             <FloatingInput
@@ -194,7 +181,7 @@ const JambScholarshipForm = () => {
               )}
             </div>
             <FloatingInput
-              label="Your phone number"
+              label="Candidate phone number"
               name="phone"
               type="number"
               register={register}
@@ -215,7 +202,7 @@ const JambScholarshipForm = () => {
                 className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
               >
                 <option value="">Select State of Origin</option>
-                {Object.keys(statesData).map((state) => (
+                {statesData.map(({ state }) => (
                   <option key={state} value={state}>
                     {state}
                   </option>
@@ -235,14 +222,11 @@ const JambScholarshipForm = () => {
                 className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
               >
                 <option value="">Select LGA of Origin</option>
-                {stateOrigin &&
-                  statesData[stateOrigin as keyof typeof statesData]?.map(
-                    (lga) => (
-                      <option key={lga} value={lga}>
-                        {lga}
-                      </option>
-                    )
-                  )}
+                {selectedOriginState?.lgas.map((lga) => (
+                  <option key={lga} value={lga}>
+                    {lga}
+                  </option>
+                ))}
               </select>
               {errors.lgaOfOrigin && (
                 <p className="text-red-500 text-sm mt-1">
@@ -260,7 +244,7 @@ const JambScholarshipForm = () => {
                 <option value="">
                   In Which State Did You Write Your JAMB?
                 </option>
-                {Object.keys(statesData).map((state) => (
+                {statesData.map(({ state }) => (
                   <option key={state} value={state}>
                     {state}
                   </option>
@@ -287,7 +271,7 @@ const JambScholarshipForm = () => {
                 className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
               >
                 <option value="">Select State of School</option>
-                {Object.keys(statesData).map((state) => (
+                {statesData.map(({ state }) => (
                   <option key={state} value={state}>
                     {state}
                   </option>
@@ -307,14 +291,11 @@ const JambScholarshipForm = () => {
                 className="w-full py-3 border-b-2 outline-none placeholder:text-gray-400"
               >
                 <option value="">Select LGA of School</option>
-                {stateSchool &&
-                  statesData[stateSchool as keyof typeof statesData]?.map(
-                    (lga) => (
-                      <option key={lga} value={lga}>
-                        {lga}
-                      </option>
-                    )
-                  )}
+                {selectedSchoolState?.lgas.map((lga) => (
+                  <option key={lga} value={lga}>
+                    {lga}
+                  </option>
+                ))}
               </select>
               {errors.schoolLga && (
                 <p className="text-red-500 text-sm mt-1">

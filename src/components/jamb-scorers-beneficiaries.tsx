@@ -16,7 +16,8 @@ const TopJambScorersBeneficiaries = () => {
           data-aos="fade-down"
         >
           De Imperial Philanthropic Family plans to provide Tertiary Education
-          Support Funds for 2025 Top JAMB Scorers from the S'East and Nigeria in General.
+          Support Funds for 2025 Top JAMB Scorers from the S'East and Nigeria in
+          General.
         </h1>
         <img
           src={presido}
@@ -35,46 +36,39 @@ const TopJambScorersBeneficiaries = () => {
         </p>
         <br />
         <div data-aos="fade-up">
-          <p>The DIPF JAMB SCHOLARSHIP GRANTS will be of two categories;</p>
-          <ol className="list-decimal ml-5">
-            <li>
-              <b>₦20 Million</b> for 37 Top JAMB Scorers: Each of the 36 States,
-              along with the Federal Capital Territory (Abuja), will be Awarded
-              a DIPF Scholarship of <b>₦500,000</b> (Five Hundred Thousand
-              Naira).
+          <p>The <b>DIPF JAMB SCHOLARSHIP GRANTS</b> will be of two categories;</p>
+          <ol className="list-decimal ml-5 mt-2">
+            <li className="mb-5">
+              <b>₦20 Million</b> for 37 Top JAMB Performers: Each of the 36
+              States, along with the Federal Capital Territory (Abuja), will be
+              awarded a DIPF Scholarship of <b>₦500,000</b> (Five Hundred
+              Thousand Naira).
+              <p className="my-2">To Qualify, Candidates must meet the following criteria:</p>
+              <ul className="list-disc ml-5">
+                <li>Be among top performers in the 2025 JAMB Examinations.</li>
+                <li>Be a Nigerian Citizen.</li>
+              </ul>
             </li>
             <li>
-              <b>₦30 Million</b> for Southeast Nigeria: An additional DIPF
-              Scholarship fund will be awarded to 25 Top JAMB Scorers from the
-              Southeast Region, providing <b>₦1 Million</b> each to Five
-              Outstanding Candidates from each of the Five States: ABIA,
-              ANAMBRA, EBONYI, ENUGU, and IMO.
+              <b>₦30 Million</b> for Southeast Nigeria: An additional DIPF Scholarship
+              fund will be awarded to 25 Top JAMB Scorers from the Southeast
+              Region, providing <b>₦1 Million</b> each to Five Outstanding Candidates
+              from each of the Five States: ABIA, ANAMBRA, EBONYI, ENUGU, and
+              IMO.
+              <p className="my-2">To Qualify, Candidates must meet the following criteria:</p>
+              <ul className="list-disc ml-5">
+                <li>Score above 250 in the 2025 JAMB Examinations.</li>
+                <li>Register and Write the Jamb Exam in any state within the Southeast.</li>
+                <li>Be an indigene of any of the Southeast states.</li>
+                <li>Have First and Second Choices of institutions within the Southeast.</li>
+              </ul>
             </li>
           </ol>
         </div>
         <br />
         <div data-aos="fade-up">
           <p>
-            The DIPF Scholarship Examination is open for 2025 JAMBites who met
-            the following requirements:
-          </p>
-          <ul className="list-disc ml-5">
-            <li>Must be an Igbo indigene.</li>
-            <li>
-              Must have schooled and written 2025 JAMB in a Southeastern state.
-            </li>
-            {/* <li>Must have completed Secondary Education and received a certificate (WAEC, NECO or equivalent).</li> */}
-            <li>
-              Must have selected Southeastern Universities as First and Second
-              choice of institution.
-            </li>
-            <li>
-              Must have scored 250 and above in 2025 JAMB UTME Examination.
-            </li>
-          </ul>
-          <br />
-          <p>
-            If you meet the above requirements, kindly proceed to fill this{" "}
+            If you meet the requirements in any of the categories above, kindly proceed to fill this{" "}
             <a
               href="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-top-10-jamb-scorers-in-southeast-2025/register"
               className="text-blue-600 hover:underline font-medium"
