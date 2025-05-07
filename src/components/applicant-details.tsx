@@ -145,7 +145,7 @@ const ApplicantDetails = () => {
             <div className="flex gap-10 flex-wrap">
               {applicant?.jambSlip && (
                 <div data-aos="fade-in">
-                  <p className="text-sm text-gray-500 mb-1">JAMB Slip</p>
+                  <p className="text-sm text-gray-500 mb-1">JAMB Result Slip</p>
                   <img
                     src={applicant.jambSlip}
                     alt="JAMB Slip"
@@ -160,7 +160,7 @@ const ApplicantDetails = () => {
                   </span>
                 </div>
               )}
-              {applicant?.oLevelSlip && (
+              {/* {applicant?.oLevelSlip && (
                 <div data-aos="fade-out">
                   <p className="text-sm text-gray-500 mb-1">O-Level Result</p>
                   <img
@@ -176,7 +176,7 @@ const ApplicantDetails = () => {
                     View
                   </span>
                 </div>
-              )}
+              )} */}
             </div>
           </div>
           {previewImage && (

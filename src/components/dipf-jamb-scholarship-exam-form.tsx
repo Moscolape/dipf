@@ -44,7 +44,7 @@ const JambScholarshipForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [firstPreviewImage, setFirstPreviewImage] = useState<string | null>(null);
   const [secondPreviewImage, setSecondPreviewImage] = useState<string | null>(null);
-  const [thirdPreviewImage, setThirdPreviewImage] = useState<string | null>(null);
+//   const [thirdPreviewImage, setThirdPreviewImage] = useState<string | null>(null);
   const [showModal, setShowModal] = useState(false);
 
   const stateOrigin = watch("stateOfOrigin");
@@ -58,7 +58,7 @@ const JambScholarshipForm = () => {
   
       // Append all non-file fields
       Object.entries(data).forEach(([key, value]) => {
-        if (!["jambSlip", "passport", "oLevelSlip"].includes(key)) {
+        if (!["jambSlip", "passport"].includes(key)) {
           formData.append(key, value as string);
         }
       });
@@ -66,16 +66,16 @@ const JambScholarshipForm = () => {
       // Append files
       const jambSlip = data.jambSlip?.[0];
       const passport = data.passport?.[0];
-      const oLevelSlip = data.oLevelSlip?.[0];
+    //   const oLevelSlip = data.oLevelSlip?.[0];
   
-      if (!jambSlip || !passport || !oLevelSlip) {
-        alert("Please upload all required documents (JAMB slip, passport, O'Level slip).");
+      if (!jambSlip || !passport) {
+        alert("Please upload all required documents (JAMB slip, passport).");
         return;
       }
   
       formData.append("jambSlip", jambSlip);
       formData.append("passport", passport);
-      formData.append("oLevelSlip", oLevelSlip);
+    //   formData.append("oLevelSlip", oLevelSlip);
   
       const response = await fetch(
         // "http://localhost:8080/api/v1/register",
@@ -149,11 +149,10 @@ const JambScholarshipForm = () => {
                 Must have schooled and written 2025 JAMB in a Southeastern
                 state.
               </li>
-              <li>
+              {/* <li>
                 Must have completed Secondary Education and received a
                 certificate (WAEC, NECO or equivalent).
-              </li>
-
+              </li> */}
               <li>
                 Must have selected Southeastern Universities as First and Second
                 choice of institution.
@@ -419,7 +418,7 @@ const JambScholarshipForm = () => {
                 />
               </div>
             )}
-            <div>
+            {/* <div>
               <label className="block text-sm font-medium text-gray-700">
                 Upload Original O'Level Result Slip (WAEC, NECO, or NABTEB)
               </label>
@@ -444,10 +443,10 @@ const JambScholarshipForm = () => {
                   {errors.oLevelSlip.message}
                 </p>
               )}
-            </div>
+            </div> */}
 
             {/* Image Preview */}
-            {thirdPreviewImage && (
+            {/* {thirdPreviewImage && (
               <div>
                 <p className="font-medium mb-2">O'Level Result Preview:</p>
                 <img
@@ -456,7 +455,7 @@ const JambScholarshipForm = () => {
                   className="w-64 h-64 object-cover"
                 />
               </div>
-            )}
+            )} */}
 
             {showModal && <SuccessModal />}
 

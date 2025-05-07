@@ -63,7 +63,7 @@ const TopJambScorersBeneficiaries = () => {
             <li>
               Must have schooled and written 2025 JAMB in a Southeastern state.
             </li>
-            <li>Must have completed Secondary Education and received a certificate (WAEC, NECO or equivalent).</li>
+            {/* <li>Must have completed Secondary Education and received a certificate (WAEC, NECO or equivalent).</li> */}
             <li>
               Must have selected Southeastern Universities as First and Second
               choice of institution.
