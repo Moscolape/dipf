@@ -47,11 +47,11 @@ const ApplicantsByJambScoreRangeBarChart = () => {
   }, []);
 
   return isLoading ? (
-    <div className="flex items-center justify-center h-[20vh]">
+    <div className="flex items-center justify-center h-[30vh]">
       <div className="w-8 h-8 border-4 border-[#b58825] border-t-transparent rounded-full animate-spin"></div>
     </div>
   ) : (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width="100%" height={350}>
       <BarChart
         data={data}
         layout="vertical"

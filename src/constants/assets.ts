@@ -11,6 +11,18 @@ import apply1 from "../assets/field-reports.svg";
 import apply2 from "../assets/field-reports2.svg";
 import next from "../assets/arrow-right-double.svg";
 import prev from "../assets/arrow-left-double.svg";
+import bg1 from "../assets/landing.jpg";
+import dipf1 from "../assets/dipf1.jpg";
+import dipf2 from "../assets/dipf2.jpg";
+import dipf3 from "../assets/dipf3.jpg";
+import dipf4 from "../assets/dipf4.jpg";
+import dipf5 from "../assets/dipf5.jpg";
+import dipf6 from "../assets/dipf6.jpg";
+import dipf7 from "../assets/dipf7.jpg";
+import dipf8 from "../assets/dipf8.jpg";
+import dipf9 from "../assets/dipf9.jpg";
+import dipf10 from "../assets/dipf10.jpg";
+import svgBackground from "../assets/liquid-cheese.svg";
 
 export {
   logo,
@@ -25,5 +37,17 @@ export {
   apply1,
   apply2,
   next,
-  prev
+  prev,
+  bg1,
+  dipf1,
+  dipf2,
+  dipf3,
+  dipf4,
+  dipf5,
+  dipf6,
+  dipf7,
+  dipf8,
+  dipf9,
+  dipf10,
+  svgBackground
 };

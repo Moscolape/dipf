@@ -94,7 +94,7 @@ const Login = () => {
           <div className="sm:w-1/2 flex flex-col justify-center">
             <h1 className="sm:text-3xl text-xl font-bold">Login</h1>
             <p className="text-gray-400 mb-6 mt-2 sm:text-[1rem] text-sm">
-              Welcome! Please enter your admin details!!
+              Welcome, Admin!! Please enter your details!!!
             </p>
             {formMessage && (
               <div
