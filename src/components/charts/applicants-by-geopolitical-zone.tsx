@@ -10,7 +10,7 @@ import {
 } from "recharts";
 
 interface ChartData {
-  state: string;
+  zone: string;
   count: number;
 }
 
@@ -37,7 +37,7 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({
   return null;
 };
 
-const ApplicantsByStateOfOrigin = () => {
+const ApplicantsByGeopoliticalZones = () => {
   const [chartData, setChartData] = useState<ChartData[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -47,8 +47,8 @@ const ApplicantsByStateOfOrigin = () => {
 
       try {
         const response = await fetch(
-          `https://dipf-backend.onrender.com/api/v1/analytics/state-count/`
-          //   `http://localhost:8080/api/v1/analytics/state-count/`
+          `https://dipf-backend.onrender.com/api/v1/analytics/zone-count/`
+            // `http://localhost:8080/api/v1/analytics/zone-count/`
         );
 
         const result = await response.json();
@@ -80,7 +80,7 @@ const ApplicantsByStateOfOrigin = () => {
             <BarChart data={chartData}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis
-                dataKey="state"
+                dataKey="zone"
                 tick={{ fontSize: 16 }}
                 textAnchor="middle"
               />
@@ -95,4 +95,4 @@ const ApplicantsByStateOfOrigin = () => {
   );
 };
 
-export default ApplicantsByStateOfOrigin;
+export default ApplicantsByGeopoliticalZones;

@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import {
-  PieChart,
-  Pie,
-  Cell,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
   Tooltip,
   ResponsiveContainer,
+  Cell,
 } from "recharts";
 
 interface ChartData {
@@ -12,9 +14,9 @@ interface ChartData {
   count: number;
 }
 
-const COLORS = ["#b58825", "#000000", "#cccccc"];
+const COLORS = ["#b58825", "#000000", "#8c8989"];
 
-const ApplicantsByJambScoreRangePieChart = () => {
+const ApplicantsByJambScoreRangeBarChart = () => {
   const [data, setData] = useState<ChartData[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -23,7 +25,6 @@ const ApplicantsByJambScoreRangePieChart = () => {
       setIsLoading(true);
       try {
         const response = await fetch(
-        //   `http://localhost:8080/api/v1/analytics/jamb-score-range/`
           `https://dipf-backend.onrender.com/api/v1/analytics/jamb-score-range/`
         );
         const result = await response.json();
@@ -51,25 +52,22 @@ const ApplicantsByJambScoreRangePieChart = () => {
     </div>
   ) : (
     <ResponsiveContainer width="100%" height={300}>
-      <PieChart>
-        <Pie
-          data={data}
-          dataKey="count"
-          nameKey="range"
-          cx="50%"
-          cy="50%"
-          innerRadius={40}
-          outerRadius={100}
-          label
-        >
+      <BarChart
+        data={data}
+        layout="vertical"
+        margin={{ top: 20, right: 30, left: 40, bottom: 20 }}
+      >
+        <XAxis type="number" allowDecimals={false} />
+        <YAxis type="category" dataKey="range" />
+        <Tooltip />
+        <Bar dataKey="count" fill="#b58825">
           {data.map((_, index) => (
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
-        </Pie>
-        <Tooltip />
-      </PieChart>
+        </Bar>
+      </BarChart>
     </ResponsiveContainer>
   );
 };
 
-export default ApplicantsByJambScoreRangePieChart;
+export default ApplicantsByJambScoreRangeBarChart;

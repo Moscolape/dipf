@@ -10,6 +10,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import initializeAOS from "../utils/aos-init";
 import { logo2 } from "../constants/assets";
+import { ArrowUpRight } from "lucide-react";
 
 const socialMediaLinks = [
   {
@@ -143,7 +144,7 @@ export default function Footer() {
           <p className="sm:px-0 px-7 my-3">
             &copy; 2025 De Imperial Philanthropic Family. All rights reserved.
           </p>
-          <p>
+          <p className="flex sm:flex-row flex-col justify-center items-center">
             Designed and developed by{" "}
             <b>
               <a
@@ -151,7 +152,7 @@ export default function Footer() {
                 target="_blank"
                 className="text-[#b58825]"
               >
-                Chukwunenye Moses
+                <span className="flex items-center ml-2">Chukwunenye Moses <ArrowUpRight className="text-[#b58825] w-5 h-5 border-t border-r ml-2" /></span>
               </a>
             </b>
           </p>
