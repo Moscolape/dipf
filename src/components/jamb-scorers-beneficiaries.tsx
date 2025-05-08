@@ -16,7 +16,7 @@ const TopJambScorersBeneficiaries = () => {
           data-aos="fade-down"
         >
           De Imperial Philanthropic Family plans to provide Tertiary Education
-          Support Funds for 2025 Top JAMB Scorers from the S'East and Nigeria in
+          Support Funds for 2025 Top JAMB Performers from the S'East and Nigeria in
           General.
         </h1>
         <img
@@ -28,7 +28,7 @@ const TopJambScorersBeneficiaries = () => {
         <p data-aos="fade-up" className="mt-10">
           The <b>De Imperial Philanthropic Family (DIPF)</b> is proud to
           announce the launch of the DIPF <b>₦50M Scholarship Grants</b> aimed
-          at rewarding the top JAMB scorers in Nigeria. This initiative is
+          at rewarding the top JAMB performers in Nigeria. This initiative is
           designed to encourage academic excellence among the youth in Igbo land
           in particular and Nigeria in general, inspiring prospective candidates
           to strive for exceptional performance in the upcoming 2025 JAMB

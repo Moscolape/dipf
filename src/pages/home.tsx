@@ -14,9 +14,12 @@ import {
   dipf7,
   dipf8,
   dipf9,
+  dipfamily,
   logo,
-//   svgBackground,
+  svgBackground,
 } from "../constants/assets";
+import { Camera, Shell, Truck } from "lucide-react";
+import Metrics from "../components/metrics";
 
 const Home = () => {
   useEffect(() => {
@@ -32,12 +35,15 @@ const Home = () => {
         {/* Overlay */}
         <div className="absolute inset-0 bg-[#00000072] flex items-center justify-center text-center p-4 font-Montserrat">
           <div className="text-white space-y-4 max-w-3xl">
-            <h1 className="text-3xl sm:text-6xl font-bold" data-aos="fade-left">
+            <h1
+              className="text-3xl sm:text-6xl font-bold"
+              data-aos="fade-right"
+            >
               DE IMPERIAL PHILANTHROPIC FAMILY
             </h1>
             <span
               className="inline-block w-1/2 bg-white h-3 my-5"
-              data-aos="fade-up"
+              data-aos="fade-left"
             ></span>
             <p className="text-lg sm:text-3xl" data-aos="fade-right">
               Living for Humanity
@@ -115,12 +121,97 @@ const Home = () => {
           </div>
         </Marquee>
       </div>
-      {/* <div
-        className="sm:mt-16 mt-10 bg-cover bg-center bg-no-repeat py-20 px-4 text-white"
-        style={{ backgroundImage: `url(${svgBackground})` }}
-      >
-        <h1 className="text-4xl font-bold text-center">Core Values</h1>
-      </div> */}
+      <div className="sm:mt-16 mt-10 relative w-full sm:h-[40vh] h-[100vh]">
+        <img
+          src={svgBackground}
+          alt="no-data"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-[#0000004b] flex flex-col items-center justify-center text-center p-4 font-Montserrat">
+          <div
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full text-white px-4"
+            data-aos="fade-down"
+          >
+            <div className="flex flex-col items-center space-y-2">
+              <Truck className="sm:w-20 sm:h-20 w-14 h-14 text-white animate-moveX" />
+              <h2 className="text-xl font-semibold">Our Mission</h2>
+              <p className="">
+                To aid the socio-economic development of South-Eastern Nigeria
+                through laudable initiatives and targeted empowerments.
+              </p>
+            </div>
+            <div className="flex flex-col items-center space-y-2">
+              <Camera className="sm:w-20 sm:h-20 w-14 h-14 text-white animate-bump" />
+              <h2 className="text-xl font-semibold">Our Vision</h2>
+              <p className="">
+                Improvement of economic, education, work, health and social
+                relations of beneficiaries through commitment of members.
+              </p>
+            </div>
+            <div className="flex flex-col items-center space-y-2">
+              <Shell className="sm:w-20 sm:h-20 w-14 h-14 text-white rotate-small" />
+              <h2 className="text-xl font-semibold">Our Motto</h2>
+              <p className="">Living for Humanity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Metrics />
+      <div className="mt-6" data-aos="fade-up">
+        <h2 className="text-center text-2xl sm:text-4xl font-bold mb-6 font-Montserrat">
+          Recent Initiatives
+        </h2>
+        <div className="flex sm:flex-row flex-col">
+          <img
+            src={dipfamily}
+            alt="dipfam"
+            className="sm:w-1/3"
+            data-aos="fade-in"
+          />
+          <div className="sm:w-2/3 font-Montserrat px-3 pt-3 sm:pt-0 sm:px-10">
+            <p>
+              De Imperial Philanthropic Family announces a groundbreaking
+              initiative aimed at empowering Nigerian youths through education.
+              We are launching a <b>₦50 Million (Fifty Million Naira)</b> DIPF
+              Scholarship Program for the 2025 Best Performing Joint Admissions
+              and Matriculation Board (JAMB) Students across all 36 states in
+              Nigeria and the Federal Capital Territory, Abuja.
+            </p>
+            <br />
+            <p>
+              This initiative is part of our broader mission to uplift education
+              standards and provide equitable access to quality learning
+              experiences for all Nigerian students. This initiative will:
+            </p>
+            <ul className="ml-5 list-disc mt-3">
+              <li>
+                <b>Encourage academic excellence</b> by rewarding and motivating
+                students to strive for higher academic achievements.
+              </li>
+              <li>
+                <b>Enhance accessibility to education</b> by providing financial
+                support to students who may lack the resources to pursue higher
+                education.
+              </li>
+              <li>
+                <b>Empower future leaders</b> by investing in the next
+                generation of leaders via the facilitation of their educational
+                journey.
+              </li>
+            </ul>
+            <br />
+            <p>
+              For more information, check{" "}
+              <a
+                href="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-top-10-jamb-scorers-in-southeast-2025/"
+                className="text-blue-600 hover:underline font-medium"
+              >
+                this page
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
     </PageWrapper>
   );
 };

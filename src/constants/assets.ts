@@ -23,6 +23,7 @@ import dipf8 from "../assets/dipf8.jpg";
 import dipf9 from "../assets/dipf9.jpg";
 import dipf10 from "../assets/dipf10.jpg";
 import svgBackground from "../assets/liquid-cheese.svg";
+import dipfamily from "../assets/dipfamily.jpg";
 
 export {
   logo,
@@ -49,5 +50,6 @@ export {
   dipf8,
   dipf9,
   dipf10,
-  svgBackground
+  svgBackground,
+  dipfamily
 };

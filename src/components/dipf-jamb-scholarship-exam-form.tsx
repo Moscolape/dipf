@@ -104,8 +104,8 @@ const JambScholarshipForm = () => {
       }
 
       const result = await response.json();
-      setShowModal(true);
       console.log(result);
+      setShowModal(true);
       reset();
     } catch (error) {
       console.error("Error submitting form:", error);

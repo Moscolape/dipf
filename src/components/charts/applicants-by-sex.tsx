@@ -50,6 +50,7 @@ const ApplicantsBySexPieChart = () => {
           nameKey="sex"
           cx="50%"
           cy="50%"
+          innerRadius={40}
           outerRadius={100}
           label
         >

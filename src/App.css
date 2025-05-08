@@ -54,6 +54,20 @@
   font-family: 'Urbanist', sans-serif;
 }
 
+@keyframes moveX {
+  0%, 100% {
+    transform: translateX(-30px);
+  }
+  50% {
+    transform: translateX(30px);
+  }
+}
+
+.animate-moveX {
+  animation: moveX 2.5s ease-in-out infinite;
+}
+
+
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -87,7 +101,7 @@
 }
 
 .rotate-small {
-  animation: rotateSmall 3.5s linear infinite;
+  animation: rotateSmall 2.5s linear infinite;
 }
 
 @keyframes big {
@@ -194,12 +208,12 @@
 
 @keyframes bump {
   0% {
-    transform: scale(0);
+    transform: scale(1);
     animation-timing-function: ease-in-out;
   }
 
   25% {
-    transform: scale(1.2);
+    transform: scale(1.1);
     animation-timing-function: ease-out;
   }
 
@@ -220,7 +234,7 @@
 }
 
 .animate-bump {
-  animation: bump 1.5s linear 1;
+  animation: bump 2.5s linear infinite;
 }
 
 .animate-hop {
