@@ -142,12 +142,16 @@ const JambScholarshipForm = () => {
         {/* Foreground Content */}
         <div className="relative z-10 w-full max-w-3xl bg-white bg-opacity-90 sm:p-6 py-6 sm:rounded-lg sm:shadow-md font-Montserrat mt-20">
           <h2 className="text-lg sm:text-3xl font-bold mb-10 text-center">
-            DIPF JAMB Scholarship Application
+            DIPF 2025 JAMB Scholarship Application
           </h2>
           <p className="mb-5">
             <b>NOTE:</b> Entering inaccurate information or uploading a photo of
             your result slip that isn't very clear could lead to your
             disqualification.
+          </p>
+          <p className="mb-5">
+            <b>NOTE:</b> Proceed with filling the form only if you got <b>250 and
+            above</b>.
           </p>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
@@ -304,7 +308,7 @@ const JambScholarshipForm = () => {
               )}
             </div>
             <FloatingInput
-              label="JAMB Score"
+              label="JAMB Score (250 and above)"
               name="jambScore"
               type="number"
               register={register}
@@ -399,6 +403,8 @@ const JambScholarshipForm = () => {
                 />
               </div>
             )}
+
+            <p className="italic mt-10">For more information or any enquiries, contact <b>Dr. Frank Igbojindu</b> (Best Brain Contest) @ <b>0703 055 5581</b></p>
             {/* <div>
               <label className="block text-sm font-medium text-gray-700">
                 Upload Original O'Level Result Slip (WAEC, NECO, or NABTEB)

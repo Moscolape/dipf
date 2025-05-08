@@ -157,7 +157,7 @@ const Home = () => {
         </div>
       </div>
       <Metrics />
-      <div className="mt-6" data-aos="fade-up">
+      <div className="mt-6 sm:w-[90%] mx-auto" data-aos="fade-up">
         <h2 className="text-center text-2xl sm:text-4xl font-bold mb-6 font-Montserrat">
           Recent Initiatives
         </h2>

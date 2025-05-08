@@ -67,7 +67,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <img src={mission} alt="mission" className="sm:w-4/5 mx-auto mt-20 sm:h-[150vh] -mb-15 sm:px-0 px-3" data-aos="fade-down"/>
+      <img src={mission} alt="mission" className="sm:w-4/5 mx-auto mt-5 sm:h-[150vh] sm:-mb-30 sm:px-0 px-3 sm:scale-75" data-aos="fade-down"/>
     </PageWrapper>
   );
 };
