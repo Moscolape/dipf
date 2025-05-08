@@ -24,7 +24,7 @@ const About = () => {
             <img
               src={national}
               alt="presido"
-              className="h-[70vh] sm:w-4/5 w-full"
+              className="sm:h-[70vh] sm:w-4/5 w-full"
               data-aos="fade-left"
             />
             <div className="text-sm sm:mt-3 sm:p-0 p-3">
@@ -33,7 +33,7 @@ const About = () => {
                 <p>NATIONAL PRESIDENT, DE IMPERIAL PHILANTHROPIC FAMILY</p>
             </div>
           </div>
-          <div className="sm:w-1/2 sm:mt-0 mt-10 sm:p-0 p-3" data-aos="fade-right">
+          <div className="sm:w-1/2 sm:mt-0 mt-5 sm:p-0 p-3" data-aos="fade-right">
             <p>
               <b>DE IMPERIAL PHILANTHROPIC FAMILY (DIPF)</b> is a corporate
               body, fully registered with the Corporate Affairs Commission (CAC)
@@ -67,7 +67,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <img src={mission} alt="mission" className="w-4/5 mx-auto mt-20 sm:h-[150vh] -mb-15"/>
+      <img src={mission} alt="mission" className="sm:w-4/5 mx-auto mt-20 sm:h-[150vh] -mb-15 sm:px-0 px-3" data-aos="fade-down"/>
     </PageWrapper>
   );
 };
