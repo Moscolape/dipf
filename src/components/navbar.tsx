@@ -62,7 +62,7 @@ export default function NavLinks() {
 
   return (
     <nav
-      className="flex justify-between items-center sm:px-4 pl-2 py-2 fixed w-full top-0 z-40"
+      className="flex justify-between items-center sm:px-4 pl-2 py-2 fixed w-full top-0 z-40 shadow"
       style={{
         backgroundColor: "rgba(255, 255, 255, 0.5)",
         backdropFilter: "blur(30px)",

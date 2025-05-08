@@ -24,6 +24,8 @@ import dipf9 from "../assets/dipf9.jpg";
 import dipf10 from "../assets/dipf10.jpg";
 import svgBackground from "../assets/liquid-cheese.svg";
 import dipfamily from "../assets/dipfamily.jpg";
+import national from "../assets/National Presido.jpeg";
+import mission from "../assets/mission.png";
 
 export {
   logo,
@@ -51,5 +53,7 @@ export {
   dipf9,
   dipf10,
   svgBackground,
-  dipfamily
+  dipfamily,
+  national,
+  mission
 };
