@@ -28,7 +28,7 @@ const Home = () => {
 
   return (
     <PageWrapper>
-      <div className="relative w-full h-screen">
+      <main className="relative w-full h-screen">
         {/* Background Image */}
         <img src={bg1} alt="no-data" className="w-full h-full object-cover" />
 
@@ -50,10 +50,10 @@ const Home = () => {
             </p>
           </div>
         </div>
-      </div>
+      </main>
 
       {/* Identity Section */}
-      <div className="flex sm:flex-row flex-col mt-16">
+      <section className="flex sm:flex-row flex-col mt-16">
         <div
           className="max-w-xl mx-auto sm:text-center relative"
           data-aos="fade-down"
@@ -61,11 +61,11 @@ const Home = () => {
           <h1 className="text-2xl sm:text-4xl font-Montserrat font-bold mb-5 text-center">
             Who We Are
           </h1>
-          <p className="font-DM-Sans sm:text-lg text-[1rem] px-3">
+          <h2 className="font-DM-Sans sm:text-lg text-[1rem] px-3">
             <b>DE IMPERIAL PHILANTHROPIC FAMILY (DIPF)</b> is a group of
             patriotic, responsible, responsive and dutiful persons, drawn from
             the South-Eastern demographic of Nigeria and across global diaspora.
-          </p>
+          </h2>
           <img
             src={logo}
             alt="watermark"
@@ -91,9 +91,9 @@ const Home = () => {
             className="absolute top-0 sm:right-[40%] right-20 w-60 opacity-10 pointer-events-none z-30 transform rotate-180"
           />
         </div>
-      </div>
+      </section>
 
-      <div className="mt-16" data-aos="fade-up">
+      <section className="mt-16" data-aos="fade-up">
         <h2 className="text-center text-2xl sm:text-4xl font-bold mb-6 font-Montserrat">
           Moments We Cherish
         </h2>
@@ -120,8 +120,8 @@ const Home = () => {
             ))}
           </div>
         </Marquee>
-      </div>
-      <div className="sm:mt-16 mt-10 relative w-full sm:h-[40vh] h-[100vh]">
+      </section>
+      <section className="sm:mt-16 mt-10 relative w-full sm:h-[40vh] h-[100vh]">
         <img
           src={svgBackground}
           alt="no-data"
@@ -155,9 +155,9 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <Metrics />
-      <div className="mt-6 sm:w-[90%] mx-auto" data-aos="fade-up">
+      <main className="mt-6 sm:w-[90%] mx-auto" data-aos="fade-up">
         <h2 className="text-center text-2xl sm:text-4xl font-bold mb-6 font-Montserrat">
           Recent Initiatives
         </h2>
@@ -211,7 +211,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-      </div>
+      </main>
     </PageWrapper>
   );
 };
