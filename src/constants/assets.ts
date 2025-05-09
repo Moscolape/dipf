@@ -26,6 +26,8 @@ import svgBackground from "../assets/liquid-cheese.svg";
 import dipfamily from "../assets/dipfamily.jpg";
 import national from "../assets/National Presido.jpeg";
 import mission from "../assets/mission.png";
+import mendem from "../assets/mendem.jpeg";
+
 
 export {
   logo,
@@ -55,5 +57,6 @@ export {
   svgBackground,
   dipfamily,
   national,
-  mission
+  mission,
+  mendem
 };

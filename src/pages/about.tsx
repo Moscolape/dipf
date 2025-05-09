@@ -14,7 +14,7 @@ const About = () => {
         <div className="bg-gradient-to-b from-[#926014] to-white py-10">
           <h2
             className="text-center text-2xl sm:text-5xl font-bold mb-6 font-Montserrat text-white"
-            data-aos="fade-up"
+            data-aos="fade-down"
           >
             About Us
           </h2>
@@ -25,7 +25,8 @@ const About = () => {
               src={national}
               alt="presido"
               className="sm:h-[80vh] sm:w-4/5 w-full"
-              data-aos="fade-left"
+              data-aos="fade-in"
+              data-aos-delay={200}
             />
             <div className="text-sm sm:mt-3 sm:p-0 p-3">
                 <p className="text-lg font-bold">HIGH CHIEF DR SIR DARLINGTON NWABUNIKE</p>
@@ -34,7 +35,7 @@ const About = () => {
             </div>
           </div>
           <div className="sm:w-1/2 sm:mt-0 mt-5 sm:p-0 p-3">
-            <p data-aos="fade-right">
+            <p data-aos="fade-up">
               <b>DE IMPERIAL PHILANTHROPIC FAMILY (DIPF)</b> is a corporate
               body, fully registered with the Corporate Affairs Commission (CAC)
               and founded in 2021. Its membership is largely composed of Private
@@ -42,7 +43,7 @@ const About = () => {
               inclinations, in Nigeria, and the Diaspora.
             </p>
             <br />
-            <p data-aos="fade-left">
+            <p data-aos="fade-down">
               The Institution’s Ideology rests on Humanitarian commonalities,
               manifesting in compelling imperatives of providing exigent
               Helpline Templates, in tackling issues of Maternal Death
@@ -58,7 +59,7 @@ const About = () => {
               Growth, Development and Prosperity.{" "}
             </p>
             <br />
-            <p data-aos="fade-right">
+            <p data-aos="fade-up">
               <b>DE IMPERIAL PHILANTHROPIC FAMILY</b> recognises the Southeast
               Geopolitical Region, of Nigeria, as its catchment Humanitarian
               Jurisdiction, driven by an overriding Motto, “LIVING FOR
