@@ -1,7 +1,8 @@
 import PageWrapper from "../components/pageWrapper";
 import { useEffect } from "react";
 import initializeAOS from "../utils/aos-init";
-import { notAvailableYet } from "../constants/assets";
+import { pillars } from "../constants/assets";
+
 
 const Pillars = () => {
   useEffect(() => {
@@ -10,10 +11,14 @@ const Pillars = () => {
 
   return (
     <PageWrapper>
-      <div className="flex flex-col justify-center items-center my-5 h-[60vh]">
-        <img src={notAvailableYet} alt="no-data" className="w-30 h-30"/>
-        <span className="block my-4">Under development</span>
-      </div>
+      <main className="relative w-full h-[50vh]">
+        {/* Background Image */}
+        <img
+          src={pillars}
+          alt="no-data"
+          className="w-full h-full object-cover"
+        />
+      </main>
     </PageWrapper>
   );
 };

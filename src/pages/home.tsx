@@ -18,7 +18,7 @@ import {
   scholarship,
   svgBackground,
 } from "../constants/assets";
-import { Camera, Shell, Truck } from "lucide-react";
+import { Camera, Link, Shell, Truck } from "lucide-react";
 import Metrics from "../components/metrics";
 
 const Home = () => {
@@ -134,7 +134,7 @@ const Home = () => {
           >
             <div className="flex flex-col items-center space-y-2">
               <Truck className="sm:w-20 sm:h-20 w-14 h-14 text-white animate-moveX" />
-              <h2 className="text-xl font-semibold">Our Mission</h2>
+              <h2 className="text-2xl font-semibold">Our Mission</h2>
               <p className="">
                 To aid the socio-economic development of South-Eastern Nigeria
                 through laudable initiatives and targeted empowerments.
@@ -142,7 +142,7 @@ const Home = () => {
             </div>
             <div className="flex flex-col items-center space-y-2">
               <Camera className="sm:w-20 sm:h-20 w-14 h-14 text-white animate-bump" />
-              <h2 className="text-xl font-semibold">Our Vision</h2>
+              <h2 className="text-2xl font-semibold">Our Vision</h2>
               <p className="">
                 Improvement of economic, education, work, health and social
                 relations of beneficiaries through commitment of members.
@@ -150,7 +150,7 @@ const Home = () => {
             </div>
             <div className="flex flex-col items-center space-y-2">
               <Shell className="sm:w-20 sm:h-20 w-14 h-14 text-white rotate-small" />
-              <h2 className="text-xl font-semibold">Our Motto</h2>
+              <h2 className="text-2xl font-semibold">Our Motto</h2>
               <p className="">Living for Humanity.</p>
             </div>
           </div>
@@ -170,7 +170,7 @@ const Home = () => {
           />
           <div className="sm:w-2/3 font-Montserrat px-3 pt-3 sm:pt-0 sm:px-10">
             <p>
-              De Imperial Philanthropic Family announces a groundbreaking
+              <b>DE IMPERIAL PHILANTHROPIC FAMILY</b> announces a groundbreaking
               initiative aimed at empowering Nigerian youths through education.
               We are launching a <b>₦50 Million (Fifty Million Naira)</b> DIPF
               Scholarship Program for the 2025 Best Performing Joint Admissions
@@ -208,7 +208,14 @@ const Home = () => {
               >
                 this page
               </a>
+              . To register, click the button below;
             </p>
+            <br />
+            <a href="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-top-10-jamb-scorers-in-southeast-2025/register">
+              <button className="px-6 py-3 bg-red-600 text-white hover:bg-black hover:font-medium transition-all cursor-pointer">
+                Register Now
+              </button>
+            </a>
           </div>
         </div>
       </main>

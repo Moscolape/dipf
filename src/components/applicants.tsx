@@ -81,38 +81,40 @@ const Applicants = () => {
   return (
     <DashboardWrapper>
       <div className="w-full m-auto font-Inter p-5">
-        <div className="flex items-center justify-between mb-8 mt-4">
-          <div className="flex items-center">
-            <label className="mr-2 text-sm font-medium">
-              Sort by JAMB Score:
-            </label>
-            <select
-              value={sortOrder}
-              onChange={(e) => setSortOrder(e.target.value as "asc" | "desc")}
-              className="border rounded px-2 py-1 text-sm mr-6"
-            >
-              <option value="">Select Order</option>
-              <option value="desc">Descending</option>
-              <option value="asc">Ascending</option>
-            </select>
+        {currentApplicants.length !== 0 && (
+          <div className="flex items-center justify-between mb-8 mt-4">
+            <div className="flex items-center">
+              <label className="mr-2 text-sm font-medium">
+                Sort by JAMB Score:
+              </label>
+              <select
+                value={sortOrder}
+                onChange={(e) => setSortOrder(e.target.value as "asc" | "desc")}
+                className="border rounded px-2 py-1 text-sm mr-6"
+              >
+                <option value="">Select Order</option>
+                <option value="desc">Descending</option>
+                <option value="asc">Ascending</option>
+              </select>
 
-            <label className="mr-2 text-sm font-medium">
-              Filter by State of Origin:
-            </label>
-            <select
-              value={stateFilter}
-              onChange={(e) => setStateFilter(e.target.value)}
-              className="border rounded px-2 py-1 text-sm"
-            >
-              <option value="">Select State</option>
-              {statesData.map(({ state }) => (
-                <option key={state} value={state}>
-                  {state}
-                </option>
-              ))}
-            </select>
+              <label className="mr-2 text-sm font-medium">
+                Filter by State of Origin:
+              </label>
+              <select
+                value={stateFilter}
+                onChange={(e) => setStateFilter(e.target.value)}
+                className="border rounded px-2 py-1 text-sm"
+              >
+                <option value="">Select State</option>
+                {statesData.map(({ state }) => (
+                  <option key={state} value={state}>
+                    {state}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
-        </div>
+        )}
 
         <div className="py-3 px-2 flex items-center bg-gray-300">
           <span className="w-[25%] font-bold">Name</span>

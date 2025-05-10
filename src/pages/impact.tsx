@@ -1,7 +1,7 @@
 import PageWrapper from "../components/pageWrapper";
 import { useEffect } from "react";
 import initializeAOS from "../utils/aos-init";
-import { logo, mendem } from "../constants/assets";
+import { dipfamily, logo } from "../constants/assets";
 
 const Impact = () => {
   useEffect(() => {
@@ -13,7 +13,7 @@ const Impact = () => {
       <main className="relative w-full h-[60vh]">
         {/* Background Image */}
         <img
-          src={mendem}
+          src={dipfamily}
           alt="no-data"
           className="w-full h-full object-cover"
         />

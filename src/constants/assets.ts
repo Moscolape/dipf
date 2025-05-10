@@ -28,6 +28,8 @@ import national from "../assets/National Presido.jpeg";
 import mission from "../assets/mission.png";
 import mendem from "../assets/mendem.jpeg";
 import scholarship from "../assets/DIPF-Scholarship.jpeg";
+import dipfBackground from "../assets/dipf-logo-background.png";
+import pillars from "../assets/pillars.png";
 
 
 export {
@@ -60,5 +62,7 @@ export {
   national,
   mission,
   mendem,
-  scholarship
+  scholarship,
+  dipfBackground,
+  pillars
 };
