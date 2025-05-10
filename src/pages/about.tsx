@@ -74,11 +74,11 @@ const About = () => {
           </div>
         </div>
       </div>
-      <section className="mt-6 sm:mt-20 sm:w-4/5 mx-auto" data-aos="fade-up">
-        <h2 className="text-center text-2xl sm:text-4xl font-bold sm:mb-6 font-Montserrat">
+      <section className="mt-6 sm:mt-20 sm:w-4/5 mx-auto">
+        <h2 className="text-center text-2xl sm:text-4xl font-bold sm:mb-6 font-Montserrat" data-aos="fade-down">
           Our History
         </h2>
-        <div className="font-Montserrat sm:p-0 p-3">
+        <div className="font-Montserrat sm:p-0 p-3" data-aos="fade-up">
           <p>
             In 2017, a young, creative, talented and reasonably successful
             businessman, <b>EVANS IZUNNA EMESIM</b>, emerged in the

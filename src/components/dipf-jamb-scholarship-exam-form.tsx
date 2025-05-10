@@ -150,8 +150,8 @@ const JambScholarshipForm = () => {
             disqualification.
           </p>
           <p className="mb-5">
-            <b>NOTE:</b> Proceed with filling the form only if you got <b>250 and
-            above</b>.
+            <b>NOTE:</b> Proceed with filling the form only if you got{" "}
+            <b>250 and above</b>.
           </p>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
@@ -404,7 +404,31 @@ const JambScholarshipForm = () => {
               </div>
             )}
 
-            <p className="italic mt-10">For more information or any enquiries, contact <b>Dr. Frank Igbojindu</b> (Best Brain Contest) @ <b>0703 055 5581</b></p>
+            <p className="italic mt-20">
+              For more information or any enquiries, contact;
+            </p>
+            <ul className="list-disc ml-2">
+              <li>
+                <b>Dr. Frank Igbojindu</b> (Best Brain Contest) @{" "}
+                <b>0703 055 5581</b>
+              </li>
+              <span className="inline-block my-2">OR</span>
+              <li>
+                <b>Chief Chike Okonkwo</b> (Chairman Education Committee) @{" "}
+                <b>0803 304 8480</b>
+              </li>
+            </ul>
+            <p>Follow our pages on;</p>
+            <ul className="list-disc ml-2">
+              <li>
+                <b>Facebook:</b> De Imperial Philanthropic Family
+              </li>
+              <li>
+                <b>Instagram:</b> De Imperial Family
+              </li>
+            </ul>
+            <br />
+
             {/* <div>
               <label className="block text-sm font-medium text-gray-700">
                 Upload Original O'Level Result Slip (WAEC, NECO, or NABTEB)

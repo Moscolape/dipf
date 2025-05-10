@@ -18,7 +18,7 @@ import {
   scholarship,
   svgBackground,
 } from "../constants/assets";
-import { Camera, Link, Shell, Truck } from "lucide-react";
+import { Camera, Shell, Truck } from "lucide-react";
 import Metrics from "../components/metrics";
 
 const Home = () => {
