@@ -27,6 +27,7 @@ import dipfamily from "../assets/dipfamily.jpg";
 import national from "../assets/National Presido.jpeg";
 import mission from "../assets/mission.png";
 import mendem from "../assets/mendem.jpeg";
+import scholarship from "../assets/DIPF-Scholarship.jpeg";
 
 
 export {
@@ -58,5 +59,6 @@ export {
   dipfamily,
   national,
   mission,
-  mendem
+  mendem,
+  scholarship
 };

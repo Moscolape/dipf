@@ -14,8 +14,8 @@ import {
   dipf7,
   dipf8,
   dipf9,
-  dipfamily,
   logo,
+  scholarship,
   svgBackground,
 } from "../constants/assets";
 import { Camera, Shell, Truck } from "lucide-react";
@@ -163,7 +163,7 @@ const Home = () => {
         </h2>
         <div className="flex sm:flex-row flex-col">
           <img
-            src={dipfamily}
+            src={scholarship}
             alt="dipfam"
             className="sm:w-1/3"
             data-aos="fade-in"

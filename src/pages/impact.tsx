@@ -1,7 +1,7 @@
 import PageWrapper from "../components/pageWrapper";
 import { useEffect } from "react";
 import initializeAOS from "../utils/aos-init";
-import { mendem } from "../constants/assets";
+import { logo, mendem } from "../constants/assets";
 
 const Impact = () => {
   useEffect(() => {
@@ -19,9 +19,7 @@ const Impact = () => {
         />
       </main>
       <section className="py-10 backdrop">
-        <h2
-          className="text-2xl sm:text-5xl font-bold text-center sm:mb-10 font-Montserrat"
-        >
+        <h2 className="text-2xl sm:text-5xl font-bold text-center sm:mb-10 font-Montserrat">
           Diaspora Interventions
         </h2>
         <section
@@ -55,7 +53,12 @@ const Impact = () => {
         </section>
       </section>
       <section className="py-10">
-        <section className="max-w-6xl mx-auto font-Montserrat">
+        <section className="max-w-6xl mx-auto font-Montserrat relative">
+          <img
+            src={logo}
+            alt="watermark"
+            className="absolute sm:top-[0%] top-[20%] right-[0%] sm:right-[30%] w-128 opacity-10 pointer-events-none z-30"
+          />
           <h2
             className="text-2xl sm:text-5xl font-bold text-center sm:mb-10 font-Montserrat"
             data-aos="fade-down"
