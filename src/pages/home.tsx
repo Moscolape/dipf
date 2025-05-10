@@ -208,7 +208,7 @@ const Home = () => {
               >
                 this page
               </a>
-              . To register, click the button below;
+              . To register for the scholarship program, click the button below;
             </p>
             <br />
             <a href="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-top-10-jamb-scorers-in-southeast-2025/register">
