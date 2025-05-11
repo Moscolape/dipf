@@ -216,7 +216,7 @@ const Pillars = () => {
               key={index}
               className="flex flex-col items-center text-center bg-gray-100 sm:rounded-lg sm:shadow p-3"
               data-aos="fade-up"
-              data-aos-delay={index * 100}
+              data-aos-delay={index * 50}
             >
               <img
                 src={person.image}
