@@ -21,7 +21,8 @@ const EducationalSupport = () => {
     {
       id: 2,
       image: jambite,
-      title: "Scholarship Grant for 2025 Top JAMB Scorers from SouthEast and Nigeria at large",
+      title:
+        "Scholarship Grant for 2025 Top JAMB Scorers from SouthEast and Nigeria at large",
       description:
         "This initiative is designed to encourage academic excellence among the youth in Igbo land in particular and Nigeria in general, inspiring prospective candidates to strive for exceptional performance in the upcoming 2025 JAMB examinations...",
       link: "/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-top-10-jamb-scorers-in-southeast-2025",
@@ -38,11 +39,12 @@ const EducationalSupport = () => {
           Educational Supports
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {events.map((event) => (
+          {events.map((event, index) => (
             <div
-              key={event.id}
+              key={index}
               className="group rounded-lg shadow transform transition-transform duration-300"
               data-aos="fade-up"
+              data-aos-delay={index * 100}
             >
               <div className="overflow-hidden rounded-t-lg">
                 <img

@@ -75,7 +75,7 @@ const About = () => {
         </div>
       </div>
       <section className="mt-6 sm:mt-20 sm:w-4/5 mx-auto">
-        <h2 className="text-center text-2xl sm:text-4xl font-bold sm:mb-6 font-Montserrat" data-aos="fade-down">
+        <h2 className="text-center text-2xl sm:text-4xl font-bold sm:mb-6 font-Prism" data-aos="fade-down">
           Our History
         </h2>
         <div className="font-Montserrat sm:p-0 p-3" data-aos="fade-up">

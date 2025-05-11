@@ -4,6 +4,7 @@ import notAvailableYet from "../assets/undraw_no-data_ig65.svg";
 import js1 from "../assets/js1.jpg";
 import jambite from "../assets/jambite.jpg";
 import presido from "../assets/DIPF-presido.jpeg";
+import presido2 from "../assets/presido.jpg";
 import working from "../assets/undraw_workspace_s6wf.svg";
 import dash1 from "../assets/Union.svg";
 import dash2 from "../assets/Union2.svg";
@@ -30,6 +31,9 @@ import mendem from "../assets/mendem.jpeg";
 import scholarship from "../assets/DIPF-Scholarship.jpeg";
 import dipfBackground from "../assets/dipf-logo-background.png";
 import pillars from "../assets/pillars.png";
+import pillar1 from "../assets/pillar1.png";
+import pillar2 from "../assets/pillar2.png";
+import pillar3 from "../assets/pillar3.png";
 
 
 export {
@@ -64,5 +68,9 @@ export {
   mendem,
   scholarship,
   dipfBackground,
-  pillars
+  pillars,
+  presido2,
+  pillar1,
+  pillar2,
+  pillar3
 };
