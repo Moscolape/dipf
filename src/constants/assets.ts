@@ -34,6 +34,22 @@ import pillars from "../assets/pillars.png";
 import pillar1 from "../assets/pillar1.png";
 import pillar2 from "../assets/pillar2.png";
 import pillar3 from "../assets/pillar3.png";
+import pillar4 from "../assets/pillar4.png";
+import pillar5 from "../assets/pillar5.png";
+import pillar6 from "../assets/pillar6.png";
+import pillar7 from "../assets/pillar7.png";
+import pillar8 from "../assets/pillar8.png";
+import pillar9 from "../assets/pillar9.png";
+import pillar10 from "../assets/pillar10.png";
+import pillar11 from "../assets/pillar11.png";
+import pillar12 from "../assets/pillar12.png";
+import pillar13 from "../assets/pillar13.png";
+import pillar14 from "../assets/pillar14.png";
+import pillar15 from "../assets/pillar15.png";
+import pillar16 from "../assets/pillar16.png";
+import pillar17 from "../assets/pillar17.png";
+import patron1 from "../assets/patron1.png";
+import patron2 from "../assets/patron2.png";
 
 
 export {
@@ -72,5 +88,21 @@ export {
   presido2,
   pillar1,
   pillar2,
-  pillar3
+  pillar3,
+  pillar4,
+  pillar5,
+  pillar6,
+  pillar7,
+  pillar8,
+  pillar9,
+  pillar10,
+  pillar11,
+  pillar12,
+  pillar13,
+  pillar14,
+  pillar15,
+  pillar16,
+  pillar17,
+  patron1,
+  patron2
 };

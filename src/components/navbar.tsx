@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react"; // Importing icons
+// import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react"; 
 import { logo } from "../constants/assets";
 
 const links = [
@@ -68,7 +68,7 @@ export default function NavLinks() {
         backdropFilter: "blur(30px)",
       }}
     >
-      <Link to="/" className="logo">
+      <a href="/" className="logo">
         <img
           src={logo}
           alt="My Logo"
@@ -76,14 +76,14 @@ export default function NavLinks() {
           height={logoSize}
           className="sm:scale-200 pl-2 pt-2 pb-2"
         />
-      </Link>
+      </a>
 
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center space-x-4 font-Montserrat">
         {links.map((link) => (
-          <Link
-            key={link.name}
-            to={link.href}
+          <a
+            // key={link.name}
+            href={link.href}
             className={`px-4 py-2 text-h6 hover:text-[#b58825] hover:scale-110 rounded-md ${
               currentPath.includes(link.href)
                 ? "text-[#b58825] font-bold"
@@ -91,16 +91,16 @@ export default function NavLinks() {
             } ${link.name === "Donate" ? "hidden" : "inline-block"}`}
           >
             {link.name}
-          </Link>
+          </a>
         ))}
       </div>
 
-      <Link
-        to="/login"
+      <a
+        href="/login"
         className="text-white bg-[#b58825] hover:bg-[#926014] py-2 px-4 rounded-md hidden sm:block"
       >
         Login
-      </Link>
+      </a>
 
       {/* Mobile Menu Button */}
       <button
@@ -127,14 +127,14 @@ export default function NavLinks() {
 
         <div className="space-y-6 text-center flex flex-col justify-center font-Urbanist">
           {links.map((link) => (
-            <Link
-              key={link.name}
-              to={link.href}
+            <a
+            //   key={link.name}
+              href={link.href}
               className="text-xl font-semibold hover:text-[#be9611] transition"
               onClick={() => setMenuOpen(false)}
             >
               {link.name}
-            </Link>
+            </a>
           ))}
         </div>
       </motion.div>

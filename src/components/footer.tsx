@@ -6,7 +6,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import initializeAOS from "../utils/aos-init";
 import { logo2 } from "../constants/assets";
@@ -91,16 +91,16 @@ export default function Footer() {
             </p>
           </div>
           <div className="text-h6 flex mt-10">
-            {socialMediaLinks.map((link, index) => (
-              <Link
-                to={link.href}
-                key={index}
+            {socialMediaLinks.map((link) => (
+              <a
+                href={link.href}
+                // key={index}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mr-4 text-2xl hover:text-[#b58825]"
               >
                 {link.icon}
-              </Link>
+              </a>
             ))}
           </div>
         </div>
@@ -109,14 +109,14 @@ export default function Footer() {
             <h1 className="text-lg font-bold">QUICK LINKS</h1>
             <br />
             <div className="flex flex-col">
-              {quickLinks.map((link, index) => (
-                <Link
-                  to={link.href}
-                  key={index}
+              {quickLinks.map((link) => (
+                <a
+                  href={link.href}
+                //   key={index}
                   className="mb-2 text-[1rem] hover:text-[#b58825] hover:scale-95"
                 >
                   {link.text}
-                </Link>
+                </a>
               ))}
             </div>
           </div>
