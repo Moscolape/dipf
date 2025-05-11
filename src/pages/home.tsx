@@ -1,5 +1,8 @@
 import PageWrapper from "../components/pageWrapper";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { useState } from "react";
+import { X } from "lucide-react";
+
 import Marquee from "react-fast-marquee";
 import initializeAOS from "../utils/aos-init";
 import {
@@ -22,9 +25,42 @@ import { Camera, Shell, Truck } from "lucide-react";
 import Metrics from "../components/metrics";
 
 const Home = () => {
+  const [showModal, setShowModal] = useState(false);
+
   useEffect(() => {
+    const hasSeenModal = localStorage.getItem("hasSeenScholarshipModal");
+    if (!hasSeenModal) {
+      setShowModal(true);
+    }
     initializeAOS();
   }, []);
+
+  const closeModal = () => {
+    setShowModal(false);
+    localStorage.setItem("hasSeenScholarshipModal", "true");
+  };
+
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        setShowModal(false);
+        localStorage.setItem("hasSeenScholarshipModal", "true");
+      }
+    };
+
+    if (showModal) {
+      document.addEventListener("mousedown", handleOutsideClick);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [showModal]);
 
   return (
     <PageWrapper>
@@ -211,14 +247,63 @@ const Home = () => {
               . To register for the scholarship program, click the button below;
             </p>
             <br />
-            <a href="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-top-10-jamb-scorers-in-southeast-2025/register">
-              <button className="px-6 py-3 bg-red-600 text-white hover:bg-black hover:font-medium transition-all cursor-pointer">
+            <button className="px-6 py-3 bg-red-600 text-white hover:bg-black hover:font-medium transition-all cursor-pointer">
+              <a href="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-top-10-jamb-scorers-in-southeast-2025/register">
                 Register Now
-              </button>
-            </a>
+              </a>
+            </button>
           </div>
         </div>
       </main>
+
+      {showModal && (
+        <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4">
+          <div
+            className="bg-white rounded-lg max-w-5xl w-full relative shadow-lg overflow-hidden animate-fadeUp"
+            ref={modalRef}
+          >
+            {/* Close Icon */}
+            <button
+              onClick={closeModal}
+              className="absolute top-3 right-3 text-gray-500 hover:text-black"
+            >
+              <X className="w-10 h-10 rounded-full bg-white p-2 text-black cursor-pointer hover:bg-gray-400" />
+            </button>
+
+            {/* Modal Content */}
+            <img
+              src={scholarship}
+              alt="DIPF Scholarship Promo"
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-5 font-Montserrat text-sm sm:text-base">
+              <h2 className="text-xl font-bold mb-2">
+                ₦50M DIPF Scholarship Grant for Top Performers of JAMB 2025
+              </h2>
+              <p>
+                The <b>De Imperial Philanthropic Family (DIPF)</b> is proud to
+                announce the launch of the DIPF <b>₦50M Scholarship Grants</b>{" "}
+                aimed at rewarding the top JAMB performers in Nigeria. This
+                initiative is designed to encourage academic excellence among
+                the youth in Igbo land in particular and Nigeria in general,
+                inspiring prospective candidates to strive for exceptional
+                performance in the upcoming 2025 JAMB examinations.
+              </p>
+              <br />
+              <button
+                className="px-6 py-3 bg-red-600 text-white hover:bg-black hover:font-medium transition-all cursor-pointer block mx-auto"
+                onClick={() =>
+                  localStorage.setItem("hasSeenScholarshipModal", "true")
+                }
+              >
+                <a href="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-top-10-jamb-scorers-in-southeast-2025/register">
+                  Register Now
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </PageWrapper>
   );
 };
