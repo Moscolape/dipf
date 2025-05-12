@@ -81,8 +81,7 @@ const VolunteerForm: React.FC = () => {
         </div>
       </div>
 
-      {/* Skills Section */}
-      <div className="mt-5">
+      <div className="mt-10">
         <p className="font-semibold mb-2">
           What skills will you bring to the team?
         </p>
@@ -98,11 +97,32 @@ const VolunteerForm: React.FC = () => {
             "I'm a people person!",
           ].map((skill, index) => (
             <label key={index} className="flex items-center space-x-2">
-              <input type="checkbox" className="form-checkbox" />
+              <input
+                type="checkbox"
+                className="form-checkbox w-5 h-5 accent-[#b58825]"
+              />
               <span>{skill}</span>
             </label>
           ))}
         </div>
+      </div>
+
+      <div className="mt-10">
+        <p className="font-semibold mb-2">A little more about yourself</p>
+        <textarea
+          placeholder="Write here..."
+          rows={8}
+          className="w-full border p-2 resize-none"
+        ></textarea>
+      </div>
+
+      <div className="mt-10">
+        <button
+          type="submit"
+          className="bg-[#b58825] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#9a6f1e] transition cursor-pointer"
+        >
+          Get Involved
+        </button>
       </div>
     </form>
   );
