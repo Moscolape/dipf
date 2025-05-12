@@ -468,7 +468,7 @@ const JambScholarshipForm = () => {
               </div>
             )} */}
 
-            {showModal && <SuccessModal />}
+            {showModal && <SuccessModal text="" />}
 
             <div className="sm:col-span-2 flex justify-center mt-10">
               <button

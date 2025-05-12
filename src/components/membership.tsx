@@ -104,7 +104,7 @@ const Membership = () => {
 
   return (
     <PageWrapper>
-      <div className="pt-12 sm:px-6 px-2 sm:w-[90%] mx-auto font-Montserrat">
+      <div className="pt-12 sm:px-6 px-2 sm:w-[90%] mx-auto font-Montserrat relative">
         <h1
           className="text-2xl sm:text-5xl font-Montserrat font-bold mb-4 text-center"
           data-aos="fade-down"
