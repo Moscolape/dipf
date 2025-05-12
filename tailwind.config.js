@@ -38,6 +38,17 @@ export default {
             11: '#F0EE8C',
           }
         },
+        keyframes: {
+          colorCycle: {
+            '0%, 100%': { color: '#ef4444' },     // red-500
+            '25%': { color: '#3b82f6' },          // blue-500
+            '50%': { color: '#10b981' },          // green-500
+            '75%': { color: '#f59e0b' },          // amber-500
+          },
+        },
+        animation: {
+          colorCycle: 'colorCycle 4s linear infinite',
+        },
         backgroundImage: {},
         screens: {
           'mo': '320px',

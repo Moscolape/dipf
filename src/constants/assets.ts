@@ -50,6 +50,54 @@ import pillar16 from "../assets/pillar16.png";
 import pillar17 from "../assets/pillar17.png";
 import patron1 from "../assets/patron1.png";
 import patron2 from "../assets/patron2.png";
+import kbk1 from "../assets/KOBOKO-Programme_FINAL1024_100.jpg";
+import kbk2 from "../assets/KOBOKO-Programme_FINAL1024_101.jpg";
+import kbk3 from "../assets/KOBOKO-Programme_FINAL1024_102.jpg";
+import kbk4 from "../assets/KOBOKO-Programme_FINAL1024_104.jpg";
+import kbk5 from "../assets/KOBOKO-Programme_FINAL1024_105.jpg";
+import kbk6 from "../assets/KOBOKO-Programme_FINAL1024_106.jpg";
+import kbk7 from "../assets/KOBOKO-Programme_FINAL1024_107.jpg";
+import kbk8 from "../assets/KOBOKO-Programme_FINAL1024_108.jpg";
+import kbk9 from "../assets/KOBOKO-Programme_FINAL1024_109.jpg";
+import kbk10 from "../assets/KOBOKO-Programme_FINAL1024_110.jpg";
+import kbk11 from "../assets/KOBOKO-Programme_FINAL1024_111.jpg";
+import kbk12 from "../assets/KOBOKO-Programme_FINAL1024_112fixed.jpg";
+import kbk13 from "../assets/KOBOKO-Programme_FINAL1024_113.jpg";
+import kbk14 from "../assets/KOBOKO-Programme_FINAL1024_66.jpg";
+import kbk15 from "../assets/KOBOKO-Programme_FINAL1024_67.jpg";
+import kbk16 from "../assets/KOBOKO-Programme_FINAL1024_68.jpg";
+import kbk17 from "../assets/KOBOKO-Programme_FINAL1024_69.jpg";
+import kbk18 from "../assets/KOBOKO-Programme_FINAL1024_70.jpg";
+import kbk19 from "../assets/KOBOKO-Programme_FINAL1024_71.jpg";
+import kbk20 from "../assets/KOBOKO-Programme_FINAL1024_72.jpg";
+import kbk21 from "../assets/KOBOKO-Programme_FINAL1024_73.jpg";
+import kbk22 from "../assets/KOBOKO-Programme_FINAL1024_74.jpg";
+import kbk23 from "../assets/KOBOKO-Programme_FINAL1024_75.jpg";
+import kbk24 from "../assets/KOBOKO-Programme_FINAL1024_76.jpg";
+import kbk25 from "../assets/KOBOKO-Programme_FINAL1024_77.jpg";
+import kbk26 from "../assets/KOBOKO-Programme_FINAL1024_78.jpg";
+import kbk27 from "../assets/KOBOKO-Programme_FINAL1024_79.jpg";
+import kbk28 from "../assets/KOBOKO-Programme_FINAL1024_80.jpg";
+import kbk29 from "../assets/KOBOKO-Programme_FINAL1024_81.jpg";
+import kbk30 from "../assets/KOBOKO-Programme_FINAL1024_82.jpg";
+import kbk31 from "../assets/KOBOKO-Programme_FINAL1024_83.jpg";
+import kbk32 from "../assets/KOBOKO-Programme_FINAL1024_84.jpg";
+import kbk33 from "../assets/KOBOKO-Programme_FINAL1024_85.jpg";
+import kbk34 from "../assets/KOBOKO-Programme_FINAL1024_86.jpg";
+import kbk35 from "../assets/KOBOKO-Programme_FINAL1024_87.jpg";
+import kbk36 from "../assets/KOBOKO-Programme_FINAL1024_88.jpg";
+import kbk37 from "../assets/KOBOKO-Programme_FINAL1024_89.jpg";
+import kbk38 from "../assets/KOBOKO-Programme_FINAL1024_90.jpg";
+import kbk39 from "../assets/KOBOKO-Programme_FINAL1024_91.jpg";
+import kbk40 from "../assets/KOBOKO-Programme_FINAL1024_92.jpg";
+import kbk41 from "../assets/KOBOKO-Programme_FINAL1024_93.jpg";
+import kbk42 from "../assets/KOBOKO-Programme_FINAL1024_94.jpg";
+import kbk43 from "../assets/KOBOKO-Programme_FINAL1024_95.jpg";
+import kbk44 from "../assets/KOBOKO-Programme_FINAL1024_96.jpg";
+import kbk45 from "../assets/KOBOKO-Programme_FINAL1024_97.jpg";
+import kbk46 from "../assets/KOBOKO-Programme_FINAL1024_98.jpg";
+import kbk47 from "../assets/KOBOKO-Programme_FINAL1024_99.jpg";
+import kbk48 from "../assets/KOBOKO-Programme_FINAL1024_103.jpg";
 
 
 export {
@@ -104,5 +152,53 @@ export {
   pillar16,
   pillar17,
   patron1,
-  patron2
+  patron2,
+  kbk1,
+  kbk2,
+  kbk3,
+  kbk4,
+  kbk10,
+  kbk11,
+  kbk12,
+  kbk13,
+  kbk14,
+  kbk15,
+  kbk16,
+  kbk17,
+  kbk18,
+  kbk19,
+  kbk20,
+  kbk21,
+  kbk22,
+  kbk23,
+  kbk24,
+  kbk25,
+  kbk26,
+  kbk27,
+  kbk28,
+  kbk29,
+  kbk30,
+  kbk31,
+  kbk32,
+  kbk33,
+  kbk34,
+  kbk35,
+  kbk36,
+  kbk37,
+  kbk38,
+  kbk39,
+  kbk40,
+  kbk41,
+  kbk42,
+  kbk43,
+  kbk44,
+  kbk45,
+  kbk46,
+  kbk47,
+  kbk48,
+  kbk5,
+  kbk6,
+  kbk7,
+  kbk8,
+  kbk9
 };

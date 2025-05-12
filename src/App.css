@@ -75,6 +75,25 @@
   animation: moveX 2.5s ease-in-out infinite;
 }
 
+@keyframes colorCycle {
+  0%, 100% {
+    color: black; /* red-500 */
+  }
+  25% {
+    color: #b58825; /* blue-500 */
+  }
+  50% {
+    color: #7f571c; /* green-500 */
+  }
+  75% {
+    color: #926014; /* amber-500 */
+  }
+}
+
+.animate-color-cycle {
+  animation: colorCycle 4s linear infinite;
+}
+
 
 @keyframes rotate {
   from {

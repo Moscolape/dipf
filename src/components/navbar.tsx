@@ -82,7 +82,7 @@ export default function NavLinks() {
       <div className="hidden md:flex items-center space-x-4 font-Montserrat">
         {links.map((link) => (
           <a
-            // key={link.name}
+            key={link.name}
             href={link.href}
             className={`px-4 py-2 text-h6 hover:text-[#b58825] hover:scale-110 rounded-md ${
               currentPath.includes(link.href)
@@ -128,7 +128,7 @@ export default function NavLinks() {
         <div className="space-y-6 text-center flex flex-col justify-center font-Urbanist">
           {links.map((link) => (
             <a
-            //   key={link.name}
+              key={link.name}
               href={link.href}
               className="text-xl font-semibold hover:text-[#be9611] transition"
               onClick={() => setMenuOpen(false)}

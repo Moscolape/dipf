@@ -18,6 +18,8 @@ const Members = lazy(() => import("./pages/members"));
 const Pillars = lazy(() => import("./pages/pillars"));
 const Login = lazy(() => import("./pages/login"));
 
+const Membership = lazy(() => import("./components/membership"));
+
 const ScholarshipBeneficiaries = lazy(
   () => import("./components/scholarship-beneficiaries")
 );
@@ -66,6 +68,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/impact" element={<Impact />} />
           <Route path="/members" element={<Members />} />
+          <Route path="/membership" element={<Membership />} />
           <Route path="/pillars" element={<Pillars />} />
           <Route
             path="/login"

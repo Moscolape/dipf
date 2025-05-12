@@ -94,7 +94,7 @@ export default function Footer() {
             {socialMediaLinks.map((link) => (
               <a
                 href={link.href}
-                // key={index}
+                key={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mr-4 text-2xl hover:text-[#b58825]"
@@ -112,7 +112,7 @@ export default function Footer() {
               {quickLinks.map((link) => (
                 <a
                   href={link.href}
-                //   key={index}
+                  key={link.text}
                   className="mb-2 text-[1rem] hover:text-[#b58825] hover:scale-95"
                 >
                   {link.text}
