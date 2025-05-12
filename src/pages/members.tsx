@@ -112,11 +112,11 @@ const Members = () => {
   return (
     <PageWrapper>
       <div className="pt-12 px-6 sm:w-[90%] mx-auto font-Montserrat">
-        <h1 className="text-2xl sm:text-5xl font-Montserrat font-bold mb-4 text-center animate-color-cycle">
+        <h1 className="text-2xl sm:text-5xl font-Montserrat font-bold mb-4 text-center animate-color-cycle" data-aos="fade-down">
           Our Elite Members
         </h1>
 
-        <div className="text-center mb-10 flex justify-center">
+        <div className="text-center mb-10 flex justify-center" data-aos="zoom-in">
           <a
             href="/membership"
             className="flex justify-center sm:w-[15%] w-1/2 text-white hover:bg-[#b58825] font-semibold transition duration-300 bg-black px-4 py-2 rounded"
@@ -131,7 +131,7 @@ const Members = () => {
               <img
                 src={kbk}
                 alt="kbk"
-                className="sm:w-96 h-128 w-full object-cover sm:rounded-lg shadow-lg mb-4"
+                className="sm:w-96 h-128 w-full object-cover sm:rounded-lg shadow-lg mb-4 hover:scale-110"
               />
             </div>
           ))}
