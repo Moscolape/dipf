@@ -30,6 +30,7 @@ export interface Applicant {
 
 const Applicants = () => {
   const [applicants, setApplicants] = useState<Applicant[]>([]);
+  const [totalItems, setTotalItems] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [sortOrder, setSortOrder] = useState<"asc" | "desc" | "">("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -41,25 +42,31 @@ const Applicants = () => {
   useEffect(() => {
     const fetchApplicants = async () => {
       setIsLoading(true);
-
       try {
         const baseUrl = "https://dipf-backend.onrender.com/api/v1/applicants";
-        // const baseUrl = `http://localhost:8080/api/v1/applicants`;
         const queryParams = new URLSearchParams();
-        if (sortOrder) queryParams.append("sortBy", "jambScore");
-        if (sortOrder) queryParams.append("order", sortOrder);
+
+        queryParams.append("page", currentPage.toString());
+        queryParams.append("limit", itemsPerPage.toString());
+
+        if (sortOrder) {
+          queryParams.append("sortBy", "jambScore");
+          queryParams.append("order", sortOrder);
+        }
+
         if (stateFilter) queryParams.append("stateOfOrigin", stateFilter);
         if (jambFilter) queryParams.append("jambExamState", jambFilter);
 
         const response = await fetch(`${baseUrl}?${queryParams.toString()}`);
-
         const result = await response.json();
 
         if (!response.ok) {
           throw new Error(result.message || "Failed to fetch applicants");
         }
 
+        console.log(result);
         setApplicants(result.applicants);
+        setTotalItems(result.totalItems);
       } catch (err) {
         console.error("Fetch Error:", err);
       } finally {
@@ -68,13 +75,13 @@ const Applicants = () => {
     };
 
     fetchApplicants();
-  }, [jambFilter, sortOrder, stateFilter]);
+  }, [currentPage, jambFilter, sortOrder, stateFilter]);
 
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentApplicants = applicants.slice(
-    startIndex,
-    startIndex + itemsPerPage
-  );
+  // const startIndex = (currentPage - 1) * itemsPerPage;
+  // const currentApplicants = applicants.slice(
+  //   startIndex,
+  //   startIndex + itemsPerPage
+  // );
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -89,7 +96,7 @@ const Applicants = () => {
   return (
     <DashboardWrapper>
       <div className="w-full m-auto font-Inter p-5">
-        {(!isLoading && currentApplicants.length !== 0) ? (
+        {!isLoading && applicants.length !== 0 ? (
           <div className="flex items-center justify-between mb-8 mt-4">
             <div className="flex items-center">
               <label className="mr-2 text-sm font-medium">
@@ -171,13 +178,13 @@ const Applicants = () => {
           </div>
         ) : (
           <div className="min-h-[50vh]">
-            {currentApplicants.length === 0 ? (
+            {applicants.length === 0 ? (
               <div className="flex items-center justify-center h-[20vh] text-gray-500 font-medium">
                 No applicants found.
               </div>
             ) : (
               <>
-                {currentApplicants.map((applicant, index) => (
+                {applicants.map((applicant, index) => (
                   <div
                     key={applicant._id}
                     className={`${
@@ -208,9 +215,10 @@ const Applicants = () => {
                 ))}
 
                 <Pagination
-                  totalItems={applicants.length}
+                  totalItems={totalItems}
                   itemsPerPage={itemsPerPage}
                   onPageChange={handlePageChange}
+                  currentPage={currentPage}
                 />
               </>
             )}

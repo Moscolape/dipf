@@ -1,32 +1,33 @@
 import { next, prev } from "../constants/assets";
-import { useState } from "react";
+
 interface PaginationProps {
   totalItems: number | null;
   itemsPerPage: number;
+  currentPage: number;
   onPageChange: (page: number) => void;
 }
 
 const Pagination: React.FC<PaginationProps> = ({
   totalItems,
   itemsPerPage,
+  currentPage,
   onPageChange,
 }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-
   const totalPages = totalItems && Math.ceil(totalItems / itemsPerPage);
+  console.log(totalPages);
 
   const handlePrevClick = () => {
     if (currentPage > 1) {
-      setCurrentPage((prevPage) => prevPage - 1);
-      onPageChange(currentPage - 1);
+      const newPage = currentPage - 1;
+      onPageChange(newPage);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
   const handleNextClick = () => {
     if (totalPages && currentPage < totalPages) {
-      setCurrentPage((prevPage) => prevPage + 1);
-      onPageChange(currentPage + 1);
+      const newPage = currentPage + 1;
+      onPageChange(newPage);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
@@ -44,13 +45,14 @@ const Pagination: React.FC<PaginationProps> = ({
         <img
           src={prev}
           alt="prev"
-          className="p-3 bg-gray rounded-full mr-2 cursor-pointer"
-          title="Previous"
+          className={`p-3 bg-gray rounded-full mr-2 cursor-pointer ${
+            currentPage === 1 ? "opacity-20 cursor-not-allowed" : ""
+          }`}
           onClick={handlePrevClick}
         />
         {currentPage > 1 && (
           <span
-            className="w-10 h-10 rounded-full mr-2 justify-center flex items-center"
+            className="w-10 h-10 rounded-full mr-2 justify-center flex items-center cursor-pointer"
             onClick={() => onPageChange(currentPage - 1)}
           >
             {currentPage - 1}
@@ -61,7 +63,7 @@ const Pagination: React.FC<PaginationProps> = ({
         </span>
         {totalPages && currentPage < totalPages && (
           <span
-            className="w-10 h-10 rounded-full mr-2 justify-center flex items-center"
+            className="w-10 h-10 rounded-full mr-2 justify-center flex items-center cursor-pointer"
             onClick={() => onPageChange(currentPage + 1)}
           >
             {currentPage + 1}
@@ -70,8 +72,9 @@ const Pagination: React.FC<PaginationProps> = ({
         <img
           src={next}
           alt="next"
-          className="p-3 bg-gray rounded-full ml-2 cursor-pointer"
-          title="Next"
+          className={`p-3 bg-gray rounded-full ml-2 cursor-pointer ${
+            currentPage === totalPages ? "opacity-20 cursor-not-allowed" : ""
+          }`}
           onClick={handleNextClick}
         />
       </div>
