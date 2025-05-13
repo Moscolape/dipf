@@ -25,7 +25,7 @@ const Events = () => {
       title: "A Tribute to a Life of Impact: Chief Anaeliaku Na Ekwulobia",
       description:
         "The Deimperial Philanthropic Family lead by High Chief Dr. Darlington, honored the remarkable life and enduring legacy of Chief Anaeliaku Na Ekwulobia...",
-      link: "/events",
+      link: "/events/a-tribute-to-a-life-of-impact-chief-anaeliaku-na-ekwulobia",
     },
     {
       image: hospital3,
@@ -91,7 +91,7 @@ const Events = () => {
 
   return (
     <PageWrapper>
-      <div className="mx-auto sm:px-10 px-4 py-10 font-Montserrat backdrop">
+      <div className="mx-auto sm:px-10 px-4 pt-10 pb-20 font-Montserrat backdrop">
         <h2
           className="text-2xl sm:text-5xl font-bold text-center sm:mb-10 mb-5 font-Montserrat text-bounce"
           data-aos="fade-down"

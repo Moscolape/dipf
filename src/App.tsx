@@ -30,6 +30,8 @@ const JambScholarshipForm = lazy(
   () => import("./components/dipf-jamb-scholarship-exam-form")
 );
 
+const Tribute = lazy(() => import("./components/events/tribute"));
+
 const Dashboard = lazy(() => import("./components/dashboard"));
 const Applicants = lazy(() => import("./components/applicants"));
 const ApplicantDetails = lazy(() => import("./components/applicant-details"));
@@ -81,6 +83,8 @@ function App() {
             <Route path="/applicants" element={<Applicants />} />
             <Route path="/applicants/:id" element={<ApplicantDetails />} />
           </Route>
+
+          <Route path="/events/a-tribute-to-a-life-of-impact-chief-anaeliaku-na-ekwulobia" element={<Tribute />}/>
 
           <Route
             path="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students"

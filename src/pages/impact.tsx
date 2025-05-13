@@ -19,7 +19,10 @@ const Impact = () => {
         />
       </main>
       <section className="py-10 backdrop">
-        <h2 className="text-2xl sm:text-5xl font-bold text-center sm:mb-10 font-Montserrat">
+        <h2
+          className="text-2xl sm:text-5xl font-bold text-center sm:mb-10 font-Montserrat"
+          data-aos="fade-up"
+        >
           Diaspora Interventions
         </h2>
         <section
