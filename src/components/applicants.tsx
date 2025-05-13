@@ -164,8 +164,8 @@ const Applicants = () => {
         )}
 
         <div className="py-3 px-2 flex items-center bg-gray-300">
-          <span className="w-[18.75%] font-bold">Name</span>
-          <span className="w-[18.75%] font-bold">Phone Number</span>
+          <span className="w-[20.5%] font-bold">Name</span>
+          <span className="w-[17%] font-bold">Phone Number</span>
           <span className="w-[18.75%] font-bold">JAMB Score</span>
           <span className="w-[18.75%] font-bold">Exam State</span>
           <span className="w-[15%] font-bold">Applied On</span>
@@ -192,10 +192,10 @@ const Applicants = () => {
                     } py-3 px-2 font-Nunito group`}
                   >
                     <div className="flex items-center justify-between w-full cursor-pointer transition-all">
-                      <span className="w-[18.75%] text-sm text-[#272525] font-normal group-hover:scale-[1.02]">
+                      <span className="w-[20.5%] text-sm text-[#272525] font-normal group-hover:scale-[1.02]">
                         {applicant.name}
                       </span>
-                      <span className="w-[18.75%] text-sm font-normal group-hover:scale-[1.02]">
+                      <span className="w-[17%] text-sm font-normal group-hover:scale-[1.02]">
                         {applicant.phone}
                       </span>
                       <span className="w-[18.75%] text-sm font-normal group-hover:scale-[1.02]">

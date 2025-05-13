@@ -8,7 +8,7 @@ const EducationalSupport = () => {
     initializeAOS();
   }, []);
 
-  const events = [
+  const initiatives = [
     {
       id: 1,
       image: js1,
@@ -39,7 +39,7 @@ const EducationalSupport = () => {
           Educational Supports
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {events.map((event, index) => (
+          {initiatives.map((initiative, index) => (
             <div
               key={index}
               className="group rounded-lg shadow transform transition-transform duration-300"
@@ -48,18 +48,18 @@ const EducationalSupport = () => {
             >
               <div className="overflow-hidden rounded-t-lg">
                 <img
-                  src={event.image}
+                  src={initiative.image}
                   alt="div-image"
                   className="sm:h-80 h-50 w-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
               <div className="p-4">
-                <h2 className="font-bold text-lg mb-2">{event.title}</h2>
+                <h2 className="font-bold text-lg mb-2">{initiative.title}</h2>
                 <p className="text-sm text-gray-700 mb-4">
-                  {event.description}
+                  {initiative.description}
                 </p>
                 <a
-                  href={event.link}
+                  href={initiative.link}
                   className="text-blue-600 hover:underline font-medium text-sm"
                 >
                   Read more

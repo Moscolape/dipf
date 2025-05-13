@@ -59,6 +59,61 @@
   font-family: 'Urbanist', sans-serif;
 }
 
+@keyframes customAni {
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 1;
+    transform: translateY(45px);
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  40% {
+    animation-timing-function: ease-in;
+    transform: translateY(24px);
+  }
+
+  65% {
+    animation-timing-function: ease-in;
+    transform: translateY(12px);
+  }
+
+  82% {
+    animation-timing-function: ease-in;
+    transform: translateY(6px);
+  }
+
+  93% {
+    animation-timing-function: ease-in;
+    transform: translateY(4px);
+  }
+
+  25%,
+  55%,
+  75%,
+  87% {
+    animation-timing-function: ease-out;
+    transform: translateY(0px);
+  }
+
+  100% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.text-bounce {
+  animation: customAni 2s ease-in-out 0s 1 normal none;
+}
+
+.filter {
+  -webkit-filter: brightness(110%) contrast(110%) grayscale(100%);
+  filter: brightness(110%) contrast(110%) grayscale(100%);
+}
+
 @keyframes moveX {
 
   0%,
@@ -76,17 +131,26 @@
 }
 
 @keyframes colorCycle {
-  0%, 100% {
-    color: black; /* red-500 */
+
+  0%,
+  100% {
+    color: black;
+    /* red-500 */
   }
+
   25% {
-    color: #b58825; /* blue-500 */
+    color: #b58825;
+    /* blue-500 */
   }
+
   50% {
-    color: #7f571c; /* green-500 */
+    color: #7f571c;
+    /* green-500 */
   }
+
   75% {
-    color: #926014; /* amber-500 */
+    color: #926014;
+    /* amber-500 */
   }
 }
 

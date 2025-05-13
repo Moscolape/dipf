@@ -72,7 +72,7 @@ export default function Footer() {
   }, []);
 
   const location = useLocation();
-  const isLoginPage = location.pathname === "/login";
+  const isLoginPage = location.pathname === "/login" || location.pathname === "/events" || location.pathname === "/about";
 
   return (
     <div

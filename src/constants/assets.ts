@@ -98,6 +98,46 @@ import kbk45 from "../assets/KOBOKO-Programme_FINAL1024_97.jpg";
 import kbk46 from "../assets/KOBOKO-Programme_FINAL1024_98.jpg";
 import kbk47 from "../assets/KOBOKO-Programme_FINAL1024_99.jpg";
 import kbk48 from "../assets/KOBOKO-Programme_FINAL1024_103.jpg";
+import tribute1 from "../assets/events/tribute1.jpg";
+import tribute2 from "../assets/events/tribute2.jpg";
+import tribute3 from "../assets/events/tribute3.jpg";
+import tribute4 from "../assets/events/tribute4.jpg";
+import tribute5 from "../assets/events/tribute5.jpg";
+import tribute6 from "../assets/events/tribute6.jpg";
+import tribute7 from "../assets/events/tribute7.jpg";
+import tribute8 from "../assets/events/tribute8.jpg";
+import tribute9 from "../assets/events/tribute9.jpg";
+import tribute10 from "../assets/events/tribute10.jpg";
+import tribute11 from "../assets/events/tribute11.jpg";
+import hospital1 from "../assets/events/hospital1.jpg";
+import hospital2 from "../assets/events/hospital2.jpg";
+import hospital3 from "../assets/events/hospital3.jpg";
+import hospital4 from "../assets/events/hospital4.jpg";
+import hospital5 from "../assets/events/hospital5.jpg";
+import hospital6 from "../assets/events/hospital6.jpg";
+import hospital7 from "../assets/events/hospital7.jpg";
+import hospital8 from "../assets/events/hospital8.jpg";
+import hospital9 from "../assets/events/hospital9.jpg";
+import hospital10 from "../assets/events/hospital10.jpg";
+import hospital11 from "../assets/events/hospital11.jpg";
+import hospital12 from "../assets/events/hospital12.jpg";
+import hospital13 from "../assets/events/hospital13.jpg";
+import agm1 from "../assets/events/agm1.jpg";
+import agm2 from "../assets/events/agm2.jpg";
+import agm3 from "../assets/events/agm3.jpg";
+import agm4 from "../assets/events/agm4.jpg";
+import agm5 from "../assets/events/agm5.jpg";
+import agm6 from "../assets/events/agm6.jpg";
+import agm7 from "../assets/events/agm7.jpg";
+import agm8 from "../assets/events/agm8.jpg";
+import agm9 from "../assets/events/agm9.jpg";
+import agm10 from "../assets/events/agm10.jpg";
+import agm11 from "../assets/events/agm11.jpg";
+import agm12 from "../assets/events/agm12.jpg";
+import teka1 from "../assets/events/teka1.png";
+import agbalanze from "../assets/events/agbalanze.png";
+import ndeli from "../assets/events/ndeli.png";
+import elevation from "../assets/events/elevation.png";
 
 
 export {
@@ -200,5 +240,45 @@ export {
   kbk6,
   kbk7,
   kbk8,
-  kbk9
+  kbk9,
+  tribute1,
+  tribute2,
+  tribute3,
+  tribute4,
+  tribute5,
+  tribute6,
+  tribute7,
+  tribute8,
+  tribute9,
+  tribute10,
+  tribute11,
+  hospital1,
+  hospital2,
+  hospital3,
+  hospital4,
+  hospital5,
+  hospital6,
+  hospital7,
+  hospital8,
+  hospital9,
+  hospital10,
+  hospital11,
+  hospital12,
+  hospital13,
+  agm1,
+  agm2,
+  agm3,
+  agm4,
+  agm5,
+  agm6,
+  agm7,
+  agm8,
+  agm9,
+  agm10,
+  agm11,
+  agm12,
+  teka1,
+  agbalanze,
+  ndeli,
+  elevation
 };
