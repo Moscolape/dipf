@@ -33,7 +33,7 @@ const Events = () => {
         "Highlights from one of Anambra’s most remarkable hospital launches!",
       description:
         "High Chief Dr. Darlington, representing the Deimperial Philanthropic Family, made a generous ₦42 million donation and was honored with a special award...",
-      link: "/events",
+      link: "/events/highlights-from-one-of-anambras-most-remarkable-hospital-launches",
     },
     {
       image: dipf8,
@@ -41,7 +41,7 @@ const Events = () => {
         "High Chief Dr. Sir Darlington Nwabunike wins The Sun Humanitarian Service Personality of the Year 2024 Award",
       description:
         "GOODWILL MESSAGE FROM DE IMPERIAL PHILANTHROPIC FAMILY With hearts full of joy and gratitude, we, the De Imperial Philanthropic Family, extend our warmest congratulations to...",
-      link: "/events",
+      link: "/events/high-chief-dr-sir-darlington-nwabunike-wins-the-sun-humanitarian-service-personality-of-the-year-2024-award",
     },
     {
       image: mendem,

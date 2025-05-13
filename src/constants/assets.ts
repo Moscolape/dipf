@@ -23,6 +23,10 @@ import dipf7 from "../assets/dipf7.jpg";
 import dipf8 from "../assets/dipf8.jpg";
 import dipf9 from "../assets/dipf9.jpg";
 import dipf10 from "../assets/dipf10.jpg";
+import dipf11 from "../assets/dipf11.jpg";
+import dipf12 from "../assets/dipf12.jpg";
+import dipf13 from "../assets/dipf13.jpg";
+import dipf14 from "../assets/dipf14.jpg";
 import svgBackground from "../assets/liquid-cheese.svg";
 import dipfamily from "../assets/dipfamily.jpg";
 import national from "../assets/National Presido.jpeg";
@@ -165,6 +169,10 @@ export {
   dipf8,
   dipf9,
   dipf10,
+  dipf11,
+  dipf12,
+  dipf13,
+  dipf14,
   svgBackground,
   dipfamily,
   national,

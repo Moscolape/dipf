@@ -31,6 +31,8 @@ const JambScholarshipForm = lazy(
 );
 
 const Tribute = lazy(() => import("./components/events/tribute"));
+const Hospital = lazy(() => import("./components/events/hospital"));
+const Personality = lazy(() => import("./components/events/personality"));
 
 const Dashboard = lazy(() => import("./components/dashboard"));
 const Applicants = lazy(() => import("./components/applicants"));
@@ -85,6 +87,8 @@ function App() {
           </Route>
 
           <Route path="/events/a-tribute-to-a-life-of-impact-chief-anaeliaku-na-ekwulobia" element={<Tribute />}/>
+          <Route path="/events/highlights-from-one-of-anambras-most-remarkable-hospital-launches" element={<Hospital />}/>
+          <Route path="/events/high-chief-dr-sir-darlington-nwabunike-wins-the-sun-humanitarian-service-personality-of-the-year-2024-award" element={<Personality />}/>
 
           <Route
             path="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students"
