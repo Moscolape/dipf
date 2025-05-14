@@ -33,6 +33,8 @@ const JambScholarshipForm = lazy(
 const Tribute = lazy(() => import("./components/events/tribute"));
 const Hospital = lazy(() => import("./components/events/hospital"));
 const Personality = lazy(() => import("./components/events/personality"));
+const Anniversary = lazy(() => import("./components/events/anniversary"));
+const Agm2023 = lazy(() => import("./components/events/agm"));
 
 const Dashboard = lazy(() => import("./components/dashboard"));
 const Applicants = lazy(() => import("./components/applicants"));
@@ -79,6 +81,7 @@ function App() {
             element={isMobile ? <MobileWarning /> : <Login />}
           />
 
+
           {/* Protect Admin Routes */}
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<Dashboard />} />
@@ -86,9 +89,28 @@ function App() {
             <Route path="/applicants/:id" element={<ApplicantDetails />} />
           </Route>
 
-          <Route path="/events/a-tribute-to-a-life-of-impact-chief-anaeliaku-na-ekwulobia" element={<Tribute />}/>
-          <Route path="/events/highlights-from-one-of-anambras-most-remarkable-hospital-launches" element={<Hospital />}/>
-          <Route path="/events/high-chief-dr-sir-darlington-nwabunike-wins-the-sun-humanitarian-service-personality-of-the-year-2024-award" element={<Personality />}/>
+
+          <Route
+            path="/events/a-tribute-to-a-life-of-impact-chief-anaeliaku-na-ekwulobia"
+            element={<Tribute />}
+          />
+          <Route
+            path="/events/highlights-from-one-of-anambras-most-remarkable-hospital-launches"
+            element={<Hospital />}
+          />
+          <Route
+            path="/events/high-chief-dr-sir-darlington-nwabunike-wins-the-sun-humanitarian-service-personality-of-the-year-2024-award"
+            element={<Personality />}
+          />
+          <Route
+            path="/events/de-imperial-philanthropic-family-showing-love-to-chief-emeka-ikes-his-20th-wedding-anniversary"
+            element={<Anniversary />}
+          />
+          <Route
+            path="/events/de-imperial-philanthropic-familys-2023-agm-event-in-pictures"
+            element={<Agm2023 />}
+          />
+
 
           <Route
             path="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students"

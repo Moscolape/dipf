@@ -204,7 +204,7 @@ const Pillars = () => {
 
       <section className="mt-6 sm:mt-10 sm:w-[90%] mx-auto font-Inter">
         <h2
-          className="text-center text-2xl sm:text-4xl font-extrabold sm:mb-6 font-Prism text-[#83787c]"
+          className="text-center text-2xl sm:text-4xl font-extrabold sm:mb-6 font-Prism text-[#83787c] text-bounce"
           data-aos="fade-down"
         >
           Meet Our Executive Members

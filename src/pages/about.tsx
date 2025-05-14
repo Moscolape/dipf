@@ -13,7 +13,7 @@ const About = () => {
       <div className="mt-18">
         <div className="bg-gradient-to-b from-[#926014] to-white py-10">
           <h2
-            className="text-center text-2xl sm:text-5xl font-bold mb-6 font-Montserrat text-white"
+            className="text-center text-2xl sm:text-5xl font-bold mb-6 font-Montserrat text-white text-bounce"
             data-aos="fade-down"
           >
             About Us

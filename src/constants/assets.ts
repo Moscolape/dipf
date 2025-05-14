@@ -138,6 +138,19 @@ import agm9 from "../assets/events/agm9.jpg";
 import agm10 from "../assets/events/agm10.jpg";
 import agm11 from "../assets/events/agm11.jpg";
 import agm12 from "../assets/events/agm12.jpg";
+import agm13 from "../assets/events/agm13.jpg";
+import agm14 from "../assets/events/agm14.jpg";
+import agm15 from "../assets/events/agm15.jpg";
+import agm16 from "../assets/events/agm16.jpg";
+import agm17 from "../assets/events/agm17.jpg";
+import agm18 from "../assets/events/agm18.jpg";
+import agm19 from "../assets/events/agm19.jpg";
+import agm20 from "../assets/events/agm20.jpg";
+import agm21 from "../assets/events/agm21.jpg";
+import agm22 from "../assets/events/agm22.jpg";
+import agm23 from "../assets/events/agm23.jpg";
+import agm24 from "../assets/events/agm24.jpg";
+import agm25 from "../assets/events/agm25.jpg";
 import teka1 from "../assets/events/teka1.png";
 import agbalanze from "../assets/events/agbalanze.png";
 import ndeli from "../assets/events/ndeli.png";
@@ -285,6 +298,19 @@ export {
   agm10,
   agm11,
   agm12,
+  agm13,
+  agm14,
+  agm15,
+  agm16,
+  agm17,
+  agm18,
+  agm19,
+  agm20,
+  agm21,
+  agm22,
+  agm23,
+  agm24,
+  agm25,
   teka1,
   agbalanze,
   ndeli,

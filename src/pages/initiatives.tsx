@@ -33,7 +33,7 @@ const EducationalSupport = () => {
     <PageWrapper>
       <div className="pt-12 px-6 max-w-6xl mx-auto font-Montserrat">
         <h1
-          className="text-2xl sm:text-5xl font-Montserrat font-bold mb-10 text-center"
+          className="text-2xl sm:text-5xl font-Montserrat font-bold mb-10 text-center text-bounce"
           data-aos="fade-down"
         >
           Educational Supports

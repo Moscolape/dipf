@@ -12,7 +12,7 @@ const Contact = () => {
     <PageWrapper>
       <div className="max-w-6xl mx-auto px-4 py-10 font-Montserrat">
         <h2
-          className="text-2xl sm:text-5xl font-bold text-center mb-10 font-Montserrat"
+          className="text-2xl sm:text-5xl font-bold text-center mb-10 font-Montserrat text-bounce"
           data-aos="fade-down"
         >
           Contact Us

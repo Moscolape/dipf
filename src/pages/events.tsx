@@ -49,13 +49,13 @@ const Events = () => {
         "De Imperial Philanthropic Family, showing love to Chief Emeka Ike’s @ his 20th WEDDING ANNIVERSARY",
       description:
         "De Imperial Philanthropic Family, led by their president High Chief Darlington Nwakaibeya Ojoto displayed “Act of love” to Chief Emeka Ike on his 20th WEDDING...",
-      link: "/events",
+      link: "/events/de-imperial-philanthropic-family-showing-love-to-chief-emeka-ikes-his-20th-wedding-anniversary",
     },
     {
       image: agm10,
       title: "De Imperial Philanthropic Family’s 2023 AGM Event in Pictures",
       description: "",
-      link: "/events",
+      link: "/events/de-imperial-philanthropic-familys-2023-agm-event-in-pictures",
     },
     {
       image: teka1,
