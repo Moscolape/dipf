@@ -1,7 +1,7 @@
 import { elevation } from "../../constants/assets";
 import PageWrapper from "../pageWrapper";
 
-const Anniversary = () => {
+const Elevation = () => {
   return (
     <PageWrapper>
       <main className="relative w-full sm:h-[60vh] h-[50vh]">
@@ -17,27 +17,23 @@ const Anniversary = () => {
           className="text-xl sm:text-3xl font-bold text-center sm:mb-5 sm:w-4xl mx-auto"
           data-aos="fade-down"
         >
-          De Imperial Philanthropic Family, showing love to Chief Emeka Ike’s @
-          his 20th WEDDING ANNIVERSARY
+          ANNUAL GENERAL MEETING 2023 – Elevation Night 2023
         </h2>
 
         <div className="max-w-4xl mx-auto sm:p-0 p-3" data-aos="fade-up">
           <p>
-            De Imperial Philanthropic Family, led by their president High Chief
-            Darlington Nwakaibeya Ojoto displayed “Act of love” to Chief Emeka
-            Ike on his 20th WEDDING ANNIVERSARY. An event that shutdown Amuwo
-            Odofin on Sunday, October 22, 2023.
+            De Imperial Philanthropic Family’s ANNUAL GENERAL MEETING and
+            Elevation Night 2023.
           </p>
-        <iframe
-          className="w-full h-96 rounded-lg shadow-md mt-10"
-          src="https://www.youtube.com/embed/al27z_-wBBE"
-          allowFullScreen
-        ></iframe>
+          <iframe
+            className="w-full h-96 rounded-lg shadow-md mt-10"
+            src="https://www.youtube.com/embed/GBEe7nw0Eak"
+            allowFullScreen
+          ></iframe>
         </div>
-
       </section>
     </PageWrapper>
   );
 };
 
-export default Anniversary;
+export default Elevation;

@@ -58,7 +58,7 @@ const Personality = () => {
 
       <section className="sm:py-10 py-5 font-Montserrat">
         <h2
-          className="text-xl sm:text-3xl font-bold text-center sm:mb-5 w-4xl mx-auto"
+          className="text-xl sm:text-3xl font-bold text-center sm:mb-5 sm:w-4xl mx-auto"
           data-aos="fade-down"
         >
           High Chief Dr. Sir Darlington Nwabunike wins The Sun Humanitarian

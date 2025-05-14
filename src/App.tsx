@@ -35,6 +35,10 @@ const Hospital = lazy(() => import("./components/events/hospital"));
 const Personality = lazy(() => import("./components/events/personality"));
 const Anniversary = lazy(() => import("./components/events/anniversary"));
 const Agm2023 = lazy(() => import("./components/events/agm"));
+const Teka = lazy(() => import("./components/events/teka"));
+const Agbalanze = lazy(() => import("./components/events/agbalanze"));
+const Ndeli = lazy(() => import("./components/events/ndeli"));
+const Elevation = lazy(() => import("./components/events/elevation"));
 
 const Dashboard = lazy(() => import("./components/dashboard"));
 const Applicants = lazy(() => import("./components/applicants"));
@@ -109,6 +113,22 @@ function App() {
           <Route
             path="/events/de-imperial-philanthropic-familys-2023-agm-event-in-pictures"
             element={<Agm2023 />}
+          />
+          <Route
+            path="/events/don-teka-appreciated-de-imperial-family-with-n30million-at-the-agm-2023"
+            element={<Teka />}
+          />
+          <Route
+            path="/events/agbalanze-onyekachukwu-and-mighty-mighty-na-umuchu-supported-chico-ezeani-with-n10million-each"
+            element={<Agbalanze />}
+          />
+          <Route
+            path="/events/ndeli-knighted-de-imperial-familys-president"
+            element={<Ndeli />}
+          />
+          <Route
+            path="/events/annual-general-meeting-2023-elevation-night-2023"
+            element={<Elevation />}
           />
 
 

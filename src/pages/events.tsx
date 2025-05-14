@@ -63,7 +63,7 @@ const Events = () => {
         "DON TEKA APPRECIATED DE IMPERIAL FAMILY WITH N30MILLION AT THE AGM 2023",
       description:
         "DON TEKA APPRECIATED DE IMPERIAL FAMILY WITH N30MILLION AT THE AGM 2023. MEGA ABBATTOIR AND NDELI PRESENTED MAGIC BOX TO DON TEKA...",
-      link: "/events",
+      link: "/events/don-teka-appreciated-de-imperial-family-with-n30million-at-the-agm-2023",
     },
     {
       image: agbalanze,
@@ -71,21 +71,21 @@ const Events = () => {
         "AGBALANZE ONYEKACHUKWU AND MIGHTY MIGHTY NA UMUCHU SUPPORTED CHICO EZEANI WITH N10MILLION EACH",
       description:
         "AGBALANZE ONYEKACHUKWU SUPPORTED CHICO EZEANI WITH N10MILLION AND APPRECIATED DE IMPERIAL FAMILY WITH $500. MIGHTY MIGHTY NA UMUCHU SUPPORTED CHICO EZEANI WITH N10MILLION...",
-      link: "/events",
+      link: "/events/agbalanze-onyekachukwu-and-mighty-mighty-na-umuchu-supported-chico-ezeani-with-n10million-each",
     },
     {
       image: ndeli,
       title: "NDELI KNIGHTED DE IMPERIAL FAMILY’s PRESIDENT",
       description:
         "NDELI KNIGHTED DE IMPERIAL FAMILY PRESIDENT, HIGH CHIEF DR. SIR DARLINGTON NWABUNIKE (OGBABALU AKU NA ANWU) AS KING OF DORIME!",
-      link: "/events",
+      link: "/events/ndeli-knighted-de-imperial-familys-president",
     },
     {
       image: elevation,
       title: "ANNUAL GENERAL MEETING 2023 – Elevation Night 2023",
       description:
         "De Imperial Philanthropic Family’s ANNUAL GENERAL MEETING and Elevation Night 2023...",
-      link: "/events",
+      link: "/events/annual-general-meeting-2023-elevation-night-2023",
     },
   ];
 
@@ -114,7 +114,9 @@ const Events = () => {
                 />
               </div>
               <div className="sm:p-4 mt-4 sm:mt-0">
-                <h2 className="font-bold text-lg mb-2">{event.title}</h2>
+                <a href={event.link}>
+                  <h2 className="font-bold text-lg mb-2">{event.title}</h2>
+                </a>
                 <p className="text-sm text-gray-500 mb-4">
                   {event.description}
                 </p>
