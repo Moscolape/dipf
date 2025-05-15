@@ -529,3 +529,10 @@
   background: #7A7A7A;
   border-radius: 5px;
 }
+
+
+@media screen and (max-width: 767px) {
+  #custom-cursor {
+    display: none;
+  }
+}
