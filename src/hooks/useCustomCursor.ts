@@ -2,6 +2,11 @@ import { useEffect } from "react";
 
 const useCustomCursor = () => {
   useEffect(() => {
+    const isTouchDevice = () =>
+      'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+    if (isTouchDevice()) return;
+
     const cursor = document.getElementById("custom-cursor");
 
     const moveCursor = (e: MouseEvent) => {
@@ -32,9 +37,7 @@ const useCustomCursor = () => {
       addPulse();
       handleDrag();
     });
-    document.addEventListener("mouseup", () => {
-      handleDragEnd();
-    });
+    document.addEventListener("mouseup", handleDragEnd);
 
     return () => {
       document.removeEventListener("mousemove", moveCursor);
