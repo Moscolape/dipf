@@ -180,7 +180,7 @@ const BeneficiariesTable2024 = () => {
 
   const Content = (
     <>
-      <div className="p-6 sm:bg-gray-100 rounded-md sm:shadow-lg max-w-6xl mx-auto font-Montserrat my-20">
+      <div className="sm:p-6 sm:bg-gray-100 rounded-md sm:shadow-lg sm:max-w-6xl mx-auto font-Montserrat my-20">
         <h2
           className="sm:text-3xl text-xl font-bold mb-4 text-center"
           data-aos="fade-left"
