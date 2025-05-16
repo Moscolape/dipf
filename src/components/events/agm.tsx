@@ -89,7 +89,7 @@ const Agm2023 = () => {
                 <img
                   src={imgSrc}
                   loading="lazy"
-                  alt={`Tribute image ${index + 1}`}
+                  alt={`Agm image ${index + 1}`}
                   onClick={() => openModal(imgSrc)}
                   className="w-full h-full object-cover hover:scale-125 cursor-pointer transition-transform duration-300"
                 />

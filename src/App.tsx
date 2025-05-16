@@ -39,6 +39,7 @@ const Teka = lazy(() => import("./components/events/teka"));
 const Agbalanze = lazy(() => import("./components/events/agbalanze"));
 const Ndeli = lazy(() => import("./components/events/ndeli"));
 const Elevation = lazy(() => import("./components/events/elevation"));
+const Jamb = lazy(() => import("./components/events/jamb"));
 
 const Dashboard = lazy(() => import("./components/dashboard"));
 const Applicants = lazy(() => import("./components/applicants"));
@@ -129,6 +130,10 @@ function App() {
           <Route
             path="/events/annual-general-meeting-2023-elevation-night-2023"
             element={<Elevation />}
+          />
+          <Route
+            path="/events/tertiary-education-support-funds-to-top-performers-in-jamb-2025"
+            element={<Jamb />}
           />
 
 

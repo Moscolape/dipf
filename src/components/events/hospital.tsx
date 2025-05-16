@@ -83,7 +83,7 @@ const Hospital = () => {
                 <img
                   src={imgSrc}
                   loading="lazy"
-                  alt={`Tribute image ${index + 1}`}
+                  alt={`Hospital image ${index + 1}`}
                   onClick={() => openModal(imgSrc)}
                   className="w-full h-full object-cover hover:scale-125 cursor-pointer transition-transform duration-300"
                 />

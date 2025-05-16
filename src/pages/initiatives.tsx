@@ -1,7 +1,7 @@
 import PageWrapper from "../components/pageWrapper";
 import { useEffect } from "react";
 import initializeAOS from "../utils/aos-init";
-import { jambite, js1 } from "../constants/assets";
+import { jamb2, js1 } from "../constants/assets";
 
 const EducationalSupport = () => {
   useEffect(() => {
@@ -20,7 +20,7 @@ const EducationalSupport = () => {
     },
     {
       id: 2,
-      image: jambite,
+      image: jamb2,
       title:
         "Scholarship Grant for 2025 Top JAMB Scorers from SouthEast and Nigeria at large",
       description:

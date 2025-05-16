@@ -155,6 +155,18 @@ import teka1 from "../assets/events/teka1.png";
 import agbalanze from "../assets/events/agbalanze.png";
 import ndeli from "../assets/events/ndeli.png";
 import elevation from "../assets/events/elevation.png";
+import jamb1 from "../assets/events/jamb1.jpeg";
+import jamb2 from "../assets/events/jamb2.jpeg";
+import jamb3 from "../assets/events/jamb3.jpeg";
+import jamb4 from "../assets/events/jamb4.jpeg";
+import jamb5 from "../assets/events/jamb5.jpeg";
+import jamb6 from "../assets/events/jamb6.jpeg";
+import jamb7 from "../assets/events/jamb7.jpeg";
+import jamb8 from "../assets/events/jamb8.jpeg";
+import jamb9 from "../assets/events/jamb9.jpeg";
+import jamb10 from "../assets/events/jamb10.jpeg";
+import jamb11 from "../assets/events/jamb11.jpeg";
+import jamb12 from "../assets/events/jamb12.jpeg";
 
 
 export {
@@ -314,5 +326,17 @@ export {
   teka1,
   agbalanze,
   ndeli,
-  elevation
+  elevation,
+  jamb1,
+  jamb2,
+  jamb3,
+  jamb4,
+  jamb5,
+  jamb6,
+  jamb7,
+  jamb8,
+  jamb9,
+  jamb10,
+  jamb11,
+  jamb12
 };

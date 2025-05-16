@@ -7,6 +7,7 @@ import {
   dipf8,
   elevation,
   hospital3,
+  jamb1,
   mendem,
   ndeli,
   teka1,
@@ -20,6 +21,14 @@ const Events = () => {
   }, []);
 
   const events = [
+    {
+      image: jamb1,
+      title:
+        "Scholarship Grant for 2025 Top JAMB Scorers from SouthEast and Nigeria at large",
+      description:
+        "The De Imperial Philanthropic Family (DIPF) is proud to announce the launch of the DIPF ₦50M Scholarship Grants aimed at rewarding the top JAMB performers in Nigeria...",
+      link: "/events/tertiary-education-support-funds-to-top-performers-in-jamb-2025",
+    },
     {
       image: dipf8,
       title:
