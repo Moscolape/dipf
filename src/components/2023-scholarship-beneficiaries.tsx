@@ -368,9 +368,10 @@ const BeneficiariesTable2023 = () => {
         ) : (
           <>
             <div className="overflow-x-auto">
-              <table className="sm:w-[300%] w-[500%] border-collapse border border-gray-300">
+              <table className="sm:w-[300%] w-[900%] border-collapse border border-gray-300">
                 <thead>
                   <tr className="bg-gray-300 text-left">
+                    <th className="border p-2">S/No.</th>
                     <th className="border p-2">Beneficiary Name</th>
                     <th className="border p-2">Code No</th>
                     <th className="border p-2">School</th>
@@ -398,6 +399,9 @@ const BeneficiariesTable2023 = () => {
                           index % 2 === 0 ? "bg-gray-100" : "bg-gray-200"
                         }`}
                       >
+                        <td className="border p-2">
+                          {(currentPage - 1) * 10 + index + 1}
+                        </td>
                         <td className="border p-2">
                           {beneficiary.beneficiaryName}
                         </td>
