@@ -40,11 +40,10 @@ const Login = () => {
 
   const onSubmit: SubmitHandler<LoginData> = async (data) => {
     setFormMessage(null);
-    getUsername(data.username);
-
+    
     try {
       setIsSubmitting(true);
-
+      
       const response = await fetch(
         "https://dipf-backend.onrender.com/api/v1/auth/login",
         {
@@ -53,17 +52,18 @@ const Login = () => {
           body: JSON.stringify(data),
         }
       );
-
+      
       const result = await response.json();
-
+      
       if (result.message.toLowerCase().includes("invalid")) {
         setFormMessage(result.message);
         setMessageType("error");
         return;
       }
-
+      
       if (result.message.toLowerCase().includes("successful")) {
         setFormMessage(result.message);
+        getUsername(result.username);
         login(result.token);
         setMessageType("success");
         reset();
