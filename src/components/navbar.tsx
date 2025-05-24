@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 // import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react"; 
+import { Menu, X } from "lucide-react";
 import { logo } from "../constants/assets";
 
 const links = [
@@ -10,7 +10,34 @@ const links = [
   { name: "Members", href: "/members" },
   { name: "Pillars", href: "/pillars" },
   { name: "Events", href: "/events" },
-  { name: "Scholarships", href: "/initiatives" },
+  {
+    name: "Scholarships",
+    href: "/initiatives",
+    dropdown: [
+      {
+        name: "DIPF Southeast JS1 Scholarships",
+        href: "/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students",
+        subDropdown: [
+          {
+            name: "2023 Beneficiaries",
+            href: "",
+          },
+          {
+            name: "2024 Beneficiaries",
+            href: "",
+          },
+          {
+            name: "2025 Beneficiaries",
+            href: "",
+          }
+        ],
+      },
+      {
+        name: "2025 Top JAMB Performers",
+        href: "/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-top-10-jamb-scorers-in-southeast-2025",
+      },
+    ],
+  },
   { name: "Contact Us", href: "/contact" },
 ];
 
@@ -79,19 +106,51 @@ export default function NavLinks() {
       </a>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center space-x-4 font-Montserrat">
+      <div className="hidden md:flex items-center space-x-4 font-Montserrat relative">
         {links.map((link) => (
-          <a
-            key={link.name}
-            href={link.href}
-            className={`px-4 py-2 text-h6 hover:text-[#b58825] hover:scale-110 rounded-md ${
-              currentPath.includes(link.href)
-                ? "text-[#b58825] font-bold"
-                : "font-medium"
-            } ${link.name === "Donate" ? "hidden" : "inline-block"}`}
-          >
-            {link.name}
-          </a>
+          <div key={link.name} className="relative group">
+            <a
+              href={link.href}
+              className={`px-4 py-2 text-h6 hover:text-[#b58825] hover:scale-110 rounded-md inline-block ${
+                currentPath.includes(link.href)
+                  ? "text-[#b58825] font-bold"
+                  : "font-medium"
+              }`}
+            >
+              {link.name}
+            </a>
+
+            {/* First level dropdown */}
+            {link.dropdown && (
+              <div className="absolute top-full left-0 mt-2 w-70 bg-[#b58825] text-white shadow-2xl rounded-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 transform translate-y-2 z-40">
+                {link.dropdown.map((item) => (
+                  <div key={item.name} className="relative group/submenu">
+                    <a
+                      href={item.href}
+                      className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b58825] text-sm"
+                    >
+                      {item.name}
+                    </a>
+
+                    {/* Second level dropdown */}
+                    {item.subDropdown && (
+                      <div className="absolute left-full top-0 ml-1 w-48 bg-white text-[#b58825] shadow-xl rounded-lg opacity-0 group-hover/submenu:opacity-100 group-hover/submenu:translate-x-0 transition-all duration-300 transform translate-x-2 z-50">
+                        {item.subDropdown.map((subItem) => (
+                          <a
+                            key={subItem.name}
+                            href={subItem.href}
+                            className="block px-4 py-2 hover:bg-gray-200 hover:text-[#b58825]  text-sm"
+                          >
+                            {subItem.name}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         ))}
       </div>
 
