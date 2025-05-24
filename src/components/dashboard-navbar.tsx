@@ -7,7 +7,7 @@ export default function TopNavbar() {
   const location = useLocation();
   const [showModal, setShowModal] = useState(false);
 
-  const title = location.pathname.includes('dashboard') ? 'Dashboard' : 'Applicants';
+  const title = location.pathname.includes('dashboard') ? 'Dashboard' : location.pathname.includes('applicants') ? 'Applicants' : 'DIPF SouthEast JS1 Scholarship Beneficiaries';
 
   return (
     <>

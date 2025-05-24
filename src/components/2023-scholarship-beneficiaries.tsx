@@ -179,358 +179,352 @@ const BeneficiariesTable2023 = () => {
   };
 
   const Content = (
-    <>
-      <div className="sm:p-6 sm:bg-gray-100 rounded-md sm:shadow-lg sm:max-w-6xl mx-auto font-Montserrat my-20">
-        <h2
-          className="sm:text-3xl text-xl font-bold mb-4 text-center"
-          data-aos="fade-left"
-        >
-          2023 Scholarship Beneficiaries
-        </h2>
+    <div className="sm:p-6 sm:bg-gray-100 rounded-md sm:shadow-lg sm:max-w-6xl mx-auto font-Montserrat my-20">
+      <h2
+        className="sm:text-3xl text-xl font-bold mb-4 text-center"
+        data-aos="fade-left"
+      >
+        2023 Scholarship Beneficiaries
+      </h2>
 
-        {editingBeneficiary && (
-          <div className="w-screen h-screen bg-[#00000090] flex items-center justify-center z-50 fixed top-0 left-0">
-            <div className="bg-white sm:w-[65%] w-4/5 m-auto rounded-lg p-6 animate-fadeDownFast max-h-[90vh] overflow-y-auto">
-              <h3 className="text-2xl font-bold mb-4 text-center">
-                Edit Beneficiary
-              </h3>
+      {editingBeneficiary && (
+        <div className="w-screen h-screen bg-[#00000090] flex items-center justify-center z-50 fixed top-0 left-0">
+          <div className="bg-white sm:w-[65%] w-4/5 m-auto rounded-lg p-6 animate-fadeDownFast max-h-[90vh] overflow-y-auto">
+            <h3 className="text-2xl font-bold mb-4 text-center">
+              Edit Beneficiary
+            </h3>
 
-              <div className="space-y-4">
-                <label>Beneficiary Name</label>
-                <input
-                  type="text"
-                  name="beneficiaryName"
-                  value={updatedData.beneficiaryName || ""}
-                  onChange={handleInputChange}
-                  className="w-full p-2 border rounded-lg"
-                />
+            <div className="space-y-4">
+              <label>Beneficiary Name</label>
+              <input
+                type="text"
+                name="beneficiaryName"
+                value={updatedData.beneficiaryName || ""}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded-lg"
+              />
 
-                <label>Code No</label>
-                <input
-                  type="text"
-                  name="codeNo"
-                  value={updatedData.codeNo || ""}
-                  onChange={handleInputChange}
-                  className="w-full p-2 border rounded-lg"
-                />
+              <label>Code No</label>
+              <input
+                type="text"
+                name="codeNo"
+                value={updatedData.codeNo || ""}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded-lg"
+              />
 
-                <label>School</label>
-                <input
-                  type="text"
-                  name="school"
-                  value={updatedData.school || ""}
-                  onChange={handleInputChange}
-                  className="w-full p-2 border rounded-lg"
-                />
+              <label>School</label>
+              <input
+                type="text"
+                name="school"
+                value={updatedData.school || ""}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded-lg"
+              />
 
-                <label>Parent Phone</label>
-                <input
-                  type="text"
-                  name="parentPhone"
-                  value={updatedData.parentPhone || ""}
-                  onChange={handleInputChange}
-                  className="w-full p-2 border rounded-lg"
-                />
+              <label>Parent Phone</label>
+              <input
+                type="text"
+                name="parentPhone"
+                value={updatedData.parentPhone || ""}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded-lg"
+              />
 
-                <label>Account Name</label>
-                <input
-                  type="text"
-                  name="accountName"
-                  value={updatedData.accountName || ""}
-                  onChange={handleInputChange}
-                  className="w-full p-2 border rounded-lg"
-                />
+              <label>Account Name</label>
+              <input
+                type="text"
+                name="accountName"
+                value={updatedData.accountName || ""}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded-lg"
+              />
 
-                <label>Account No</label>
-                <input
-                  type="text"
-                  name="accountNo"
-                  value={updatedData.accountNo || ""}
-                  onChange={handleInputChange}
-                  className="w-full p-2 border rounded-lg"
-                />
+              <label>Account No</label>
+              <input
+                type="text"
+                name="accountNo"
+                value={updatedData.accountNo || ""}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded-lg"
+              />
 
-                <label>Bank</label>
-                <input
-                  type="text"
-                  name="bank"
-                  value={updatedData.bank || ""}
-                  onChange={handleInputChange}
-                  className="w-full p-2 border rounded-lg"
-                />
+              <label>Bank</label>
+              <input
+                type="text"
+                name="bank"
+                value={updatedData.bank || ""}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded-lg"
+              />
 
-                {/* Payment Status Fields */}
-                {[
-                  "js1",
-                  "js2",
-                  "js3",
-                  "juniorWAEC",
-                  "ss1",
-                  "ss2",
-                  "ss3",
-                  "seniorWAEC",
-                ].map((level) => (
-                  <div key={level}>
-                    <label>{level.toUpperCase()} Payment</label>
-                    <select
-                      name={level}
-                      value={updatedData[level as keyof Beneficiary] || ""}
-                      onChange={handleInputChange}
-                      className="w-full p-2 border rounded-lg"
-                    >
-                      <option value="">Select Status</option>
-                      <option value="Paid">Paid</option>
-                      <option value="Not Paid">Not Paid</option>
-                    </select>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex justify-between mt-6">
-                <button
-                  onClick={handleUpdate}
-                  className="px-4 py-2 bg-green-500 text-white rounded-lg"
-                >
-                  {updating ? "Saving..." : "Save"}
-                </button>
-                <button
-                  onClick={() => setEditingBeneficiary(null)}
-                  className="px-4 py-2 bg-red-500 text-white rounded-lg"
-                >
-                  Cancel
-                </button>
-              </div>
+              {/* Payment Status Fields */}
+              {[
+                "js1",
+                "js2",
+                "js3",
+                "juniorWAEC",
+                "ss1",
+                "ss2",
+                "ss3",
+                "seniorWAEC",
+              ].map((level) => (
+                <div key={level}>
+                  <label>{level.toUpperCase()} Payment</label>
+                  <select
+                    name={level}
+                    value={updatedData[level as keyof Beneficiary] || ""}
+                    onChange={handleInputChange}
+                    className="w-full p-2 border rounded-lg"
+                  >
+                    <option value="">Select Status</option>
+                    <option value="Paid">Paid</option>
+                    <option value="Not Paid">Not Paid</option>
+                  </select>
+                </div>
+              ))}
             </div>
-          </div>
-        )}
 
-        {/* Filters Section */}
-        <div className="sm:flex flex-wrap gap-4 justify-between items-center mb-6 w-full">
-          {/* Search by Beneficiary Code */}
-          <div className="sm:flex flex-wrap justify-center items-center sm:gap-4">
-            <input
-              type="text"
-              value={searchCode}
-              onChange={(e) => setSearchCode(e.target.value)}
-              placeholder="Enter Code e.g DIPF/ANAMBRA/2023/021"
-              className="p-2 border rounded-lg sm:w-[26rem] w-full"
-            />
-            <div className="sm:my-0 my-5 flex justify-center">
+            <div className="flex justify-between mt-6">
               <button
-                onClick={fetchBeneficiaryByCode}
-                className="px-4 py-2 bg-[#b58825] text-white rounded-lg hover:bg-[#7f571c] mr-3"
+                onClick={handleUpdate}
+                className="px-4 py-2 bg-green-500 text-white rounded-lg"
               >
-                Search
+                {updating ? "Saving..." : "Save"}
               </button>
               <button
-                onClick={clearSearch}
-                className="px-4 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500"
+                onClick={() => setEditingBeneficiary(null)}
+                className="px-4 py-2 bg-red-500 text-white rounded-lg"
               >
-                Clear
+                Cancel
               </button>
             </div>
           </div>
+        </div>
+      )}
 
-          <div className="flex flex-wrap justify-center items-center sm:gap-4">
-            {/* State Filter */}
-            <select
-              className="p-2 border rounded-lg mr-3"
-              value={selectedState}
-              onChange={(e) => setSelectedState(e.target.value)}
+      {/* Filters Section */}
+      <div className="sm:flex flex-wrap gap-4 justify-between items-center mb-6 w-full">
+        {/* Search by Beneficiary Code */}
+        <div className="sm:flex flex-wrap justify-center items-center sm:gap-4">
+          <input
+            type="text"
+            value={searchCode}
+            onChange={(e) => setSearchCode(e.target.value)}
+            placeholder="Enter Code e.g DIPF/ANAMBRA/2023/021"
+            className="p-2 border rounded-lg sm:w-[26rem] w-full"
+          />
+          <div className="sm:my-0 my-5 flex justify-center">
+            <button
+              onClick={fetchBeneficiaryByCode}
+              className="px-4 py-2 bg-[#b58825] text-white rounded-lg hover:bg-[#7f571c] mr-3"
             >
-              <option value="Abia">Abia</option>
-              <option value="Anambra">Anambra</option>
-              <option value="Ebonyi">Ebonyi</option>
-              <option value="Enugu">Enugu</option>
-              <option value="Imo">Imo</option>
-            </select>
-
-            {/* Sort By Filter */}
-            <select
-              className="p-2 border rounded-lg"
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
+              Search
+            </button>
+            <button
+              onClick={clearSearch}
+              className="px-4 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500"
             >
-              <option value="">Sort By</option>
-              <option value="beneficiaryName">Beneficiary Name</option>
-              <option value="codeNo">Code No</option>
-            </select>
+              Clear
+            </button>
           </div>
         </div>
 
-        {/* Table Section */}
-        {loading ? (
-          <div className="flex items-center justify-center h-[30vh]">
-            <div className="w-8 h-8 border-4 border-[#b58825] border-t-transparent rounded-full animate-spin"></div>
-          </div>
-        ) : error ? (
-          <p className="text-center text-red-500">{error}</p>
-        ) : (
-          <>
-            <div className="overflow-x-auto">
-              <table className="sm:w-[300%] w-[900%] border-collapse border border-gray-300">
-                <thead>
-                  <tr className="bg-gray-300 text-left">
-                    <th className="border p-2">S/No.</th>
-                    <th className="border p-2">Beneficiary Name</th>
-                    <th className="border p-2">Code No</th>
-                    <th className="border p-2">School</th>
-                    <th className="border p-2">State</th>
-                    <th className="border p-2">Parent Phone</th>
-                    <th className="border p-2">Account Name</th>
-                    <th className="border p-2">Account No</th>
-                    <th className="border p-2">Bank</th>
-                    <th className="border p-2">JS1</th>
-                    <th className="border p-2">JS2</th>
-                    <th className="border p-2">JS3</th>
-                    <th className="border p-2">Junior WAEC</th>
-                    <th className="border p-2">SS1</th>
-                    <th className="border p-2">SS2</th>
-                    <th className="border p-2">SS3</th>
-                    <th className="border p-2">Senior WAEC</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {beneficiaries.length > 0 ? (
-                    beneficiaries.map((beneficiary, index) => (
-                      <tr
-                        key={index}
-                        className={`text-sm border ${
-                          index % 2 === 0 ? "bg-gray-100" : "bg-gray-200"
+        <div className="flex flex-wrap justify-center items-center sm:gap-4">
+          {/* State Filter */}
+          <select
+            className="p-2 border rounded-lg mr-3"
+            value={selectedState}
+            onChange={(e) => setSelectedState(e.target.value)}
+          >
+            <option value="Abia">Abia</option>
+            <option value="Anambra">Anambra</option>
+            <option value="Ebonyi">Ebonyi</option>
+            <option value="Enugu">Enugu</option>
+            <option value="Imo">Imo</option>
+          </select>
+
+          {/* Sort By Filter */}
+          <select
+            className="p-2 border rounded-lg"
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+          >
+            <option value="">Sort By</option>
+            <option value="beneficiaryName">Beneficiary Name</option>
+            <option value="codeNo">Code No</option>
+          </select>
+        </div>
+      </div>
+
+      {/* Table Section */}
+      {loading ? (
+        <div className="flex items-center justify-center h-[30vh]">
+          <div className="w-8 h-8 border-4 border-[#b58825] border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      ) : error ? (
+        <p className="text-center text-red-500">{error}</p>
+      ) : (
+        <>
+          <div className="overflow-x-auto">
+            <table className="sm:w-[300%] w-[900%] border-collapse border border-gray-300">
+              <thead>
+                <tr className="bg-gray-300 text-left">
+                  <th className="border p-2">S/No.</th>
+                  <th className="border p-2">Beneficiary Name</th>
+                  <th className="border p-2">Code No</th>
+                  <th className="border p-2">School</th>
+                  <th className="border p-2">State</th>
+                  <th className="border p-2">Parent Phone</th>
+                  <th className="border p-2">Account Name</th>
+                  <th className="border p-2">Account No</th>
+                  <th className="border p-2">Bank</th>
+                  <th className="border p-2">JS1</th>
+                  <th className="border p-2">JS2</th>
+                  <th className="border p-2">JS3</th>
+                  <th className="border p-2">Junior WAEC</th>
+                  <th className="border p-2">SS1</th>
+                  <th className="border p-2">SS2</th>
+                  <th className="border p-2">SS3</th>
+                  <th className="border p-2">Senior WAEC</th>
+                </tr>
+              </thead>
+              <tbody>
+                {beneficiaries.length > 0 ? (
+                  beneficiaries.map((beneficiary, index) => (
+                    <tr
+                      key={index}
+                      className={`text-sm border ${
+                        index % 2 === 0 ? "bg-gray-100" : "bg-gray-200"
+                      }`}
+                    >
+                      <td className="border p-2">
+                        {(currentPage - 1) * 10 + index + 1}
+                      </td>
+                      <td className="border p-2">
+                        {beneficiary.beneficiaryName}
+                      </td>
+                      <td className="border p-2">{beneficiary.codeNo}</td>
+                      <td className="border p-2">{beneficiary.school}</td>
+                      <td className="border p-2">{beneficiary.state}</td>
+                      <td className="border p-2">{beneficiary.parentPhone}</td>
+                      <td className="border p-2">{beneficiary.accountName}</td>
+                      <td className="border p-2">{beneficiary.accountNo}</td>
+                      <td className="border p-2">{beneficiary.bank}</td>
+                      <td
+                        className={`border-black border p-2 ${
+                          beneficiary.js1 === "Not Paid"
+                            ? "text-red-500"
+                            : "text-green-500"
                         }`}
                       >
-                        <td className="border p-2">
-                          {(currentPage - 1) * 10 + index + 1}
-                        </td>
-                        <td className="border p-2">
-                          {beneficiary.beneficiaryName}
-                        </td>
-                        <td className="border p-2">{beneficiary.codeNo}</td>
-                        <td className="border p-2">{beneficiary.school}</td>
-                        <td className="border p-2">{beneficiary.state}</td>
-                        <td className="border p-2">
-                          {beneficiary.parentPhone}
-                        </td>
-                        <td className="border p-2">
-                          {beneficiary.accountName}
-                        </td>
-                        <td className="border p-2">{beneficiary.accountNo}</td>
-                        <td className="border p-2">{beneficiary.bank}</td>
-                        <td
-                          className={`border-black border p-2 ${
-                            beneficiary.js1 === "Not Paid"
-                              ? "text-red-500"
-                              : "text-green-500"
-                          }`}
-                        >
-                          {beneficiary.js1}
-                        </td>
-                        <td
-                          className={`border-black border p-2 ${
-                            beneficiary.js2 === "Not Paid"
-                              ? "text-red-500"
-                              : "text-green-500"
-                          }`}
-                        >
-                          {beneficiary.js2}
-                        </td>
-                        <td
-                          className={`border-black border p-2 ${
-                            beneficiary.js3 === "Not Paid"
-                              ? "text-red-500"
-                              : "text-green-500"
-                          }`}
-                        >
-                          {beneficiary.js3}
-                        </td>
-                        <td
-                          className={`border-black border p-2 ${
-                            beneficiary.juniorWAEC === "Not Paid"
-                              ? "text-red-500"
-                              : "text-green-500"
-                          }`}
-                        >
-                          {beneficiary.juniorWAEC}
-                        </td>
-                        <td
-                          className={`border-black border p-2 ${
-                            beneficiary.ss1 === "Not Paid"
-                              ? "text-red-500"
-                              : "text-green-500"
-                          }`}
-                        >
-                          {beneficiary.ss1}
-                        </td>
-                        <td
-                          className={`border-black border p-2 ${
-                            beneficiary.ss2 === "Not Paid"
-                              ? "text-red-500"
-                              : "text-green-500"
-                          }`}
-                        >
-                          {beneficiary.ss2}
-                        </td>
-                        <td
-                          className={`border-black border p-2 ${
-                            beneficiary.ss3 === "Not Paid"
-                              ? "text-red-500"
-                              : "text-green-500"
-                          }`}
-                        >
-                          {beneficiary.ss3}
-                        </td>
-                        <td
-                          className={`border-black border p-2 ${
-                            beneficiary.seniorWAEC === "Not Paid"
-                              ? "text-red-500"
-                              : "text-green-500"
-                          }`}
-                        >
-                          {beneficiary.seniorWAEC}
-                        </td>
-                      </tr>
-                    ))
-                  ) : (
-                    <tr>
-                      <td colSpan={9} className="text-center text-gray-500 p-4">
-                        No beneficiaries found.
+                        {beneficiary.js1}
+                      </td>
+                      <td
+                        className={`border-black border p-2 ${
+                          beneficiary.js2 === "Not Paid"
+                            ? "text-red-500"
+                            : "text-green-500"
+                        }`}
+                      >
+                        {beneficiary.js2}
+                      </td>
+                      <td
+                        className={`border-black border p-2 ${
+                          beneficiary.js3 === "Not Paid"
+                            ? "text-red-500"
+                            : "text-green-500"
+                        }`}
+                      >
+                        {beneficiary.js3}
+                      </td>
+                      <td
+                        className={`border-black border p-2 ${
+                          beneficiary.juniorWAEC === "Not Paid"
+                            ? "text-red-500"
+                            : "text-green-500"
+                        }`}
+                      >
+                        {beneficiary.juniorWAEC}
+                      </td>
+                      <td
+                        className={`border-black border p-2 ${
+                          beneficiary.ss1 === "Not Paid"
+                            ? "text-red-500"
+                            : "text-green-500"
+                        }`}
+                      >
+                        {beneficiary.ss1}
+                      </td>
+                      <td
+                        className={`border-black border p-2 ${
+                          beneficiary.ss2 === "Not Paid"
+                            ? "text-red-500"
+                            : "text-green-500"
+                        }`}
+                      >
+                        {beneficiary.ss2}
+                      </td>
+                      <td
+                        className={`border-black border p-2 ${
+                          beneficiary.ss3 === "Not Paid"
+                            ? "text-red-500"
+                            : "text-green-500"
+                        }`}
+                      >
+                        {beneficiary.ss3}
+                      </td>
+                      <td
+                        className={`border-black border p-2 ${
+                          beneficiary.seniorWAEC === "Not Paid"
+                            ? "text-red-500"
+                            : "text-green-500"
+                        }`}
+                      >
+                        {beneficiary.seniorWAEC}
                       </td>
                     </tr>
-                  )}
-                </tbody>
-              </table>
-            </div>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan={9} className="text-center text-gray-500 p-4">
+                      No beneficiaries found.
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
 
-            {/* Pagination Controls */}
-            <div className="flex justify-center items-center gap-4 mt-6">
-              <button
-                className={`px-4 py-2 bg-[#7f571c] text-white rounded-lg cursor-pointer ${
-                  currentPage === 1 && "opacity-50 cursor-not-allowed"
-                }`}
-                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-                disabled={currentPage === 1}
-              >
-                Previous
-              </button>
+          {/* Pagination Controls */}
+          <div className="flex justify-center items-center gap-4 mt-6">
+            <button
+              className={`px-4 py-2 bg-[#7f571c] text-white rounded-lg cursor-pointer ${
+                currentPage === 1 && "opacity-50 cursor-not-allowed"
+              }`}
+              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+            >
+              Previous
+            </button>
 
-              <span className="text-lg">{`Page ${currentPage} of ${totalPages}`}</span>
+            <span className="text-lg">{`Page ${currentPage} of ${totalPages}`}</span>
 
-              <button
-                className={`px-4 py-2 bg-[#744a15] text-white rounded-lg cursor-pointer ${
-                  currentPage === totalPages && "opacity-50 cursor-not-allowed"
-                }`}
-                onClick={() =>
-                  setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-                }
-                disabled={currentPage === totalPages}
-              >
-                Next
-              </button>
-            </div>
-          </>
-        )}
-      </div>
-    </>
+            <button
+              className={`px-4 py-2 bg-[#744a15] text-white rounded-lg cursor-pointer ${
+                currentPage === totalPages && "opacity-50 cursor-not-allowed"
+              }`}
+              onClick={() =>
+                setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+              }
+              disabled={currentPage === totalPages}
+            >
+              Next
+            </button>
+          </div>
+        </>
+      )}
+    </div>
   );
 
   return Content;

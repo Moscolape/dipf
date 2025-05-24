@@ -10,7 +10,7 @@ const links = [
   { name: "Members", href: "/members" },
   { name: "Pillars", href: "/pillars" },
   { name: "Events", href: "/events" },
-  { name: "Initiatives", href: "/initiatives" },
+  { name: "Scholarships", href: "/initiatives" },
   { name: "Contact Us", href: "/contact" },
 ];
 

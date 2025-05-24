@@ -1,24 +1,74 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { apply1, apply2, dash1, dash2, logo2 } from "../constants/assets";
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
+
+type SidebarLink = {
+  text: string;
+  icon: string;
+  activeIcon: string;
+  urls: string[];
+};
 
 const Sidebar = () => {
   const location = useLocation();
+  const [links, setLinks] = useState<SidebarLink[]>([]);
 
-  const sidebarLinks = [
-    {
-      text: "Dashboard",
-      icon: dash1,
-      activeIcon: dash2,
-      urls: ["/dashboard"],
-    },
-    {
-      text: "Applicants",
-      icon: apply1,
-      activeIcon: apply2,
-      urls: ["/applicants"],
-    },
-  ];
+  useEffect(() => {
+    const username = localStorage.getItem("username");
+
+    if (!username) return;
+
+    const newLinks: SidebarLink[] =
+      username === "deimperial"
+        ? [
+            {
+              text: "2023 Beneficiaries",
+              icon: apply1,
+              activeIcon: apply2,
+              urls: ["/2023-southeast-dipf-scholarships-for-js1-students"],
+            },
+            {
+              text: "2024 Beneficiaries",
+              icon: apply1,
+              activeIcon: apply2,
+              urls: ["/2024-southeast-dipf-scholarships-for-js1-students"],
+            },
+            {
+              text: "2025 Beneficiaries",
+              icon: apply1,
+              activeIcon: apply2,
+              urls: ["/2025-southeast-dipf-scholarships-for-js1-students"],
+            },
+            {
+              text: "2026 Beneficiaries",
+              icon: apply1,
+              activeIcon: apply2,
+              urls: ["/2026-southeast-dipf-scholarships-for-js1-students"],
+            },
+            {
+              text: "2027 Beneficiaries",
+              icon: apply1,
+              activeIcon: apply2,
+              urls: ["/2027-southeast-dipf-scholarships-for-js1-students"],
+            },
+          ]
+        : [
+            {
+              text: "Dashboard",
+              icon: dash1,
+              activeIcon: dash2,
+              urls: ["/dashboard"],
+            },
+            {
+              text: "Applicants",
+              icon: apply1,
+              activeIcon: apply2,
+              urls: ["/applicants"],
+            },
+          ];
+
+    setLinks(newLinks);
+  }, []);
 
   const isActive = useCallback(
     (...to: string[]) => {
@@ -39,7 +89,7 @@ const Sidebar = () => {
           <p className="text-lg font-semibold">DIPF - ADMIN MANAGER</p>
         </div>
         <ul className="space-y-2">
-          {sidebarLinks.map((link) => {
+          {links.map((link) => {
             return (
               <li key={link.text}>
                 <NavLink

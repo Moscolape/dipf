@@ -20,7 +20,7 @@ const Login = () => {
     null
   );
 
-  const { login } = useAuth();
+  const { login, getUsername } = useAuth();
 
   const {
     register,
@@ -40,10 +40,11 @@ const Login = () => {
 
   const onSubmit: SubmitHandler<LoginData> = async (data) => {
     setFormMessage(null);
+    getUsername(data.username);
+
     try {
       setIsSubmitting(true);
 
-      //   const response = await fetch("http://localhost:8080/api/v1/auth/login", {
       const response = await fetch(
         "https://dipf-backend.onrender.com/api/v1/auth/login",
         {
@@ -67,9 +68,12 @@ const Login = () => {
         setMessageType("success");
         reset();
 
-        // delay before navigation
         setTimeout(() => {
-          navigate("/dashboard");
+          if (data.username === "deimperial") {
+            navigate("/2023-southeast-dipf-scholarships-for-js1-students");
+          } else {
+            navigate("/dashboard");
+          }
         }, 2000);
 
         return;

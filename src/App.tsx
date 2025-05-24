@@ -11,7 +11,7 @@ import MobileWarning from "./components/mobile";
 const Home = lazy(() => import("./pages/home"));
 const About = lazy(() => import("./pages/about"));
 const Events = lazy(() => import("./pages/events"));
-const Initiatives = lazy(() => import("./pages/initiatives"));
+const Scholarships = lazy(() => import("./pages/scholarships"));
 const Contact = lazy(() => import("./pages/contact"));
 const Impact = lazy(() => import("./pages/impact"));
 const Members = lazy(() => import("./pages/members"));
@@ -44,6 +44,11 @@ const Jamb = lazy(() => import("./components/events/jamb"));
 const Dashboard = lazy(() => import("./components/dashboard"));
 const Applicants = lazy(() => import("./components/applicants"));
 const ApplicantDetails = lazy(() => import("./components/applicant-details"));
+const DIPF2023 = lazy(() => import("./components/dipf-2023"));
+const DIPF2024 = lazy(() => import("./components/dipf-2024"));
+const DIPF2025 = lazy(() => import("./components/dipf-2025"));
+const DIPF2026 = lazy(() => import("./components/dipf-2026"));
+const DIPF2027 = lazy(() => import("./components/dipf-2027"));
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -75,7 +80,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/initiatives" element={<Initiatives />} />
+          <Route path="/initiatives" element={<Scholarships />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/impact" element={<Impact />} />
           <Route path="/members" element={<Members />} />
@@ -86,14 +91,32 @@ function App() {
             element={isMobile ? <MobileWarning /> : <Login />}
           />
 
-
           {/* Protect Admin Routes */}
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/applicants" element={<Applicants />} />
             <Route path="/applicants/:id" element={<ApplicantDetails />} />
+            <Route
+              path="/2023-southeast-dipf-scholarships-for-js1-students"
+              element={<DIPF2023 />}
+            />
+            <Route
+              path="/2024-southeast-dipf-scholarships-for-js1-students"
+              element={<DIPF2024 />}
+            />
+            <Route
+              path="/2025-southeast-dipf-scholarships-for-js1-students"
+              element={<DIPF2025 />}
+            />
+            <Route
+              path="/2026-southeast-dipf-scholarships-for-js1-students"
+              element={<DIPF2026 />}
+            />
+            <Route
+              path="/2027-southeast-dipf-scholarships-for-js1-students"
+              element={<DIPF2027 />}
+            />
           </Route>
-
 
           <Route
             path="/events/a-tribute-to-a-life-of-impact-chief-anaeliaku-na-ekwulobia"
@@ -135,7 +158,6 @@ function App() {
             path="/events/tertiary-education-support-funds-to-top-performers-in-jamb-2025"
             element={<Jamb />}
           />
-
 
           <Route
             path="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students"
