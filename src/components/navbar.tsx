@@ -127,7 +127,7 @@ export default function NavLinks() {
                   <div key={item.name} className="relative group/submenu">
                     <a
                       href={item.href}
-                      className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b58825] text-sm"
+                      className="block px-4 py-2 hover:bg-gray-100 hover:text-black text-sm"
                     >
                       {item.name}
                     </a>
@@ -139,7 +139,7 @@ export default function NavLinks() {
                           <a
                             key={subItem.name}
                             href={subItem.href}
-                            className="block px-4 py-2 hover:bg-gray-200 hover:text-[#b58825]  text-sm"
+                            className="block px-4 py-2 hover:bg-gray-200 hover:text-black  text-sm"
                           >
                             {subItem.name}
                           </a>
