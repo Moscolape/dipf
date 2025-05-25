@@ -164,11 +164,11 @@ function App() {
             element={<ScholarshipBeneficiaries />}
           />
           <Route
-            path="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-top-10-jamb-scorers-in-southeast-2025"
+            path="/initiatives/de-imperial-philanthropic-family-scholarship-for-2025-top-jamb-performers"
             element={<JambScorersBeneficiaries />}
           />
           <Route
-            path="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-top-10-jamb-scorers-in-southeast-2025/register"
+            path="/initiatives/de-imperial-philanthropic-family-scholarship-for-2025-top-jamb-performers/register"
             element={<JambScholarshipForm />}
           />
         </Routes>
