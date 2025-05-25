@@ -25,7 +25,7 @@ const EducationalSupport = () => {
         "Scholarship Grant for 2025 Top JAMB Scorers from SouthEast and Nigeria at large",
       description:
         "This initiative is designed to encourage academic excellence among the youth in Igbo land in particular and Nigeria in general, inspiring prospective candidates to strive for exceptional performance in the upcoming 2025 JAMB examinations...",
-      link: "/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-top-10-jamb-scorers-in-southeast-2025",
+      link: "/initiatives/de-imperial-philanthropic-family-scholarship-for-2025-top-jamb-performers",
     },
   ];
 

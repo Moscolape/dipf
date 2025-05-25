@@ -248,7 +248,7 @@ const Home = () => {
             </p>
             <br />
             <button className="px-6 py-3 bg-red-600 text-white hover:bg-black hover:font-medium transition-all cursor-pointer">
-              <a href="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-top-10-jamb-scorers-in-southeast-2025/register">
+              <a href="/initiatives/de-imperial-philanthropic-family-scholarship-for-2025-top-jamb-performers/register">
                 Register Now
               </a>
             </button>
@@ -296,7 +296,7 @@ const Home = () => {
                   localStorage.setItem("hasSeenScholarshipModal", "true")
                 }
               >
-                <a href="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-top-10-jamb-scorers-in-southeast-2025/register">
+                <a href="/initiatives/de-imperial-philanthropic-family-scholarship-for-2025-top-jamb-performers/register">
                   Register Now
                 </a>
               </button>

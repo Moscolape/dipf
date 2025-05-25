@@ -70,7 +70,7 @@ const TopJambScorersBeneficiaries = () => {
           <p>
             If you meet the requirements in any of the categories above, kindly proceed to fill this{" "}
             <a
-              href="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-top-10-jamb-scorers-in-southeast-2025/register"
+              href="/initiatives/de-imperial-philanthropic-family-scholarship-for-2025-top-jamb-performers/register"
               className="text-blue-600 hover:underline font-medium"
             >
               registration form
