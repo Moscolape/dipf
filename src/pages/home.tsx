@@ -239,7 +239,7 @@ const Home = () => {
             <p>
               For more information, check{" "}
               <a
-                href="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-top-10-jamb-scorers-in-southeast-2025/"
+                href="/initiatives/de-imperial-philanthropic-family-scholarship-for-2025-top-jamb-performers"
                 className="text-blue-600 hover:underline font-medium"
               >
                 this page
