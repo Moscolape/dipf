@@ -167,7 +167,23 @@ import jamb9 from "../assets/events/jamb9.jpeg";
 import jamb10 from "../assets/events/jamb10.jpeg";
 import jamb11 from "../assets/events/jamb11.jpeg";
 import jamb12 from "../assets/events/jamb12.jpeg";
-
+import maiden1 from "../assets/scholarships/10dipf2023.jpeg";
+import maiden2 from "../assets/scholarships/11dipf2023.jpeg";
+import maiden3 from "../assets/scholarships/12dipf2023.jpeg";
+import maiden4 from "../assets/scholarships/13dipf2023.jpeg";
+import maiden5 from "../assets/scholarships/14dipf2023.jpeg";
+import maiden6 from "../assets/scholarships/15dipf2023.jpeg";
+import maiden7 from "../assets/scholarships/16dipf2023.jpeg";
+import maiden8 from "../assets/scholarships/17dipf2023.jpeg";
+import maiden9 from "../assets/scholarships/1dipf2023.jpeg";
+import maiden10 from "../assets/scholarships/2dipf2023.jpeg";
+import maiden11 from "../assets/scholarships/3dipf2023.jpeg";
+import maiden12 from "../assets/scholarships/4dipf2023.jpeg";
+import maiden13 from "../assets/scholarships/5dipf2023.jpeg";
+import maiden14 from "../assets/scholarships/6dipf2023.jpeg";
+import maiden15 from "../assets/scholarships/7dipf2023.jpeg";
+import maiden16 from "../assets/scholarships/8dipf2023.jpeg";
+import maiden17 from "../assets/scholarships/9dipf2023.jpeg";
 
 export {
   logo,
@@ -338,5 +354,22 @@ export {
   jamb9,
   jamb10,
   jamb11,
-  jamb12
+  jamb12,
+  maiden1,
+  maiden2,
+  maiden3,
+  maiden4,
+  maiden5,
+  maiden10,
+  maiden11,
+  maiden12,
+  maiden13,
+  maiden14,
+  maiden15,
+  maiden16,
+  maiden17,
+  maiden6,
+  maiden7,
+  maiden8,
+  maiden9,
 };

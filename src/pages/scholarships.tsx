@@ -1,7 +1,7 @@
 import PageWrapper from "../components/pageWrapper";
 import { useEffect } from "react";
 import initializeAOS from "../utils/aos-init";
-import { jamb2, js1 } from "../constants/assets";
+import { jamb2, maiden12 } from "../constants/assets";
 
 const EducationalSupport = () => {
   useEffect(() => {
@@ -11,7 +11,7 @@ const EducationalSupport = () => {
   const initiatives = [
     {
       id: 1,
-      image: js1,
+      image: maiden12,
       title:
         "Scholarship Initiative by De Imperial Philanthropic Family for SouthEastern JS1 Students",
       description:

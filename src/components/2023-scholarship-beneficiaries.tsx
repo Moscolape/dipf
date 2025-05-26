@@ -184,7 +184,7 @@ const BeneficiariesTable2023 = () => {
         className="sm:text-3xl text-xl font-bold mb-4 text-center"
         data-aos="fade-left"
       >
-        2023 Scholarship Beneficiaries
+        2023 Beneficiaries
       </h2>
 
       {editingBeneficiary && (

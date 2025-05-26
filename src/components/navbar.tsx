@@ -20,16 +20,16 @@ const links = [
         subDropdown: [
           {
             name: "2023 Beneficiaries",
-            href: "",
+            href: "/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students/2023-beneficiaries",
           },
           {
             name: "2024 Beneficiaries",
-            href: "",
+            href: "/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students/2024-beneficiaries",
           },
           {
             name: "2025 Beneficiaries",
-            href: "",
-          }
+            href: "/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students/2025-beneficiaries",
+          },
         ],
       },
       {
@@ -47,6 +47,9 @@ export default function NavLinks() {
   const [currentPath, setCurrentPath] = useState<string>(
     window.location.pathname
   );
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openSubDropdown, setOpenSubDropdown] = useState<string | null>(null);
+
   const menuRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -184,17 +187,82 @@ export default function NavLinks() {
           <X size={40} className="text-black" />
         </button>
 
-        <div className="space-y-6 text-center flex flex-col justify-center font-Urbanist">
-          {links.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-xl font-semibold hover:text-[#be9611] transition"
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.name}
-            </a>
-          ))}
+        <div className="space-y-6 text-left px-8 font-Montserrat w-full">
+          {links.map((link) => {
+            const hasDropdown = !!link.dropdown;
+            const isOpen = openDropdown === link.name;
+
+            return (
+              <div key={link.name}>
+                <div
+                  className="flex justify-between items-center text-xl font-semibold hover:text-[#be9611] transition cursor-pointer"
+                  onClick={() =>
+                    hasDropdown
+                      ? setOpenDropdown(isOpen ? null : link.name)
+                      : setMenuOpen(false)
+                  }
+                >
+                  <a href={link.href}>{link.name}</a>
+                  {hasDropdown && (
+                    <span className="ml-2">{isOpen ? "▲" : "▼"}</span>
+                  )}
+                </div>
+
+                {/* Dropdown Items */}
+                {hasDropdown && isOpen && (
+                  <div className="ml-4 mt-2 space-y-2 text-base">
+                    {link.dropdown.map((item) => {
+                      const hasSub = !!item.subDropdown;
+                      const isSubOpen = openSubDropdown === item.name;
+
+                      return (
+                        <div key={item.name}>
+                          <div
+                            className="flex justify-between items-center cursor-pointer"
+                            onClick={() =>
+                              hasSub
+                                ? setOpenSubDropdown(
+                                    isSubOpen ? null : item.name
+                                  )
+                                : setMenuOpen(false)
+                            }
+                          >
+                            <a
+                              href={item.href}
+                              className="block text-[#b58825]"
+                            >
+                              {item.name}
+                            </a>
+                            {hasSub && (
+                              <span className="ml-2 text-sm">
+                                {isSubOpen ? "▲" : "▼"}
+                              </span>
+                            )}
+                          </div>
+
+                          {/* Sub-Dropdown Items */}
+                          {hasSub && isSubOpen && (
+                            <div className="ml-4 mt-1 space-y-1 text-sm">
+                              {item.subDropdown.map((subItem) => (
+                                <a
+                                  key={subItem.name}
+                                  href={subItem.href}
+                                  onClick={() => setMenuOpen(false)}
+                                  className="block text-[#5b3907]"
+                                >
+                                  {subItem.name}
+                                </a>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </motion.div>
     </nav>

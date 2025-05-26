@@ -1,7 +1,7 @@
 import PageWrapper from "../components/pageWrapper";
 import { useEffect } from "react";
 import initializeAOS from "../utils/aos-init";
-import { presido } from "../constants/assets";
+import { jamb3 } from "../constants/assets";
 
 const TopJambScorersBeneficiaries = () => {
   useEffect(() => {
@@ -10,7 +10,7 @@ const TopJambScorersBeneficiaries = () => {
 
   return (
     <PageWrapper>
-      <div className="pt-12 px-6 max-w-6xl mx-auto font-Montserrat">
+      <div className="pt-12 px-3 max-w-6xl mx-auto font-Montserrat">
         <h1
           className="text-xl sm:text-4xl font-bold sm:mb-10 mb-3 underline sm:no-underline"
           data-aos="fade-down"
@@ -20,7 +20,7 @@ const TopJambScorersBeneficiaries = () => {
           General.
         </h1>
         <img
-          src={presido}
+          src={jamb3}
           alt="DIPF-National President"
           className="h-[50vh] w-full object-cover sm:h-[90vh]"
           data-aos="fade-in"

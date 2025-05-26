@@ -23,6 +23,16 @@ const Membership = lazy(() => import("./components/membership"));
 const ScholarshipBeneficiaries = lazy(
   () => import("./components/scholarship-beneficiaries")
 );
+const ScholarshipBeneficiaries2023 = lazy(
+  () => import("./components/2023-beneficiaries")
+);
+const ScholarshipBeneficiaries2024 = lazy(
+  () => import("./components/2024-beneficiaries")
+);
+const ScholarshipBeneficiaries2025 = lazy(
+  () => import("./components/2025-beneficiaries")
+);
+
 const JambScorersBeneficiaries = lazy(
   () => import("./components/jamb-scorers-beneficiaries")
 );
@@ -162,6 +172,18 @@ function App() {
           <Route
             path="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students"
             element={<ScholarshipBeneficiaries />}
+          />
+          <Route
+            path="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students/2023-beneficiaries"
+            element={<ScholarshipBeneficiaries2023 />}
+          />
+          <Route
+            path="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students/2024-beneficiaries"
+            element={<ScholarshipBeneficiaries2024 />}
+          />
+          <Route
+            path="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students/2025-beneficiaries"
+            element={<ScholarshipBeneficiaries2025 />}
           />
           <Route
             path="/initiatives/de-imperial-philanthropic-family-scholarship-for-2025-top-jamb-performers"
