@@ -64,7 +64,6 @@ const Applicants = () => {
           throw new Error(result.message || "Failed to fetch applicants");
         }
 
-        console.log(result);
         setApplicants(result.applicants);
         setTotalItems(result.totalItems);
       } catch (err) {

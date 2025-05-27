@@ -14,7 +14,6 @@ const Pagination: React.FC<PaginationProps> = ({
   onPageChange,
 }) => {
   const totalPages = totalItems && Math.ceil(totalItems / itemsPerPage);
-  console.log(totalPages);
 
   const handlePrevClick = () => {
     if (currentPage > 1) {
