@@ -97,11 +97,11 @@ const Home = () => {
           <h1 className="text-2xl sm:text-4xl font-Montserrat font-bold mb-5 text-center">
             Who We Are
           </h1>
-          <h2 className="font-DM-Sans sm:text-lg text-[1rem] px-3">
+          <h1 className="font-DM-Sans sm:text-lg text-[1rem] px-3">
             <b>DE IMPERIAL PHILANTHROPIC FAMILY (DIPF)</b> is a group of
             patriotic, responsible, responsive and dutiful persons, drawn from
             the South-Eastern demographic of Nigeria and across global diaspora.
-          </h2>
+          </h1>
           <img
             src={logo}
             alt="watermark"
@@ -115,12 +115,12 @@ const Home = () => {
           <h1 className="text-2xl sm:text-4xl font-Montserrat font-bold mb-5 text-center">
             Who We Are Not
           </h1>
-          <p className="font-DM-Sans sm:text-lg text-[1rem] px-3">
+          <h1 className="font-DM-Sans sm:text-lg text-[1rem] px-3">
             <b>DE IMPERIAL PHILANTHROPIC FAMILY (DIPF)</b> is <b>NOT</b> a club,
             society or political pressure group. <b>DIPF is NOT</b> driven by
             any political aspiration, interest or sponsorship of anyone
             harbouring a political interest.
-          </p>
+          </h1>
           <img
             src={logo}
             alt="watermark"

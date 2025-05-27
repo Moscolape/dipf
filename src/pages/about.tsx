@@ -41,13 +41,13 @@ const About = () => {
             </div>
           </div>
           <div className="sm:w-1/2 sm:mt-0 mt-5 sm:p-0 p-3">
-            <p data-aos="fade-up">
+            <h1 data-aos="fade-up">
               <b>DE IMPERIAL PHILANTHROPIC FAMILY (DIPF)</b> is a corporate
               body, fully registered with the Corporate Affairs Commission (CAC)
               and founded in 2021. Its membership is largely composed of Private
               Sector Operators, drawn from diverse Business and Enterpreneurial
               inclinations, in Nigeria, and the Diaspora.
-            </p>
+            </h1>
             <br />
             <p data-aos="fade-down">
               The Institution’s Ideology rests on Humanitarian commonalities,
@@ -65,12 +65,12 @@ const About = () => {
               Growth, Development and Prosperity.{" "}
             </p>
             <br />
-            <p data-aos="fade-up">
+            <h1 data-aos="fade-up">
               <b>DE IMPERIAL PHILANTHROPIC FAMILY</b> recognises the Southeast
               Geopolitical Region, of Nigeria, as its catchment Humanitarian
               Jurisdiction, driven by an overriding Motto, “LIVING FOR
               HUMANITY”.
-            </p>
+            </h1>
           </div>
         </div>
       </div>
