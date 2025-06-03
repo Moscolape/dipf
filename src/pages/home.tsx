@@ -6,6 +6,9 @@ import { X } from "lucide-react";
 import Marquee from "react-fast-marquee";
 import initializeAOS from "../utils/aos-init";
 import {
+  agm11,
+  agm16,
+  agm17,
   bg1,
   dipf1,
   dipf10,
@@ -17,6 +20,13 @@ import {
   dipf7,
   dipf8,
   dipf9,
+  hospital12,
+  hospital4,
+  hospital7,
+  jamb1,
+  jamb11,
+  jamb5,
+  jamb9,
   logo,
   scholarship,
   svgBackground,
@@ -137,15 +147,25 @@ const Home = () => {
           <div className="flex flex-wrap gap-4 justify-center items-center mr-4">
             {[
               dipf1,
+              jamb11,
               dipf2,
+              hospital12,
               dipf3,
+              agm11,
               dipf4,
+              jamb5,
               dipf5,
+              hospital4,
               dipf6,
+              agm16,
               dipf7,
+              jamb9,
               dipf8,
+              hospital7,
               dipf9,
+              agm17,
               dipf10,
+              jamb1
             ].map((imgSrc, index) => (
               <img
                 key={index}
