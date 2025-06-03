@@ -42,9 +42,27 @@ const Applicants = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [applicantId, setApplicantId] = useState<string | undefined>(undefined);
 
+  const [deleting, setDeleting] = useState<boolean>(false);
+
   const detailsDivRef = useRef<HTMLDivElement | null>(null);
 
   const itemsPerPage = 10;
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        detailsDivRef.current &&
+        !detailsDivRef.current.contains(event.target as Node)
+      ) {
+        setOpenDetailsIndex(-1);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   useEffect(() => {
     const fetchApplicants = async () => {
@@ -83,8 +101,34 @@ const Applicants = () => {
     fetchApplicants();
   }, [currentPage, jambFilter, sortOrder, stateFilter]);
 
-  const handleDeleteApplicant = () => {
-    console.log(applicantId);
+  const handleDeleteApplicant = async () => {
+    if (!applicantId) return;
+    setDeleting(true);
+
+    try {
+      const response = await fetch(
+        `https://dipf-backend.onrender.com/api/v1/applicants/${applicantId}`,
+        {
+          method: "DELETE",
+        }
+      );
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Failed to delete applicant");
+      }
+
+      setApplicants((prev) =>
+        prev.filter((applicant) => applicant._id !== applicantId)
+      );
+
+      setOpenModal(false);
+      setApplicantId(undefined);
+    } catch (error) {
+      console.error("Delete Error:", error);
+    } finally {
+      setDeleting(false);
+    }
   };
 
   const toggleDetails = (index: number) => {
@@ -274,7 +318,7 @@ const Applicants = () => {
                           className="font-medium hover:bg-[#8a1b1b] bg-[#b52525] text-white rounded-lg py-2 px-4 ml-2 cursor-pointer"
                           onClick={handleDeleteApplicant}
                         >
-                          Yes
+                          {deleting ? "Deleting..." : "Yes, remove"}
                         </button>
                       </div>
                     </div>
