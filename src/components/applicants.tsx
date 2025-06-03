@@ -1,9 +1,10 @@
 import DashboardWrapper from "./dashboardWrapper";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import moment from "moment";
 import { Link } from "react-router-dom";
 import Pagination from "./pagination";
 import { statesData } from "../utils/allstatesdata";
+import { EllipsisVertical } from "lucide-react";
 
 export interface Applicant {
   _id: string;
@@ -36,6 +37,12 @@ const Applicants = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [stateFilter, setStateFilter] = useState("");
   const [jambFilter, setJambFilter] = useState("");
+
+  const [openDetailsIndex, setOpenDetailsIndex] = useState<number>(-1);
+  const [openModal, setOpenModal] = useState<boolean>(false);
+  const [applicantId, setApplicantId] = useState<string | undefined>(undefined);
+
+  const detailsDivRef = useRef<HTMLDivElement | null>(null);
 
   const itemsPerPage = 10;
 
@@ -76,11 +83,18 @@ const Applicants = () => {
     fetchApplicants();
   }, [currentPage, jambFilter, sortOrder, stateFilter]);
 
-  // const startIndex = (currentPage - 1) * itemsPerPage;
-  // const currentApplicants = applicants.slice(
-  //   startIndex,
-  //   startIndex + itemsPerPage
-  // );
+  const handleDeleteApplicant = () => {
+    console.log(applicantId);
+  };
+
+  const toggleDetails = (index: number) => {
+    setOpenDetailsIndex(openDetailsIndex === index ? -1 : index);
+  };
+
+  const deleteApplicant = (applicantId: string) => {
+    setApplicantId(applicantId);
+    setOpenModal(true);
+  };
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -207,11 +221,65 @@ const Applicants = () => {
                         {moment(applicant.createdAt).format("LL")}
                       </span>
                       <span className="w-[10%] text-sm text-[#b58825] font-normal">
-                        <Link to={`/applicants/${applicant._id}`}>View</Link>
+                        <EllipsisVertical
+                          className="cursor-pointer more-icon"
+                          onClick={() => toggleDetails(index)}
+                        />
                       </span>
                     </div>
+                    {openDetailsIndex === index && (
+                      <div
+                        ref={detailsDivRef}
+                        className="shadow-md absolute right-7 rounded-sm flex flex-col bg-white animate-fadeDownFast"
+                      >
+                        <Link
+                          to={`/applicants/${applicant._id}`}
+                          className="px-5 py-2 hover:bg-gray-100"
+                        >
+                          <span className="text-sm text-gray-500 cursor-pointer font-Inter font-medium">
+                            View details
+                          </span>
+                        </Link>
+
+                        <span
+                          className={`px-5 py-2 bg-red-100 hover:bg-red-200 text-red-500 text-sm cursor-pointer font-Inter font-medium`}
+                          onClick={() => deleteApplicant(applicant._id)}
+                        >
+                          Delete
+                        </span>
+                      </div>
+                    )}
                   </div>
                 ))}
+
+                {openModal && (
+                  <div className="w-screen h-screen bg-[#000000cb] flex items-center justify-center z-50 fixed top-0 left-0">
+                    <div className="bg-white w-[30%] m-auto rounded-lg py-10 animate-fadeDownFast font-Montserrat">
+                      <span className="block text-center text-[#b52525] font-bold text-2xl mt-4">
+                        Delete Data
+                      </span>
+
+                      <span className="block text-center font-normal my-5">
+                        Are you sure you want to remove this applicant?
+                      </span>
+
+                      <div className="flex justify-center mt-6 mb-3">
+                        <button
+                          className="hover:bg-gray-300 bg-gray-100 font-medium rounded-lg py-2 px-4 mr-2 cursor-pointer"
+                          onClick={() => setOpenModal(false)}
+                        >
+                          No
+                        </button>
+                        <button
+                          className="font-medium hover:bg-[#8a1b1b] bg-[#b52525] text-white rounded-lg py-2 px-4 ml-2 cursor-pointer"
+                          onClick={handleDeleteApplicant}
+                        >
+                          Yes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
 
                 <Pagination
                   totalItems={totalItems}
