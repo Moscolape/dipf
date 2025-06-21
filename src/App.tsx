@@ -88,109 +88,109 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/initiatives" element={<Scholarships />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/impact" element={<Impact />} />
-          <Route path="/members" element={<Members />} />
-          <Route path="/membership" element={<Membership />} />
-          <Route path="/pillars" element={<Pillars />} />
+          <Route path="/bout" element={<About />} />
+          <Route path="/vents" element={<Events />} />
+          <Route path="/nitiatives" element={<Scholarships />} />
+          <Route path="/ontact" element={<Contact />} />
+          <Route path="/mpact" element={<Impact />} />
+          <Route path="/embers" element={<Members />} />
+          <Route path="/embership" element={<Membership />} />
+          <Route path="/illars" element={<Pillars />} />
           <Route
-            path="/login"
+            path="/ogin"
             element={isMobile ? <MobileWarning /> : <Login />}
           />
 
           {/* Protect Admin Routes */}
           <Route element={<ProtectedRoute />}>
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/applicants" element={<Applicants />} />
-            <Route path="/applicants/:id" element={<ApplicantDetails />} />
+            <Route path="/ashboard" element={<Dashboard />} />
+            <Route path="/pplicants" element={<Applicants />} />
+            <Route path="/pplicants/:id" element={<ApplicantDetails />} />
             <Route
-              path="/2023-southeast-dipf-scholarships-for-js1-students"
+              path="/023-southeast-dipf-scholarships-for-js1-students"
               element={<DIPF2023 />}
             />
             <Route
-              path="/2024-southeast-dipf-scholarships-for-js1-students"
+              path="/024-southeast-dipf-scholarships-for-js1-students"
               element={<DIPF2024 />}
             />
             <Route
-              path="/2025-southeast-dipf-scholarships-for-js1-students"
+              path="/025-southeast-dipf-scholarships-for-js1-students"
               element={<DIPF2025 />}
             />
             <Route
-              path="/2026-southeast-dipf-scholarships-for-js1-students"
+              path="/026-southeast-dipf-scholarships-for-js1-students"
               element={<DIPF2026 />}
             />
             <Route
-              path="/2027-southeast-dipf-scholarships-for-js1-students"
+              path="/027-southeast-dipf-scholarships-for-js1-students"
               element={<DIPF2027 />}
             />
           </Route>
 
           <Route
-            path="/events/a-tribute-to-a-life-of-impact-chief-anaeliaku-na-ekwulobia"
+            path="/vents/a-tribute-to-a-life-of-impact-chief-anaeliaku-na-ekwulobia"
             element={<Tribute />}
           />
           <Route
-            path="/events/highlights-from-one-of-anambras-most-remarkable-hospital-launches"
+            path="/vents/highlights-from-one-of-anambras-most-remarkable-hospital-launches"
             element={<Hospital />}
           />
           <Route
-            path="/events/high-chief-dr-sir-darlington-nwabunike-wins-the-sun-humanitarian-service-personality-of-the-year-2024-award"
+            path="/vents/high-chief-dr-sir-darlington-nwabunike-wins-the-sun-humanitarian-service-personality-of-the-year-2024-award"
             element={<Personality />}
           />
           <Route
-            path="/events/de-imperial-philanthropic-family-showing-love-to-chief-emeka-ikes-his-20th-wedding-anniversary"
+            path="/vents/de-imperial-philanthropic-family-showing-love-to-chief-emeka-ikes-his-20th-wedding-anniversary"
             element={<Anniversary />}
           />
           <Route
-            path="/events/de-imperial-philanthropic-familys-2023-agm-event-in-pictures"
+            path="/vents/de-imperial-philanthropic-familys-2023-agm-event-in-pictures"
             element={<Agm2023 />}
           />
           <Route
-            path="/events/don-teka-appreciated-de-imperial-family-with-n30million-at-the-agm-2023"
+            path="/vents/don-teka-appreciated-de-imperial-family-with-n30million-at-the-agm-2023"
             element={<Teka />}
           />
           <Route
-            path="/events/agbalanze-onyekachukwu-and-mighty-mighty-na-umuchu-supported-chico-ezeani-with-n10million-each"
+            path="/vents/agbalanze-onyekachukwu-and-mighty-mighty-na-umuchu-supported-chico-ezeani-with-n10million-each"
             element={<Agbalanze />}
           />
           <Route
-            path="/events/ndeli-knighted-de-imperial-familys-president"
+            path="/vents/ndeli-knighted-de-imperial-familys-president"
             element={<Ndeli />}
           />
           <Route
-            path="/events/annual-general-meeting-2023-elevation-night-2023"
+            path="/vents/annual-general-meeting-2023-elevation-night-2023"
             element={<Elevation />}
           />
           <Route
-            path="/events/tertiary-education-support-funds-to-top-performers-in-jamb-2025"
+            path="/vents/tertiary-education-support-funds-to-top-performers-in-jamb-2025"
             element={<Jamb />}
           />
 
           <Route
-            path="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students"
+            path="/nitiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students"
             element={<ScholarshipBeneficiaries />}
           />
           <Route
-            path="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students/2023-beneficiaries"
+            path="/nitiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students/2023-beneficiaries"
             element={<ScholarshipBeneficiaries2023 />}
           />
           <Route
-            path="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students/2024-beneficiaries"
+            path="/nitiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students/2024-beneficiaries"
             element={<ScholarshipBeneficiaries2024 />}
           />
           <Route
-            path="/initiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students/2025-beneficiaries"
+            path="/nitiatives/de-imperial-philanthropic-family-grants-scholarship-to-250-southeast-students/2025-beneficiaries"
             element={<ScholarshipBeneficiaries2025 />}
           />
           <Route
-            path="/initiatives/de-imperial-philanthropic-family-scholarship-for-2025-top-jamb-performers"
+            path="/nitiatives/de-imperial-philanthropic-family-scholarship-for-2025-top-jamb-performers"
             element={<JambScorersBeneficiaries />}
           />
           <Route
-            path="/initiatives/de-imperial-philanthropic-family-scholarship-for-2025-top-jamb-performers/register"
+            path="/nitiatives/de-imperial-philanthropic-family-scholarship-for-2025-top-jamb-performers/register"
             element={<JambScholarshipForm />}
           />
         </Routes>
